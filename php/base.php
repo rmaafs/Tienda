@@ -34,8 +34,8 @@
 <body class="hold-transition skin-blue layout-top-nav">
     <div class="wrapper">
 
-    <?php include("includes/navbar.php"); ?>
-        
+        <?php include("includes/navbar.php"); ?>
+
         <!-- Full Width Column -->
         <div class="content-wrapper">
             <div class="container">
