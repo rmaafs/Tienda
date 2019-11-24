@@ -103,7 +103,9 @@ $total = 0;
                                         <tbody>
                                             <?php
                                             foreach ($productos as $p) { ?>
-                                                <input type="hidden" name="producto" value="<?php echo $p->id; ?>">
+                                                <input type="hidden" name="producto[]" value="<?php echo $p->id; ?>">
+                                                <input type="hidden" name="<?php echo $p->id; ?>-nombre" value="<?php echo $p->nombre; ?>">
+                                                <input type="hidden" name="<?php echo $p->id; ?>-descripcion" value="<?php echo $p->descripcion; ?>">
                                                 <input type="hidden" id="<?php echo $p->id; ?>-precio" name="<?php echo $p->id; ?>-precio" value="<?php echo $p->precio; ?>">
                                                 <input type="hidden" id="<?php echo $p->id; ?>-existencias" value="<?php echo $p->existencias; ?>">
                                                 <tr id="<?php echo $p->id; ?>-tr">
@@ -197,16 +199,7 @@ $total = 0;
             <!-- /.container -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <div class="container">
-                <div class="pull-right hidden-xs">
-                    <b>Version</b> 2.4.18
-                </div>
-                <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-                reserved.
-            </div>
-            <!-- /.container -->
-        </footer>
+        <?php include "includes/footer.php" ?>
     </div>
     <!-- ./wrapper -->
 
