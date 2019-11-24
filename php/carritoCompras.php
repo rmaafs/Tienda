@@ -1,10 +1,51 @@
+<?php
+require "Producto.php";
+
+$productos = [];
+
+$p = new Producto();
+$p->id = 41;
+$p->nombre = "Balon";
+$p->descripcion = "Balón yabulani ajja";
+$p->unidades = 1;
+$p->precio = 700;
+$p->imagen = 'https://www.tradesport.com/revcms_render_image.aspx?date=20091202&id=c5bfc6ce-b2ae-4d18-bcd5-9cba19baaf8b&mode=1&width=698&height=441';
+$p->existencias = 3;
+array_push($productos, $p);
+
+$p = new Producto();
+$p->id = 12412;
+$p->nombre = "Celular";
+$p->descripcion = "Celular motorola rojo";
+$p->unidades = 1;
+$p->precio = 3500;
+$p->imagen = "https://resources.sears.com.mx/medios-plazavip/fotos/productos_sears1/original/2877971.jpg";
+$p->existencias = 3;
+array_push($productos, $p);
+
+$p = new Producto();
+$p->id = 55612;
+$p->nombre = "Laptop";
+$p->descripcion = "Laptop LENOVO blanca";
+$p->unidades = 1;
+$p->precio = 8300;
+$p->imagen = 'https://ss628.liverpool.com.mx/xl/1073605675.jpg';
+$p->existencias = 3;
+array_push($productos, $p);
+
+$subtotal = 0;
+$promocion = 0;
+$total = 0;
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Top Navigation</title>
+    <title><?php include "titlePrefix.php"; ?>Carrito de compras</title>
+    <?php include "favicon.php" ?>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -38,93 +79,115 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="box box-info">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Carrito de compras</h3>
+                        <form action="finalizarCompra.php" method="POST" id="formCarrito">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Carrito de compras</h3>
 
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="box-body">
-                            <div class="table-responsive">
-                                <table class="table no-margin">
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <input type="checkbox" class="flat-red" checked>
-                                            </td>
-                                            <td>
-                                                <ul class="products-list product-list-in-box">
-                                                    <li class="item">
-                                                        <div class="product-img">
-                                                            <img src="https://gloimg.gbtcdn.com/soa/gb/pdm-product-pic/Electronic/2019/06/15/goods_img_big-v2/20190615135808_49891.jpg" alt="Product Image">
+                            <div class="box-body">
+                                <div class="table-responsive">
+                                    <table class="table no-margin">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            foreach ($productos as $p) { ?>
+                                                <input type="hidden" name="producto" value="<?php echo $p->id; ?>">
+                                                <input type="hidden" id="<?php echo $p->id; ?>-precio" name="<?php echo $p->id; ?>-precio" value="<?php echo $p->precio; ?>">
+                                                <input type="hidden" id="<?php echo $p->id; ?>-existencias" value="<?php echo $p->existencias; ?>">
+                                                <tr id="<?php echo $p->id; ?>-tr">
+                                                    <td>
+                                                        <!-- class="flat-red" -->
+                                                        <input type="checkbox" name="check-tienda" value="<?php echo $p->id; ?>">
+                                                    </td>
+                                                    <td>
+                                                        <ul class="products-list product-list-in-box">
+                                                            <li class="item">
+                                                                <div class="product-img">
+                                                                    <img src="<?php echo $p->imagen; ?>" alt="Product Image">
+                                                                </div>
+                                                                <div class="product-info">
+                                                                    <a href="javascript:void(0)" class="product-title"><?php echo $p->nombre; ?>
+                                                                        <span class="product-description">
+                                                                            <?php echo $p->descripcion; ?>
+                                                                        </span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group margin">
+                                                            <div class="input-group-btn">
+                                                                <button type="button" class="btn btn-danger" onclick="changeCantidad(<?php echo $p->id . ", -1"; ?>);">-</button>
+                                                            </div>
+                                                            <input type="number" class="form-control" id="<?php echo $p->id; ?>-cantidad" name="<?php echo $p->id; ?>-cantidad" value="<?php echo $p->unidades; ?>" style="text-align: center;">
+                                                            <div class="input-group-btn">
+                                                                <button type="button" class="btn btn-danger" onclick="changeCantidad(<?php echo $p->id . ", 1"; ?>);">+</button>
+                                                            </div>
                                                         </div>
-                                                        <div class="product-info">
-                                                            <a href="javascript:void(0)" class="product-title">Xiaomi Mi Band 4 Pulsera Inteligente ( Versión China ) - Negro 4
-                                                                <span class="product-description">
-                                                                    5ATM Impermeable / Pantalla AMOLED / Monitor de Ritmo Cardíaco
-                                                                </span>
-                                                        </div>
-                                                    </li>
-                                                    <!-- /.item -->
-                                                </ul>
-                                            </td>
-                                            <td>
-                                                <div class="input-group margin">
-                                                    <div class="input-group-btn">
-                                                        <button type="button" class="btn btn-danger">-</button>
-                                                    </div>
-                                                    <input type="number" class="form-control" value="1" style="text-align: center;">
-                                                    <div class="input-group-btn">
-                                                        <button type="button" class="btn btn-danger">+</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                MXN$3259.80
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                                    </td>
+                                                    <td>
+                                                        MXN$<?php echo $p->precio; ?>
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                                $subtotal += $p->precio;
+                                            }
+                                            $total = $subtotal;
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                    <input type="hidden" id="subtotal" name="subtotal" value="<?php echo $subtotal; ?>" />
+                                    <input type="hidden" id="promocion" name="promocion" value="<?php echo $promocion; ?>" />
+                                    <input type="hidden" id="total" name="total" value="<?php echo $total; ?>" />
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer clearfix">
+                                <input type="checkbox" onchange="seleccionarTodos(this);"> Seleccionar todo
+                                <button type="button" class="btn btn-success">Seguir comprando</button>
+                                <button type="button" class="btn btn-danger" onclick="borrarSeleccionados();">Borrar productos seleccionados</button>
+                                <table class="col-sm-2 pull-right">
+                                    <tr>
+                                        <td></td>
+                                        <td class="pull-right"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <td class="pull-right" id="txt-subtotal">
+                                            MXN$<?php echo $subtotal; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Promoción</td>
+                                        <td class="pull-right" id="txt-promocion">
+                                            - MXN$<?php echo $promocion; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td class="pull-right" id="txt-total">
+                                            MXN$<?php echo $total; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><button type="button" class="btn btn-warning" onclick="$('#formCarrito').submit();">Finalizar compra</button></td>
+                                    </tr>
                                 </table>
                             </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer clearfix">
-                            <input type="checkbox" class="flat-red" checked> Seleccionar todo
-                            <button type="button" class="btn btn-success">Seguir comprando</button>
-                            <table class="col-sm-2 pull-right">
-                                <tr>
-                                    <td></td>
-                                    <td class="pull-right"></td>
-                                </tr>
-                                <tr>
-                                    <td>Subtotal</td>
-                                    <td class="pull-right">MXN$3259.80</td>
-                                </tr>
-                                <tr>
-                                    <td>Promoción</td>
-                                    <td class="pull-right">- MXN$0.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Total</td>
-                                    <td class="pull-right">MXN$3259.80</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><button type="button" class="btn btn-warning">Finalizar compra</button></td>
-                                </tr>
-                            </table>
-                        </div>
+                        </form>
                         <!-- /.box-footer -->
                     </div>
                 </section>
@@ -177,6 +240,66 @@
             checkboxClass: 'icheckbox_flat-green',
             radioClass: 'iradio_flat-green'
         })
+    </script>
+
+    <script>
+        function changeCantidad(id, value) {
+            var val = parseInt(document.getElementById(id + "-cantidad").value);
+            var existencias = parseInt(document.getElementById(id + "-existencias").value);
+            var precio = parseInt(document.getElementById(id + "-precio").value);
+            if (val + value <= 0) {
+                alert("Necesitas tener mínimo 1 producto a pedir.");
+            } else if (val + value > existencias) {
+                alert("Lo sentimos, solo quedan " + existencias + " existencias de este producto.");
+            } else {
+                val += value;
+                document.getElementById(id + "-cantidad").value = val;
+                var subtotal = parseInt(document.getElementById("subtotal").value);
+                subtotal += value * precio;
+
+                document.getElementById("subtotal").value = subtotal;
+                document.getElementById("total").value = subtotal;
+                document.getElementById("txt-subtotal").innerHTML = "MXN $" + subtotal;
+                document.getElementById("txt-total").innerHTML = "MXN $" + subtotal;
+            }
+        }
+
+        function seleccionarTodos(check) {
+            var seleccionar = check.checked;
+            for (var i in document.getElementsByName("check-tienda")) {
+                var input = document.getElementsByName("check-tienda")[i].checked = seleccionar;
+            }
+        }
+
+        function borrarSeleccionados() {
+            var checks = [];
+            var dineroTotal = parseInt(document.getElementById("subtotal").value);
+            //Buscamos todos los checks activados y los guardamos
+            for (var i in document.getElementsByName("check-tienda")) {
+                var input = document.getElementsByName("check-tienda")[i];
+                if (input.value != null && input.checked) {
+                    checks.push(input.value);
+
+                    var id = input.value;
+                    var val = parseInt(document.getElementById(id + "-cantidad").value);
+                    var precio = parseInt(document.getElementById(id + "-precio").value);
+                    dineroTotal -= val * precio;
+                }
+            }
+            //alert("Total: " + checks.length);
+            if (checks.length == 0) {
+                alert("No has seleccionado ningún producto.");
+            } else {
+                //Borramos todos los HTML de los ids a borrar.
+                for (var i in checks) {
+                    document.getElementById(checks[i] + "-tr").innerHTML = "";
+                }
+                document.getElementById("subtotal").value = dineroTotal;
+                document.getElementById("total").value = dineroTotal;
+                document.getElementById("txt-subtotal").innerHTML = "MXN $" + dineroTotal;
+                document.getElementById("txt-total").innerHTML = "MXN $" + dineroTotal;
+            }
+        }
     </script>
 </body>
 
