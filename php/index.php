@@ -9,46 +9,53 @@
     <?php include "titlePrefix.php"; ?>Top Navigation</title>
     <?php include "favicon.php" ?>
 
-    <!-- Tell the browser to be responsive to screen width -->
+    <!------------------------------------------------------------ LINKS ------------------------------------------------------------>
+    
+    
+    <!-- Le dice al navegador que sea responsivo -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/4328fe96d6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
+    <!-- AdminLTE Skins -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-        <?php include "includes/chat.php"?>
+    <!-- Chat -->
+    <?php include "includes/chat.php"?>
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    
+
+    <!------------------------------------------------------------ LINKS FIN ------------------------------------------------------------>
+
 </head>
 
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<!------------------------------------------------------------ NAV ------------------------------------------------------------>
 
-<body class="hold-transition skin-red layout-top-nav">
+
+<body class="hold-transition skin-blue layout-top-nav">
     <div class="wrapper">
 
     <?php include("includes/navbar.php"); ?>
+
+<!------------------------------------------------------------ NAV FIN ------------------------------------------------------------>        
         
-        <!-- Full Width Column -->
+
+<!------------------------------------------------------------ WRAPPER ------------------------------------------------------------>
+
+
         <div class="content-wrapper">
             <div>
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Top Navigation
-                        <small>Example 2.0</small>
+                        Tienda (TEPISCOELHOYO)
+                        <small>MATANDO PATOS DESDE TIEMPOS INMEMORABLES</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -87,10 +94,30 @@
             </div>
             <!-- /.container -->
         </div>
-        <!-- /.content-wrapper -->
+
+<!------------------------------------------------------------ CONTADOR DE VISITAS ------------------------------------------------------------>
+
+    <a><img src="https://counter6.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=se5dkchz6h1kfuhrhfbeprl1a4csnzr4" border="0" title="contador de visitas" alt="contador de visitas"></a>
+
+<!------------------------------------------------------------ CONTADOR DE VISITAS FIN ------------------------------------------------------------>
+
+
+
+
+<!------------------------------------------------------------ FOOTER ------------------------------------------------------------>
+
         <?php include "includes/footer.php"?>
+
+<!------------------------------------------------------------ FOOTER FIN ------------------------------------------------------------>
+
+
+
     </div>
-    <!-- ./wrapper -->
+
+<!------------------------------------------------------------ WRAPPER FIN ------------------------------------------------------------>
+
+
+<!------------------------------------------------------------ SCRIPTS ------------------------------------------------------------>
 
     <!-- jQuery 3 -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
@@ -104,6 +131,10 @@
     <script src="../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
+
+<!------------------------------------------------------------ SCRIPTS FIN ------------------------------------------------------------>
+
 </body>
+
 
 </html>
