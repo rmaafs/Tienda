@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?php include "titlePrefix.php"; ?>Top Navigation</title>
+    <title>
+        
+    <?php include "titlePrefix.php"; ?>Top Navigation</title>
     <?php include "favicon.php" ?>
+
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -30,16 +33,17 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
-<body class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition skin-red layout-top-nav">
     <div class="wrapper">
 
     <?php include("includes/navbar.php"); ?>
         
         <!-- Full Width Column -->
         <div class="content-wrapper">
-            <div class="container">
+            <div>
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
