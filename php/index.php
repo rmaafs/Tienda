@@ -1,3 +1,20 @@
+
+<!-- CONEXION A LA BASE DE DATOS -->
+
+<?php
+  
+    $servidor = 'localhost';
+    $cuenta = 'root';
+    $password = '';
+    $bd = 'productos';
+    $conexion = new mysqli($servidor, $cuenta, $password, $bd);
+    if ($conexion->connect_errno) {
+        die('Error en la conexion');
+    }
+
+?>
+<!-- CONEXION A LA BASE DE DATOS FIN -->
+
 <!DOCTYPE html>
 <html>
 
@@ -33,6 +50,43 @@
 
     <!------------------------------------------------------------ LINKS FIN ------------------------------------------------------------>
 
+    <style>
+        table ,td,tr{
+            border: 1px solid black;
+            padding: 7px;
+            color: black:
+            border-collapse=collapse;
+            
+        }
+
+        @media screen and (max-width: 600px) {
+       table {
+           width:100%;
+       }
+       thead {
+           display: none;
+       }
+       tr:nth-of-type(2n) {
+           background-color: inherit;
+       }
+       tr td:first-child {
+           background: #f0f0f0;
+           font-weight:bold;
+           font-size:1.3em;
+       }
+       tbody td {
+           display: block;
+           text-align:center;
+       }
+       tbody td:before {
+           content: attr(data-th);
+           display: block;
+           text-align:center;
+       }
+}
+    </style>
+
+
 </head>
 
 <!------------------------------------------------------------ NAV ------------------------------------------------------------>
@@ -54,8 +108,8 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Tienda (TEPISCOELHOYO)
-                        <small>MATANDO PATOS DESDE TIEMPOS INMEMORABLES</small>
+                        Tienda ---
+                        <small>Aqui va el lema</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -66,19 +120,41 @@
 
                 <!-- Main content -->
                 <section class="content">
-                    <div class="callout callout-info">
-                        <h4>Tip!</h4>
+<!------------------------------------------------------- DATOS DE PRODUCTOS ------------------------------------------------------->
 
-                        <p>Add the layout-top-nav class to the body tag to get this layout. This feature can also be used with a
-                            sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and use regular
-                            links instead.</p>
-                    </div>
-                    <div class="callout callout-danger">
-                        <h4>Warning!</h4>
+                    <div class="box box-info" style="padding:10px;">
+                    <h4><p>Algunos de nuestros productos</p></h4>
+                        <table>
+                                <?php 
+                                $sql="SELECT * from productos_1";
+                                $result=mysqli_query($conexion,$sql);
 
-                        <p>The construction of this layout differs from the normal one. In other words, the HTML markup of the navbar
-                            and the content will slightly differ than that of the normal layout.</p>
+                                while($mostrar=mysqli_fetch_array($result)){
+                                ?>    
+
+                                <tr>
+                                    <td><?php echo $mostrar['id'] ?></td>
+                                    <td>Imagen</td>
+                                    <td><?php echo $mostrar['nombre'] ?></td>
+                                    <td>$<?php echo $mostrar['precio'] ?></td>
+                                    <td><?php echo $mostrar['tipo'] ?></td>
+                                    <td><?php echo $mostrar['descripcion'] ?></td></td>
+                                    <td><button name="botonCarrito" href="#" onclick="" style="border-radius: 5px; background: lightblue; color: #000;">Agregar al Carrito</button></td>
+                                    
+                                </tr>
+                                
+                                
+                            <?php 
+                            }
+                            
+                            ?>
+                        </table>
+
+                            
                     </div>
+<!------------------------------------------------------- DATOS DE PRODUCTOS FIN ------------------------------------------------------->
+
+                    
                     <div class="box box-default">
                         <div class="box-header with-border">
                             <h3 class="box-title">Blank Box</h3>
