@@ -6,12 +6,12 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-
+    <script src="https://kit.fontawesome.com/4328fe96d6.js" crossorigin="anonymous"></script>
     <header class="main-header">
     <nav class="navbar navbar-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="#" class="navbar-brand"><b>TIENDA</b>LOCA</a>
+                <a href="index.php" class="navbar-brand"><b>TIENDA</b>LOCA</a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
@@ -21,22 +21,36 @@
                 <ul class="nav navbar-nav">
 
                 <!-- LINK DE INICIO -->
-                    <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
                 <!-- LINK DE TIENDA --> 
-                    <li><a href="#">Tienda</a></li>
+                <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tienda<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"></a></li>
+
+                            <!-- CATEGORIA 1 -->
+                            <li><a href="#">Categoría 1</a></li>   
+
+                            <!-- CATEGORIA 2 -->
+                            <li><a href="#">Categoría 2</a></li>
+                            
+                            
+                        </ul>
                 <!-- LINK DE ACERCA DE --> 
-                 <li><a href="#">Acerca De</a></li>
+                 <li><a href="acercaDe.php">Acerca De</a></li>
                 <!-- CONTACTANOS -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contactanos<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#"></a></li>
 
+                            <!-- CONTACTO -->
+                            <li><a href="contacto.php">Contacto</a></li>   
+
                             <!-- ESTADISTICAS -->
-                            <li><a href="#">Estadisticas</a></li>
+                            <li><a href="ayuda.php">Ayuda</a></li>
                             
-                            <!-- POR AGREGAR -->
-                            <li><a href="#">Pagina 2</a></li>   
+                            
                         </ul>
                     </li>
                 </ul>
@@ -54,12 +68,15 @@
                 <ul class="nav navbar-nav">      
 
 <!-- CARRITO DE COMPRAS -->
-
-              <a class="nav-link" href="#">
-              <i class="fas f07a fa-shopping-cart "></i>
-                
-              </a>
-              
+            <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
+            <br>
+                <a class="nav-link" href="carritoCompras.php">
+                    <i class="fas f07a fa-shopping-cart" style="color:white">
+                        <span href="#" class="badge badge-warning navbar-badge" style="background-color:red">3</span>
+                    </i>
+                    
+                </a>
+            </div>
 <!-- CARRITO DE COMPRAS FIN -->
 
 <!------------------------------------ Usuario (LOGIN)----------------------------------------------->
