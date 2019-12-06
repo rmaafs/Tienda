@@ -1,5 +1,5 @@
 <?php
-require "Producto.php";//Añadí comentario
+require "Producto.php";//Añadí
 
 $productos = [];
 

@@ -3,10 +3,10 @@
 
 <?php
   
-    $servidor = 'localhost';
-    $cuenta = 'root';
-    $password = '';
-    $bd = 'productos';
+    $servidor = '34.94.76.156';
+    $cuenta = 'tienda';
+    $password = 'curiosoXD';
+    $bd = 'tienda';
     $conexion = new mysqli($servidor, $cuenta, $password, $bd);
     if ($conexion->connect_errno) {
         die('Error en la conexion');
