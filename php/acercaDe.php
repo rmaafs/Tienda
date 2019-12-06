@@ -40,32 +40,40 @@
                      
                             <div class="box-header with-border">
                                 <h3 class="box-title"> <b>Acerca de Nosotros</b></h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Praesentium nostrum harum expedita</p>
+                                <p>Somos una empresa centrada en el cliente y éste es la prioridad en cualquiera de sus estrategias. 
+                                    Misión, visión y valores confirman que toda acción, todo empleado y
+                                 todo producto del catálogo debe contribuir a garantizar la satisfacción de los consumidores.</p>
                                 
                             <div class="box-footer clearfix">
                                 <h3 class="box-title"><b>Vision</b></h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Praesentium nostrum harum expedita, blanditiis quo doloremque sapiente quos laboriosam suscipit fugiat, 
-                                aperiam veniam perspiciatis provident? Eaque dicta culpa rem voluptatum repellendus?</p>
+                                <p>Nuestra misión es “ser la empresa más centrada en el cliente del mundo, donde los 
+                                clientes pueden descubrir cualquier cosa que puedan querer comprar online, y comprometerse 
+                                a ofrecer los precios más bajos posibles”.</p>
                             </div>
 
                            
                             <div class="box-footer clearfix">
                             
                                  <h3 class="box-title"><b>Mision</b></h3>
-                                 <br><br>
-                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Praesentium nostrum harum expedita, blanditiis quo doloremque sapiente quos laboriosam suscipit fugiat, 
-                                aperiam veniam perspiciatis provident? Eaque dicta culpa rem voluptatum repellendus?</p>
+                                 <br>
+                                 <p>Nuestra misión es “aprovechar la tecnología y la 
+                                 experiencia de nuestros empleados para ofrecer a los consumidores 
+                                 la mejor experiencia de compra en internet”</p>
+
                             </div>
 
                             <div class="box-footer clearfix">
                                 <h3 class="box-title"><b>Objetivo de la compañía </b></h3> 
                                 <br>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Praesentium nostrum harum expedita, blanditiis quo doloremque sapiente quos laboriosam suscipit fugiat, 
-                                aperiam veniam perspiciatis provident? Eaque dicta culpa rem voluptatum repellendus?</p>
+                                <p>                                
+                                    • Identificar los componentes de un modelo de negocio de Comercio Electrónico
+                                    <br>
+                                    • Describir los modelos de negocio B2C y B2B más significativos
+                                    <br>
+                                    • Reconocer modelos de negocios emergentes en otras áreas del Comercio Electrónico
+                                    <br>
+                                    • Entender cómo las características del Comercio Electrónico impactan en las industrias y las fuerzas del mercado
+                                </p>
                             </div>
 
                     

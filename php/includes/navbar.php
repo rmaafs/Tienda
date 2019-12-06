@@ -11,7 +11,7 @@
     <nav class="navbar navbar-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="index.php" class="navbar-brand"><b>TIENDA</b>LOCA</a>
+                <a href="index.php" class="navbar-brand"><b>SMS</b>hop</a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
@@ -23,19 +23,7 @@
                 <!-- LINK DE INICIO -->
                     <li class="active"><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
                 <!-- LINK DE TIENDA --> 
-                <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tienda<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"></a></li>
-
-                            <!-- CATEGORIA 1 -->
-                            <li><a href="#">Categoría 1</a></li>   
-
-                            <!-- CATEGORIA 2 -->
-                            <li><a href="#">Categoría 2</a></li>
-                            
-                            
-                        </ul>
+                <li><a href="#">Tienda</a></li>
                 <!-- LINK DE ACERCA DE --> 
                  <li><a href="acercaDe.php">Acerca De</a></li>
                 <!-- CONTACTANOS -->
@@ -72,7 +60,7 @@
             <br>
                 <a class="nav-link" href="carritoCompras.php">
                     <i class="fas f07a fa-shopping-cart" style="color:white">
-                        <span href="#" class="badge badge-warning navbar-badge" style="background-color:red">3</span>
+                        <span href="#" class="badge badge-warning navbar-badge" style="background-color:red"></span>
                     </i>
                     
                 </a>
@@ -83,7 +71,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Dios Maafs</span>
+                            <span class="hidden-xs">Maafs</span>
                         </a>
                         
                         <ul class="dropdown-menu">
@@ -92,7 +80,7 @@
                                 <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                 <p>
                                     El buen maafs - Web Developer
-                                <small>Miembro desde hace 2000 años</small>
+                                <small>Miembro desde 2018</small>
                                 </p>
                             </li>
 

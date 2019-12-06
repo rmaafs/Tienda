@@ -217,7 +217,7 @@ $total = $subtotal + ($subtotal * 16 / 100);
                                     </tr>
                                     <tr>
                                         <th>Total:</th>
-                                        <td>MXS $<span id="total-total"><?php echo $total; ?></span></td>
+                                        <td>MXS $<span id="total-total"><?php echo $total + $envio - $promocion; ?></span></td>
                                     </tr>
                                 </table>
                             </div>
@@ -229,7 +229,7 @@ $total = $subtotal + ($subtotal * 16 / 100);
                     <!-- this row will not appear when printing -->
                     <div class="row no-print">
                         <div class="col-xs-12">
-                            <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Regresar</a>
+                            <a href="carritoCompras.php" class="btn btn-default"><i class="fa fa-print"></i> Regresar</a>
                             <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Confirmar compra
                             </button>
                         </div>
