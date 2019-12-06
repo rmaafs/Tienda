@@ -8,10 +8,11 @@
     //echo "passwd: " . $passwd;
     //  "nombre: " . $nom . " "
     //  "nombre : '" . $nom .  "'  "
-    $nom = selectBD('select usuario from login where usuario = "' .$user . '"');
-    if($nom){
-        $bloqueo = selectBD('select estado from login where usuario = "' .$user . '"');
-        if($bloqueo){
+    if(1){
+        $nom = selectBD('select usuario from login where usuario = "' .$user . '"');
+        if($nom){
+            $bloqueo = selectBD('select estado from login where usuario = "' .$user . '"');
+            if($bloqueo){
             $b = $bloqueo -> fetch_assoc();
             $b1 = $b['estado'];
             if($b1 == 0){
@@ -63,9 +64,13 @@
             }
         }else{
             echo "Error al recibir el estado del usuario";
+            
         }
         
+        }else{
+            echo "El usuario no existe ";
+        }
     }else{
-        echo "El usuario no existe ";
+        echo "Error de Captcha";
     }
 ?>

@@ -9,15 +9,12 @@
         echo "<br>";
         echo $c2;
         if( $c2 == 1){
-            //header('Location: fondo.php');
+            header('Location: fondo.php');
+            echo "esta activo";
         }else if($c2 == 0){
             echo "funciona";
-
             header('Location: activar.php');
         }
-
-
-
         //Eliminamos la cookie
         //setcookie("user", '', time() - 1, '/');
         //setcookie("pass", '', time() - 1, '/');

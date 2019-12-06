@@ -7,16 +7,21 @@
     <title>Inicio de accesibilidad</title>
     <script>
         function verificar(){
-            var x ='<?php echo "Vamos";?>';
-            //$user = $_COOKIE['user'];
-            alert(x));
-            
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("demo").innerHTML = this.responseText;
+            }
+            };
+            xhttp.open("GET", "crearCookies.php", true);
+            xhttp.send();
+            location.href="fondo.php";
         }
     </script>
 
 </head>
 <body>
         <button onclick="verificar()"><img src="acc.png" alt="" width="240px" height="240px"></button>
-    
+        <div id="demo"></div>
 </body>
 </html>

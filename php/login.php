@@ -36,6 +36,10 @@
     <br>
     <label for="">Ingresa la contraseña:</label>
     <input type="text" name="passwd" required id="passwd1">
+    <br>
+    <label for="">Captcha: </label>
+    <input type="text" name="cap" require id="captach">
+
     <input type="button" onclick="verificar()" value="Enviar" >
     <br>
     <input type="checkbox">Recordar Usuario
