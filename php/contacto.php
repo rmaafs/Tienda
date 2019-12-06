@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="../plugins/iCheck/all.css">
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
+    <!-- Extra styles -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body class="hold-transition skin-blue layout-top-nav">
@@ -80,19 +81,14 @@
 <!--------------------------------------------------------------- FORM ------------------------------------------------------------->
 
 
-                            <div class="box-footer clearfix" style="background-color:beige">
-                                <form action="" style="text-align:justify"> 
+                            <div class="box-footer clearfix" style="background-color:beige;">
+                                <form action="" style="text-align:center"> 
                                     <h2>Contáctanos</h2><br>
                                     <p>En caso de contar con algún otro comentario, duda o 
                                     sugerencia puedes hacerla llegar vía electrónica en el siguiente formulario,
                                     seleccionando el área a la que va dirigida.</p>
                                     <br>
 
-                                <!-- MAPA DE GOOGLE -->
-                                    <div class="box-tools pull-right">
-                                        <div class="mapouter"><div class="gmap_canvas"><iframe width="528" height="339" id="gmap_canvas" src="https://maps.google.com/maps?q=universidad%20autonoma%20de%20aguascalientes&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.divi-discounts.com">deepfocus by elegant themes</a></div><style>.mapouter{position:relative;text-align:right;height:339px;width:528px;}.gmap_canvas {overflow:hidden;background:none!important;height:339px;width:528px;}</style></div>
-                                    </div>
-                                <!-- MAPA DE GOOGLE FIN-->
 
                                 <!-- FORMULARIO -->
                                 <div>
@@ -113,7 +109,8 @@
                                         <input type="text" placeholder="Ingresa tu Apellido Materno" required=""></dd></dl><dl><dt>
                                         <label>Correo Electrónico:</label></dt><dd>
                                         <input type="email" placeholder="Ingresa tu Correo Electrónico" required=""></dd></dl><dl><dt>
-                                        <label>Estado:</label></dt><dd><span class="select"><select>
+                                        <label>Estado:</label></dt><dd><span class="select">
+                                        <select>
                                         <option value="">-No Seleccionado-</option>
                                         <option value="Aguascalientes">Aguascalientes</option>
                                         <option value="Baja California">Baja California</option>
@@ -142,7 +139,9 @@
                                         <option value="Veracruz">Veracruz</option>
                                         <option value="Yucatán">Yucatán</option>
                                         <option value="Zacatecas">Zacatecas</option>
-                                        </select></span></dd></dl><dl><dt><label>Código Postal:</label></dt><dd>
+                                        </select>
+                                        
+                                        </span></dd></dl><dl><dt><label>Código Postal:</label></dt><dd>
                                         <input type="text" placeholder="Ingresa tu C.P." required=""></dd></dl><dl><dt>
                                         <label>Comentario:</label></dt><dd>
                                         <textarea 
@@ -161,19 +160,27 @@
                                     
                                 </form>
                                 
+                             <!-- MAPA DE GOOGLE -->
+                             <div class="w3-container w3-hide-small ">
+                                        <div class="mapouter" style="padding:10px;"><div class="gmap_canvas"><iframe width="328" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=universidad%20autonoma%20de%20aguascalientes&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:339px;width:528px;}.gmap_canvas {overflow:hidden;background:none!important;height:339px;width:528px;}</style></div>
+                                    </div>
+                             <!-- MAPA DE GOOGLE FIN-->
+
+
+
                             </div>
 
                              <!-- OPCION DE REGISTRO-->
 
+                             <div class="w3-container w3-hide-small " style="background: #EB0028; color: #fff; padding: 30px 0; text-align: center; height:170px; width:40%;">
                              <div>
-                             <div>
-                                 <div style="background: #EB0028; color: #fff; box-sizing: border-box;padding: 30px 0; text-align: center; height:130px; width:30%;">
+                                 <div >
                                      <div class="nlMessage">
                                          <h5>¡Regístrate a nuestro Newsletter!</h5>
                                      </div>
                                         <div >
-                                            <input type="text" id="newsletter" name="newsletter" placeholder="Tu correo electrónico" style="color:black;box-sizing: border-box;height: 40px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px; min-width: 100px;">
-                                        <button name="botonsub" href="#" onclick="" style="box-sizing: border-box;height: 40px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px; min-width: 100px;background: #fff!important; color: #000;">Suscribirse</button>
+                                        <input type="text" id="newsletter" name="newsletter" placeholder="Tu correo electrónico" style="color:black; box-sizing: border-box; height:30px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px;">
+                                        <button name="botonsub" href="#" onclick="" style="box-sizing: border-box;height: 40px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px; min-width: 50px;background: #fff!important; color: #000;">Suscribirse</button>
                                     </div>
                                 </div>
                             </div>

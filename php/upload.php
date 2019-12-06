@@ -10,17 +10,15 @@ if(isset($_POST["submit"])){
          */
         
         //DB details
-        $dbHost     = 'localhost';
-        $dbUsername = 'root';
-        $dbPassword = '';
-        $dbName     = 'productos';
-        
-        //Create connection and select DB
-        $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-        
-        // Check connection
-        if($db->connect_error){
-            die("Connection failed: " . $db->connect_error);
+        $servidor = '34.94.76.156';
+        $cuenta = 'tienda';
+        $password = 'curiosoXD';
+        $bd = 'tienda';
+        $conexion = new mysqli($servidor, $cuenta, $password, $bd);
+        if ($conexion->connect_errno) {
+            die('Error en la conexion');
+        }else{
+            return $conexion;
         }
         
         $dataTime = date("Y-m-d H:i:s");

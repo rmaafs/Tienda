@@ -8,8 +8,6 @@
     $conexion = new mysqli($servidor, $cuenta, $password, $bd);
     if ($conexion->connect_errno) {
         die('Error en la conexion');
-    }else{
-        return $conexion;
     }
 }
 
@@ -34,6 +32,8 @@ if ($resultado){//Si $resultado != null, significa que si hay resultados del que
     echo "Tipo " . $fila['tipo'];//Obtenemos el campo usNombre de $fila
     echo "<br>";
     echo "Descripcion " . $fila['descripcion'];//Obtenemos el campo usNombre de $fila
+    echo "<br>";
+    echo "Cantidad " . $fila['Cantidad'];//Obtenemos el campo usNombre de $fila
     
 }else{
     echo "Error, datos no encontrados";

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../plugins/iCheck/all.css">
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
+   
 </head>
 
 <body class="hold-transition skin-blue layout-top-nav">
@@ -39,10 +39,10 @@
                         <p><span style="color: #ff0000;"><strong>PROCESO DE REGISTRO</strong></span></p>
                         <p><span style="color: #000000;"><strong>1. ¿Cómo me registro?</strong></span></p>
                         <p><span style="color: #ff0000;"><strong>1.1. Si eres cliente</strong></span></p>
-                        <p>En la web&nbsp;www.tiendagina.com&nbsp;clicando en el apartado “Accede a tu cuenta”&nbsp;se desplegará un menú. Clicando en el apartado “Registro”, deberás introducir número de Tarjeta TiendaGina, DNI, número de teléfono y correo electrónico. Una vez hecho esto te redirigirá a la página donde aparecerán tus datos de cliente para verificarlos o modificarlos si ha habido cambios. Una vez confirmado los datos tu tarjeta se activará automáticamente en la web y podrás empezar a comprar.<br>Si no recuerdas tu número de tarjeta, indicándonos tu DNI y número de teléfono, se te enviará el número de tarjeta a tu correo electrónico. Para ello deberás clicar en “El Nº de tarjeta es obligatorio, si no lo recuerdas&nbsp;pulsa aquí&nbsp;” dentro del apartado “Registro”</p>
+                        <p>En la web&nbsp;www.SMShop.com&nbsp;clicando en el apartado “Accede a tu cuenta”&nbsp;se desplegará un menú. Clicando en el apartado “Registro”, deberás introducir número de Tarjeta SMShop, DNI, número de teléfono y correo electrónico. Una vez hecho esto te redirigirá a la página donde aparecerán tus datos de cliente para verificarlos o modificarlos si ha habido cambios. Una vez confirmado los datos tu tarjeta se activará automáticamente en la web y podrás empezar a comprar.<br>Si no recuerdas tu número de tarjeta, indicándonos tu DNI y número de teléfono, se te enviará el número de tarjeta a tu correo electrónico. Para ello deberás clicar en “El Nº de tarjeta es obligatorio, si no lo recuerdas&nbsp;pulsa aquí&nbsp;” dentro del apartado “Registro”</p>
                         <p><span style="color: #ff0000;"><strong>1.2. Si no eres cliente</strong></span></p>
-                        <p>En la web&nbsp;www.tiendagina.com&nbsp;clicando en el apartado “Accede a tu cuenta”&nbsp;se desplegará un menú. Clicando en el apartado “Registro”&nbsp;se abrirá una ventana donde deberás seleccionar la opción “Si no cuentas con una Tarjeta TiendaGina” y rellenar el formulario con tus datos y se te creará un usuario y una contraseña que podrás cambiar en ese mismo instante.<br>Una vez hecho esto se te asignará una Tarjeta TiendaGina, que enviaremos a tu domicilio, y que podrás utilizar tanto en la web como en las tiendas físicas.</p>
-                        <p><span style="color: #ff0000;"><strong>1.3. Si ya estas registrado</strong></span></p>
+                        <p>En la web&nbsp;www.SMShop.com&nbsp;clicando en el apartado “Accede a tu cuenta”&nbsp;se desplegará un menú. Clicando en el apartado “Registro”&nbsp;se abrirá una ventana donde deberás seleccionar la opción “Si no cuentas con una Tarjeta SMShop” y rellenar el formulario con tus datos y se te creará un usuario y una contraseña que podrás cambiar en ese mismo instante.<br>Una vez hecho esto se te asignará una Tarjeta , que enviaremos a tu domicilio, y que podrás utilizar tanto en la web como en las tiendas físicas.</p>
+                        <p><span style="color: #ff0000;"><strong>1.3. Si ya estas registrado</strong></span></p>SMShop
                         <p>Si ya estás registrado deberás acceder usando tu DNI y contraseña.</p>
                         <p>&nbsp;</p>
                         <p><span style="color: #ff0000;"><strong>REALIZACIÓN DE PEDIDOS</strong></span></p>
@@ -79,7 +79,7 @@
                         <p><strong>1. ¿Cómo incluyo una dirección de envío?</strong></p>
                         <p>Antes de hacer el primer pedido en la tienda online tendrás que indicar en “Mis datos”&nbsp;la dirección o direcciones a las cuales se te pueden enviar los pedidos. Lo primero que haremos cuando quieras empezar un pedido es preguntarte por la dirección de envío del pedido, que deberá ser una de las que ya has incluido en “Mis datos”. También podrás seleccionar una tienda, de las que ofrecemos como opción, como lugar de recogida.</p>
                         <p><strong>2. ¿Cómo consulto los pedidos que ya he realizado?</strong></p>
-                        <p>Dentro del apartado “Mis compras” podrás consultar todos aquellos pedidos que hayas realizado en TiendaGina. Además, a partir de un pedido ya realizado podrás añadir todos sus artículos al pedido que estés realizando.</p>
+                        <p>Dentro del apartado “Mis compras” podrás consultar todos aquellos pedidos que hayas realizado en SMShop. Además, a partir de un pedido ya realizado podrás añadir todos sus artículos al pedido que estés realizando.</p>
                         <p>Además, podrás convertir el pedido en una lista habitual.</p>
                         <p><strong>3. ¿Qué son&nbsp;Mis Listas?</strong></p>
                         <p>A la hora de realizar un pedido, muchas veces hay artículos que se repiten en cada uno de ellos. “Mis Listas”&nbsp;te permiten crear una lista o listas con los artículos habituales de manera que puedas añadirlos de forma rápida y sencilla a un nuevo pedido.</p>
@@ -94,13 +94,13 @@
                         <p>Puedes cambiar tu dirección de mail las veces que quieras. Para ello deberás acceder a la tienda online y en el apartado “Mis Datos” podrás realizar el cambio de mail.</p>
                         <p><strong>8. ¿Puedo pedir la factura electrónica?</strong></p>
                         <p>Sí, podrás pedir factura electrónica de tus pedidos en el momento de seleccionar la dirección y franja de entrega. También podrás solicitar la factura de un pedido anterior poniéndote en contacto con nuestro Servicio de Atención al Cliente. En ambos casos te la enviaremos por correo electrónico en un plazo de 48 horas.</p>
-                        <p><strong>9. ¿Qué ventajas tiene la Tarjeta TiendaGina?</strong></p>
-                        <p>Con la Tarjeta TiendaGina consigues grandes ventajas y ahorrarás en la compra sin esfuerzo.<br>Los descuentos puedes obtenerlos por la compra de los artículos señalizados en la tienda con un icono de una Tarjeta TiendaGina. Los artículos que estén en oferta de Tarjeta TiendaGina acumularán en tu Tarjeta un porcentaje sobre el precio señalado del producto.</p>
+                        <p><strong>9. ¿Qué ventajas tiene la Tarjeta SMShop?</strong></p>
+                        <p>Con la Tarjeta SMShop consigues grandes ventajas y ahorrarás en la compra sin esfuerzo.<br>Los descuentos puedes obtenerlos por la compra de los artículos señalizados en la tienda con un icono de una Tarjeta SMShop. Los artículos que estén en oferta de Tarjeta SMShop acumularán en tu Tarjeta un porcentaje sobre el precio señalado del producto.</p>
                         <p>A partir del día 24 de cada mes, al pasar por caja, te emitiremos un bono de descuento con el importe correspondiente a todos los descuentos acumulados hasta el momento (siempre que dicho importe sea superior a 1€).</p>
-                        <p><strong>10. ¿Cómo consigo la Tarjeta TiendaGina?</strong></p>
-                        <p>Registrándote en la Tienda Online automáticamente se te generará una Tarjeta TiendaGina que podrás utilizar también en nuestras tiendas físicas.</p>
-                        <p><strong>11. ¿Cómo puedo canjear mis bonos de Tarjeta TiendaGina?</strong></p>
-                        <p>El bono mensual de Tarjeta TiendaGina lo podrás cajear a la hora de realizar el pago de cualquier pedido (siempre que el importe del pedido sea superior al del bono). El bono desaparecerá de tu cuenta bien porque lo canjees a la hora de realizar una compra, bien porque realices alguna compra en cualquiera de las tiendas de TiendaGina y se te entregue de manera física.</p>
+                        <p><strong>10. ¿Cómo consigo la Tarjeta SMShop?</strong></p>
+                        <p>Registrándote en la Tienda Online automáticamente se te generará una Tarjeta SMShop que podrás utilizar también en nuestras tiendas físicas.</p>
+                        <p><strong>11. ¿Cómo puedo canjear mis bonos de Tarjeta SMShop?</strong></p>
+                        <p>El bono mensual de Tarjeta SMShop lo podrás cajear a la hora de realizar el pago de cualquier pedido (siempre que el importe del pedido sea superior al del bono). El bono desaparecerá de tu cuenta bien porque lo canjees a la hora de realizar una compra, bien porque realices alguna compra en cualquiera de las tiendas de SMShop y se te entregue de manera física.</p>
                         <p>&nbsp;</p>
                         <p><span style="color: #ff0000;"><strong>PROCESO DE PAGO</strong></span></p>
                         <p><strong>1. ¿Qué es el precio estimado y precio total?</strong></p>
@@ -115,11 +115,11 @@
                         <p><strong>5. ¿Cuándo se carga el pago en la cuenta bancaria?</strong></p>
                         <p>El pago se carga en la cuenta el mismo día de la entrega del pedido. Si posteriormente en algún caso hubiera que hacer una devolución que conlleve un abono éste se realizará directamente en tu cuenta.</p>
                         <p><strong>6. ¿El precio de los artículos online es el mismo que el de los mismos artículos en las tiendas?</strong></p>
-                        <p>Las enseñas&nbsp;TiendaGina&nbsp;y&nbsp;TiendaGina online&nbsp;llevan políticas comerciales distintas. Los precios, la gama de productos y las promociones no tienen por qué ser exactamente las mismas, pero sí que pueden coincidir o ser muy similares.<br>&nbsp;</p>
+                        <p>Las enseñas&nbsp;SMShop&nbsp;y&nbsp;SMShop online&nbsp;llevan políticas comerciales distintas. Los precios, la gama de productos y las promociones no tienen por qué ser exactamente las mismas, pero sí que pueden coincidir o ser muy similares.<br>&nbsp;</p>
                         <p><br><span style="color: #ff0000;"><strong>PROCESO DE ENVÍO DE PEDIDOS</strong></span></p>
                         <p><strong>1. ¿Cómo se transporta el pedido?</strong></p>
                         <p>El pedido se transporta en furgonetas especialmente acondicionadas. Los productos frescos y congelados se introducen en cubetas y bolsas isotérmicas especiales, por lo que en ningún momento se rompe la cadena de frío.</p>
-                        <p>Además, en TiendaGina nos preocupamos por el medioambiente por lo que todos los pedidos los entregamos en furgonetas eléctricas.</p>
+                        <p>Además, en SMShop nos preocupamos por el medioambiente por lo que todos los pedidos los entregamos en furgonetas eléctricas.</p>
                         <p><strong>2. ¿Cuál es el precio de preparación y envío del pedido?</strong></p>
                         <p>El coste de preparación y envío es de 7,50€ indistintamente de la hora de entrega que elijas, pero si tu compra supera los 100€ éste coste será gratuito.</p>
                         <p>Si elijes la opción de recogida en tienda no se te cobrará nada por la preparación del pedido.</p>
@@ -132,15 +132,15 @@
                         <p><strong>6. ¿Es posible enviar el pedido a una dirección diferente al titular del pago?</strong></p>
                         <p>Sí, en “Mis datos”&nbsp;puedes tener más de una dirección de envío. Cuando inicies un pedido te preguntaremos siempre la dirección de envío a la que llevarlo. El pedido se entregará a la persona que ha realizado el pago del pedido.</p>
                         <p><strong>7. ¿Cómo se prepara mi pedido en la tienda?</strong></p>
-                        <p>Una vez que finalizas el pedido, este se recibe en TiendaGina donde un equipo de profesionales empieza a trabajar para que tu pedido llegue con la máxima calidad a tu dirección de envío en la franja de entrega que hayas seleccionado.</p>
+                        <p>Una vez que finalizas el pedido, este se recibe en SMShop donde un equipo de profesionales empieza a trabajar para que tu pedido llegue con la máxima calidad a tu dirección de envío en la franja de entrega que hayas seleccionado.</p>
                         <p>&nbsp;</p>
                         <p><span style="color: #ff0000;"><strong>PROCESO DE DEVOLUCIONES</strong></span></p>
                         <p><strong>1. ¿Cuál es la política de devoluciones?</strong></p>
                         <p>Cuando quieras devolver alguno de los artículos deberás ponerte en contacto con nuestro Servicio de Atención al Cliente. Te recordamos que para que puedas devolver un artículo lo debes hacer en los siguientes 14 días desde el pedido para cualquier artículo excepto con los frescos donde tendrás un máximo de 24 horas.</p>
                         <p><strong>2. ¿Cómo devuelvo los productos si no me convencen?</strong></p>
-                        <p>Desde TiendaGina buscamos tu satisfacción en la compra online, por ello si no quieres un producto nos lo podrás devolver. Para ello se lo puedes dar al personal del servicio a domicilio cuando te entregue el pedido o ponerte en contacto con el&nbsp;Servicio de Atención al Cliente.</p>
+                        <p>Desde SMShop buscamos tu satisfacción en la compra online, por ello si no quieres un producto nos lo podrás devolver. Para ello se lo puedes dar al personal del servicio a domicilio cuando te entregue el pedido o ponerte en contacto con el&nbsp;Servicio de Atención al Cliente.</p>
                         <p><strong>3. ¿En caso de recibir un artículo en mal estado qué es lo que tengo que hacer?</strong></p>
-                        <p>En el caso de haber recibido un artículo en mal estado desde TiendaGina te pedimos disculpas. Por favor, ponte en contacto con nuestro&nbsp;servicio de atención al cliente para que podamos solucionar este problema lo antes posible.</p>									
+                        <p>En el caso de haber recibido un artículo en mal estado desde SMShop te pedimos disculpas. Por favor, ponte en contacto con nuestro&nbsp;servicio de atención al cliente para que podamos solucionar este problema lo antes posible.</p>									
 
                     </div>
                 </section>

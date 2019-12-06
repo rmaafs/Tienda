@@ -14,10 +14,9 @@
 
     <div class="container">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 2.0.0
+            <b>Version</b> 3.0.0
         </div>
-        <strong>Copyright &copy; 2019-2119 <a href="https://adminlte.io">CHAPUS DE ORUS RESERVED</a>.</strong> All rights
-        reserved.
+        <strong>Copyright &copy; 2016-2019 <a href="contacto.php">SMShop RESERVED</a>.</strong> Todos los derechos reservados.
     </div>
 
      
