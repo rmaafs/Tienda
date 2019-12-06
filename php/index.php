@@ -46,45 +46,9 @@
     <?php include "includes/chat.php"?>
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    
-
+    <!-- Link de tabla css -->
+    <link rel="stylesheet" href="../dist/css/productostabla.css">
     <!------------------------------------------------------------ LINKS FIN ------------------------------------------------------------>
-
-    <style>
-        table ,td,tr{
-            border: 1px solid black;
-            padding: 7px;
-            color: black:
-            border-collapse=collapse;
-            
-        }
-
-        @media screen and (max-width: 600px) {
-       table {
-           width:100%;
-       }
-       thead {
-           display: none;
-       }
-       tr:nth-of-type(2n) {
-           background-color: inherit;
-       }
-       tr td:first-child {
-           background: #f0f0f0;
-           font-weight:bold;
-           font-size:1.3em;
-       }
-       tbody td {
-           display: block;
-           text-align:center;
-       }
-       tbody td:before {
-           content: attr(data-th);
-           display: block;
-           text-align:center;
-       }
-}
-    </style>
 
 
 </head>
