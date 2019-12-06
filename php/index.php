@@ -153,6 +153,8 @@ if ($conexion->connect_errno) {
 
                                         if ($tipo == 1) {
                                             $tipo = "Laptop";
+                                        }else{
+                                            $tipo = "Celular";
                                         }
                                     }
 
