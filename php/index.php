@@ -3,13 +3,15 @@
 
 <?php
   
-    $servidor = 'localhost';
-    $cuenta = 'root';
-    $password = '';
-    $bd = 'productos';
+    $servidor = '34.94.76.156';
+    $cuenta = 'tienda';
+    $password = 'curiosoXD';
+    $bd = 'tienda';
     $conexion = new mysqli($servidor, $cuenta, $password, $bd);
     if ($conexion->connect_errno) {
         die('Error en la conexion');
+    }else{
+        return $conexion;
     }
 
 ?>
@@ -98,7 +100,7 @@
 
                                 <tr>
                                     <td><?php echo $mostrar['id'] ?></td>
-                                    <td>Imagen</td>
+                                    <td><img style="width:70px; height:60px" src="<?php echo $mostrar['imagen']?>"></td>
                                     <td><?php echo $mostrar['nombre'] ?></td>
                                     <td>$<?php echo $mostrar['precio'] ?></td>
                                     <td><?php echo $mostrar['tipo'] ?></td>

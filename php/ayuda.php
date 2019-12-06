@@ -35,7 +35,7 @@
             <div class="container">
              
                 <section class="content">
-                    <div class="box box-info" style="background-color: lightblue">																							
+                    <div class="box box-info">																							
                         <p><span style="color: #ff0000;"><strong>PROCESO DE REGISTRO</strong></span></p>
                         <p><span style="color: #000000;"><strong>1. ¿Cómo me registro?</strong></span></p>
                         <p><span style="color: #ff0000;"><strong>1.1. Si eres cliente</strong></span></p>
