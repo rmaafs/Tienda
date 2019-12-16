@@ -4,10 +4,10 @@
 
     <!-- REDES -->
     <div class="box-tools pull-left">
-                        <a href="https://www.facebook.com//" target="_blank"><i class="fab f099 fa-facebook"></i></a></li>
-                        <a href="https://www.instagram.com//" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <a href="https://www.youtube.com//" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <a href="https://www.facebook.com//" target="_blank"><i class="fab f099 fa-facebook" style="font-size:200%;"></i></a></li>
+                        <a href="https://www.instagram.com//" target="_blank"><i class="fab fa-instagram" style="font-size:200%;"></i></a></li>
+                        <a href="https://www.youtube.com//" target="_blank"><i class="fab fa-youtube" style="font-size:200%;"></i></a></li>
+                        <a href="#" target="_blank"><i class="fab fa-twitter" style="font-size:200%;"></i></a></li>
      </div>
      <!-- REDES FIN -->
 

@@ -27,3 +27,8 @@ $p->cantidad = 1;
 
 array_push($productos, $p);
 setcookie('array', serialize($productos), time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
+
+<script>
+    console.log("<?php echo unserialize($_COOKIE['array'], ["allowed_classes" => true]);?>");
+</script>

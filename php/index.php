@@ -124,13 +124,14 @@ if ($conexion->connect_errno) {
                                         var xhttp = new XMLHttpRequest();
                                         xhttp.onreadystatechange = function() {
                                             if (this.readyState == 4 && this.status == 200) {
-                                               // document.getElementById("").innerHTML = this.responseText;
+                                                alert(this.responseText);
                                             }
                                         };
 
                                         //pasa por el metodo get a addArray.php
                                         xhttp.open("GET", "addArray.php?id="+id+"&imagen="+imagen+"&nombre="+nombre+"&precio="+precio+"&tipo="+tipo+"&descripcion="+descripcion+"&Cantidad="+Cantidad, true);
                                         xhttp.send();
+                                    
                                     }
 
                                 </script>
@@ -235,8 +236,9 @@ if ($conexion->connect_errno) {
         </div>
         <!------------------------------------------------------------ CONTADOR DE VISITAS ------------------------------------------------------------>
 
-        <a><img src="https://counter6.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=se5dkchz6h1kfuhrhfbeprl1a4csnzr4" border="0" title="contador de visitas" alt="contador de visitas"></a>
-
+        <a href="" title="contador visitas">
+            <img src="https://www.cerotec.net/contador.php?t=13&s=3&i=1863" alt="">
+        </a>  
 
         <!------------------------------------------------------------ CONTADOR DE VISITAS FIN ------------------------------------------------------------>
 
