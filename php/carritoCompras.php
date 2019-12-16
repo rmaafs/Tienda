@@ -6,8 +6,8 @@ $productos = [];
 if(isset($_COOKIE['array'])){
     $productos = unserialize($_COOKIE['array'], ["allowed_classes" => true]);
 }
-/*
-$p = new Producto();
+
+/*$p = new Producto();
 $p->id = 41;
 $p->nombre = "Balon";
 $p->descripcion = "Balón yabulani ajja";
@@ -35,8 +35,8 @@ $p->unidades = 1;
 $p->precio = 8300;
 $p->imagen = 'https://ss628.liverpool.com.mx/xl/1073605675.jpg';
 $p->existencias = 3;
-array_push($productos, $p);
-*/
+array_push($productos, $p);*/
+
 $subtotal = 0;
 $promocion = 0;
 $total = 0;
@@ -137,7 +137,7 @@ $total = 0;
                                                             <div class="input-group-btn">
                                                                 <button type="button" class="btn btn-danger" onclick="changeCantidad(<?php echo $p->id . ", -1"; ?>);">-</button>
                                                             </div>
-                                                            <input type="number" class="form-control" id="<?php echo $p->id; ?>-cantidad" name="<?php echo $p->id; ?>-cantidad" value="<?php echo $p->unidades; ?>" style="text-align: center;">
+                                                            <input type="number" class="form-control" id="<?php echo $p->id; ?>-cantidad" name="<?php echo $p->id; ?>-cantidad" value="<?php echo $p->cantidad; ?>" style="text-align: center;">
                                                             <div class="input-group-btn">
                                                                 <button type="button" class="btn btn-danger" onclick="changeCantidad(<?php echo $p->id . ", 1"; ?>);">+</button>
                                                             </div>

@@ -1,5 +1,5 @@
 <?php
-$envio = 150;
+$envio = rand(100,500);
 $productos = $_POST["producto"];
 $subtotal = $_POST["subtotal"];
 $promocion = $_POST["promocion"];
@@ -89,14 +89,14 @@ $total = $subtotal + ($subtotal * 16 / 100);
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach ($productos as $key => $p) { ?>
+                                    foreach ($productos as $p) { ?>
                                         <tr>
-                                            <td><?php echo $_POST[$p . "-cantidad"]; ?></td>
-                                            <td><?php echo $_POST[$p . "-nombre"]; ?></td>
-                                            <td><?php echo $p; ?></td>
-                                            <td><?php echo $_POST[$p . "-descripcion"]; ?></td>
-                                            <td><?php echo $_POST[$p . "-precio"]; ?></td>
-                                            <td><?php echo $_POST[$p . "-precio"] * $_POST[$p . "-cantidad"]; ?></td>
+                                            <td><?php echo $_POST[$p->id . "-cantidad"]; ?></td>
+                                            <td><?php echo $_POST[$p->id . "-nombre"]; ?></td>
+                                            <td><?php echo $p->id; ?></td>
+                                            <td><?php echo $_POST[$p->id . "-descripcion"]; ?></td>
+                                            <td><?php echo $_POST[$p->id . "-precio"]; ?></td>
+                                            <td><?php echo $_POST[$p->id . "-precio"] * $_POST[$p->id . "-cantidad"]; ?></td>
                                         </tr>
                                     <?php }
                                     ?>
@@ -111,39 +111,53 @@ $total = $subtotal + ($subtotal * 16 / 100);
                         <!-- accepted payments column -->
                         <div class="col-xs-6">
                             <p class="lead">Payment Methods:</p>
-                            <img src="../dist/img/credit/visa.png" alt="Visa">
-                            <img src="../dist/img/credit/mastercard.png" alt="Mastercard">
-                            <img src="../dist/img/credit/american-express.png" alt="American Express">
-                            <img src="../dist/img/credit/paypal2.png" alt="Paypal">
-                            <img src="../img/oxxo.png" alt="Paypal" style="float: right;">
+                            <img src="../dist/img/credit/visa.png" alt="Visa" onclick="tarjeta('VISA');" style="cursor: pointer;">
+                            <img src="../dist/img/credit/mastercard.png" alt="Mastercard" onclick="tarjeta('Mastercard')" style="cursor: pointer;">
+                            <img src="../dist/img/credit/american-express.png" alt="American Express" onclick="tarjeta('American Express')" style="cursor: pointer;">
+                            <img src="../img/oxxo.png" alt="Paypal" style="float: right;" style="cursor: pointer;" onclick="oxxo();">
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1" style="width: 100%;">Titular de la tarjeta</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Rodrigo Maafs Atilano">
-                            </div>
+                            <div id="modo-tarjeta">
+                                <div class="form-group">
+                                    <label id="tarjeta" style="width: 100%;">VISA</label>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1" style="width: 100%;">Número de tarjeta</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="0496 1252 51252">
-                            </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" style="width: 100%;">Titular de la tarjeta</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Rodrigo Maafs Atilano">
+                                </div>
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1" style="width: 100%;">Fecha de vencimiento</label>
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <input type="text" class="form-control" placeholder="Mes">
-                                    </div>
-                                    <div class="col-xs-1">
-                                        /
-                                    </div>
-                                    <div class="col-xs-3">
-                                        <input type="text" class="form-control" placeholder="Año">
-                                    </div>
-                                    <div class="col-xs-5">
-                                        <input type="text" class="form-control" placeholder="Código">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" style="width: 100%;">Número de tarjeta</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="0496 1252 51252">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" style="width: 100%;">Fecha de vencimiento</label>
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <input type="text" class="form-control" placeholder="Mes">
+                                        </div>
+                                        <div class="col-xs-1">
+                                            /
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <input type="text" class="form-control" placeholder="Año">
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <input type="text" class="form-control" placeholder="Código">
+                                        </div>
                                     </div>
                                 </div>
-                            </div><br><br>
+                            </div>
+
+                            <div id="modo-oxxo" style="display: none;">
+                                <div class="form-group">
+                                    <label id="tarjeta" style="width: 100%;">Has seleccionado tipo de pago en OXXO</label>
+                                    Tu código de pago: 8251912
+                                </div>
+                            </div>
+
+                            <br><br>
                         </div>
                         <div class="col-xs-6">
                             <div class="form-group">
@@ -270,6 +284,17 @@ $total = $subtotal + ($subtotal * 16 / 100);
             $("#total-impuestos").html($("#subtotal").val() * impuesto / 100);
             document.getElementById("total").value = parseInt($("#subtotal").val()) + parseInt($("#total-impuestos").html());
             $("#total-total").html(parseInt($("#total").val()) + parseInt(envio));
+        }
+
+        function tarjeta(texto) {
+            $("#tarjeta").html(texto);
+            $("#modo-oxxo").hide();
+            $("#modo-tarjeta").show();
+        }
+
+        function oxxo() {
+            $("#modo-tarjeta").hide();
+            $("#modo-oxxo").show();
         }
     </script>
 </body>

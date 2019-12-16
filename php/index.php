@@ -146,7 +146,7 @@ if ($conexion->connect_errno) {
                                 </h4>
                                 <table>
                                     <?php
-                                    require "Producto.php";
+                                    require_once "Producto.php";
 
                                     $tipo = "Celular";
                                     if (isset($_GET['CAT'])) {
