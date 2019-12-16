@@ -34,6 +34,9 @@ if ($resultado) { //Si $resultado != null, significa que si hay resultados del q
     <button onclick="zoomOut()">Disminuir</button>
     <br>
     <button onclick="save()">Guardar</button>
+    <button onclick="ZoomIn()">Iniciar</button>
+    
+    
     <div>
         <h2>Fuente establecida con <strong>em</strong></h2>
         Esta fuente esta establecida con em, por lo que su tamaño sera modificado con javascript
@@ -45,11 +48,14 @@ if ($resultado) { //Si $resultado != null, significa que si hay resultados del q
 
     <header>Los encabezados son así</header>
 
+    <aside>En los asides se verá de este manera.</aside>
+    <br>
+    <aside>En los asides se verá de este manera.</aside>
     <div id="demo">
 
     </div>
 
-    <aside>En los asides se verá de este manera.</aside>
+    
     <script>
         var fontSize = <?php echo $fontSize; ?>;
         var f = '<?php echo $fondo; ?>';
