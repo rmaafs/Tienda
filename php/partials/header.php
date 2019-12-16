@@ -1,3 +1,3 @@
 <header>
-  <a href="/php-login">Página principal</a>
+  <a href="index.php">Página principal</a>
 </header>
