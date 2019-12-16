@@ -41,7 +41,8 @@ $subtotal = 0;
 $promocion = 0;
 $total = 0;
 ?>
-
+<!--CHAT-->
+<?php include "includes/chat.php" ?>
 <!DOCTYPE html>
 <html>
 
