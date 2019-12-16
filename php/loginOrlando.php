@@ -47,7 +47,9 @@
     <form action="login.php" method="POST">
       <input name="email" type="text" placeholder="Email" required>
       <input name="password" type="password" placeholder="Password" required>
-      <input type="submit" value="Enviar">
+      <input name="recordar" type="checkbox" ><label for="">Recordar</label>
+      <br>
+      <input type="submit" value="Enviar" >
     </form>
   </body>
 </html>
