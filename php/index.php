@@ -49,6 +49,7 @@ if ($conexion->connect_errno) {
     <link rel="stylesheet" href="../dist/css/productostabla.css">
     <!-- Extra styles -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="../dist/js/carrito.js"></script>
     <!------------------------------------------------------------ LINKS FIN ------------------------------------------------------------>
 
 
@@ -124,7 +125,12 @@ if ($conexion->connect_errno) {
                                         var xhttp = new XMLHttpRequest();
                                         xhttp.onreadystatechange = function() {
                                             if (this.readyState == 4 && this.status == 200) {
-                                                alert(this.responseText);
+                                                //Regresará 1 si el producto se añadió perfectamente
+                                                if (this.responseText == "1") {
+                                                    actualizarCarrito();
+                                                } else {
+                                                    alert("Ya has añadido este producto.");
+                                                }
                                             }
                                         };
 

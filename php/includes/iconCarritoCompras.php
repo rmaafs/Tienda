@@ -11,12 +11,13 @@ $size = sizeof($productos);
 ?>
 
 <li class="dropdown messages-menu">
+    <input type="hidden" id="total-productos-carrito" value="<?php echo $size; ?>">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <i class="fa fa-shopping-cart"></i>
-        <span class="label label-danger"><?php echo $size; ?></span>
+        <span class="label label-danger" id="numero-total-productos-carrito"><?php echo $size; ?></span>
     </a>
     <ul class="dropdown-menu">
-        <li class="header">Tienes <?php echo $size; ?> productos agregados</li>
+        <li class="header" id="cuantos-productos-tiene-carrito">Tienes <?php echo $size; ?> productos agregados</li>
         <li>
             <!-- inner menu: contains the actual data -->
             <ul class="menu">
