@@ -5,7 +5,8 @@ $subtotal = $_POST["subtotal"];
 $promocion = $_POST["promocion"];
 $total = $subtotal + ($subtotal * 16 / 100);
 ?>
-
+<!--CHAT-->
+<?php include "includes/chat.php" ?>
 <!DOCTYPE html>
 <html>
 
