@@ -26,7 +26,8 @@
     <!-- Extra styles -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-
+<!--CHAT-->
+<?php include "includes/chat.php" ?>
 <body class="hold-transition skin-blue layout-top-nav">
     <div class="wrapper">
 
