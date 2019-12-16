@@ -89,14 +89,14 @@ $total = $subtotal + ($subtotal * 16 / 100);
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach ($productos as $key => $p) { ?>
+                                    foreach ($productos as $p) { ?>
                                         <tr>
-                                            <td><?php echo $_POST[$p . "-cantidad"]; ?></td>
-                                            <td><?php echo $_POST[$p . "-nombre"]; ?></td>
-                                            <td><?php echo $p; ?></td>
-                                            <td><?php echo $_POST[$p . "-descripcion"]; ?></td>
-                                            <td><?php echo $_POST[$p . "-precio"]; ?></td>
-                                            <td><?php echo $_POST[$p . "-precio"] * $_POST[$p . "-cantidad"]; ?></td>
+                                            <td><?php echo $_POST[$p->id . "-cantidad"]; ?></td>
+                                            <td><?php echo $_POST[$p->id . "-nombre"]; ?></td>
+                                            <td><?php echo $p->id; ?></td>
+                                            <td><?php echo $_POST[$p->id . "-descripcion"]; ?></td>
+                                            <td><?php echo $_POST[$p->id . "-precio"]; ?></td>
+                                            <td><?php echo $_POST[$p->id . "-precio"] * $_POST[$p->id . "-cantidad"]; ?></td>
                                         </tr>
                                     <?php }
                                     ?>

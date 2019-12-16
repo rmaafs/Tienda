@@ -137,7 +137,7 @@ $total = 0;
                                                             <div class="input-group-btn">
                                                                 <button type="button" class="btn btn-danger" onclick="changeCantidad(<?php echo $p->id . ", -1"; ?>);">-</button>
                                                             </div>
-                                                            <input type="number" class="form-control" id="<?php echo $p->id; ?>-cantidad" name="<?php echo $p->id; ?>-cantidad" value="<?php echo $p->unidades; ?>" style="text-align: center;">
+                                                            <input type="number" class="form-control" id="<?php echo $p->id; ?>-cantidad" name="<?php echo $p->id; ?>-cantidad" value="<?php echo $p->cantidad; ?>" style="text-align: center;">
                                                             <div class="input-group-btn">
                                                                 <button type="button" class="btn btn-danger" onclick="changeCantidad(<?php echo $p->id . ", 1"; ?>);">+</button>
                                                             </div>
