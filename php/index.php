@@ -229,6 +229,17 @@ if ($conexion->connect_errno) {
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
+
+
+                    <?php 
+                    $_GET["categoria"] = "Celular";
+                    include("includes/listaArticulos.php");?>
+
+                    <?php 
+                    $_GET["categoria"] = "Laptop";
+                    include("includes/listaArticulos.php");?>
+                                    
+
                 </section>
                 <!-- /.content -->
             </div>

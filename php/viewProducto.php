@@ -169,6 +169,15 @@ if ($resultado) {
                                     </table>
                                 </div>
                             </div>
+
+                            <?php 
+                    $_GET["categoria"] = "Celular";
+                    include("includes/listaArticulos.php");?>
+
+                    <?php 
+                    $_GET["categoria"] = "Laptop";
+                    include("includes/listaArticulos.php");?>
+
                         </div>
                         <!-- /.box -->
                     </div>
