@@ -32,7 +32,7 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
 <body class="hold-transition login-page" style="background-color: #000230">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html" style="color: #FFF"><b>SMS</b>hop</a>
+            <a href="index.php" style="color: #FFF"><b>SMS</b>hop</a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
