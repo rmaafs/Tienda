@@ -1,9 +1,9 @@
 <?php
-require "Producto.php";//Añadí
+require "Producto.php"; //Añadí
 
 $productos = [];
 
-if(isset($_COOKIE['array'])){
+if (isset($_COOKIE['array'])) {
     $productos = unserialize($_COOKIE['array'], ["allowed_classes" => true]);
 }
 
@@ -70,6 +70,7 @@ $total = 0;
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <script src="../dist/js/carrito.js"></script>
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
@@ -149,9 +150,9 @@ $total = 0;
                                                     </td>
                                                 </tr>
                                             <?php
-                                                $subtotal += $p->precio;
-                                            }
-                                            $total = $subtotal;
+                                                                                                                                                                                        $subtotal += $p->precio;
+                                                                                                                                                                                    }
+                                                                                                                                                                                    $total = $subtotal;
                                             ?>
                                         </tbody>
                                     </table>
@@ -296,6 +297,21 @@ $total = 0;
                 document.getElementById("total").value = dineroTotal;
                 document.getElementById("txt-subtotal").innerHTML = "MXN $" + dineroTotal;
                 document.getElementById("txt-total").innerHTML = "MXN $" + dineroTotal;
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        actualizarCarrito();
+                    }
+                };
+
+                //pasa por el metodo get a addArray.php
+                xhttp.open("POST", "deleteProducto.php", true);
+
+                var formData = new FormData();
+                formData.append("producto", checks);
+                xhttp.send(formData);
+
             }
         }
     </script>
