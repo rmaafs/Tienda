@@ -22,10 +22,10 @@ if ($resultado) {
             xhttp.send();
         </script>
 <?php
-                                        //header("Location: login.php?s=2");
-                                    } else {
-                                        //header("Location: login.php");
-                                    }
-                                } else {
-                                    //header("Location: login.php");
-                                }
+                                                    //header("Location: login.php?s=2");
+                                                } else {
+                                                    header("Location: login.php");
+                                                }
+                                            } else {
+                                                header("Location: login.php");
+                                            }

@@ -127,7 +127,7 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
 
         function olvidarContraseña() {
             swal({
-                title: "Escribe tu nombre, no apellidos",
+                title: "Escribe tu nombre de usuario",
                 content: "input",
                 buttons: {
                     cancel: true,
