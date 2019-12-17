@@ -9,6 +9,7 @@ $precio = $_GET['precio'];
 $nombre = $_GET['tipo'];
 $descripcion = $_GET['descripcion'];
 $Cantidad = $_GET['Cantidad'];
+$existencias = $_GET['existencias'];
 
 $productos = [];
 if(isset($_COOKIE['array'])){
@@ -23,15 +24,14 @@ foreach ($productos as $p) {
     }
 }
 
-$p = new Producto();
+$p = new Producto(null);
 $p->id = $id;
 $p->nombre = $nombre;
 $p->descripcion = $descripcion;
-$p->unidades = "piezas";
+$p->unidades = $Cantidad;
 $p->precio = $precio;
 $p->imagen = $imagen;
-$p->existencias = $Cantidad;
-$p->cantidad = 1;
+$p->existencias = $existencias;
 
 array_push($productos, $p);
 setcookie('array', serialize($productos), time() + (86400 * 30), "/"); // 86400 = 1 day

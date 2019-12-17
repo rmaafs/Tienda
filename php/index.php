@@ -121,7 +121,7 @@ if ($conexion->connect_errno) {
                                         location.replace("http://localhost/Tienda/php/index.php?CAT=2");
                                     }
                                 //Funcion que agrega al carrito
-                                    function add(id,imagen,nombre,precio,tipo,descripcion,Cantidad) {
+                                    function add(id,imagen,nombre,precio,tipo,descripcion,Cantidad,existencias) {
                                         var xhttp = new XMLHttpRequest();
                                         xhttp.onreadystatechange = function() {
                                             if (this.readyState == 4 && this.status == 200) {
@@ -135,7 +135,7 @@ if ($conexion->connect_errno) {
                                         };
 
                                         //pasa por el metodo get a addArray.php
-                                        xhttp.open("GET", "addArray.php?id="+id+"&imagen="+imagen+"&nombre="+nombre+"&precio="+precio+"&tipo="+tipo+"&descripcion="+descripcion+"&Cantidad="+Cantidad, true);
+                                        xhttp.open("GET", "addArray.php?id="+id+"&imagen="+imagen+"&nombre="+nombre+"&precio="+precio+"&tipo="+tipo+"&descripcion="+descripcion+"&Cantidad=1&existencias=" + existencias, true);
                                         xhttp.send();
                                     
                                     }

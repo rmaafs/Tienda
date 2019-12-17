@@ -71,7 +71,7 @@ session_start();
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                <span class="hidden-xs"><?php echo $_SESSION["nombre"];?></span>
+                                <span class="hidden-xs"><?php echo $_SESSION["nombre"]; ?></span>
                             </a>
 
                             <ul class="dropdown-menu">
@@ -79,7 +79,7 @@ session_start();
                                 <li class="user-header">
                                     <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                     <p>
-                                        <?php echo $_SESSION["nombre"] . " " . $_SESSION["apellidoPat"] . " " . $_SESSION["apellidoMat"];?> - Web Developer
+                                        <?php echo $_SESSION["nombre"] . " " . $_SESSION["apellidoPat"] . " " . $_SESSION["apellidoMat"]; ?> - Web Developer
                                         <small>Miembro desde 2019</small>
                                     </p>
                                 </li>
@@ -96,7 +96,7 @@ session_start();
                             </div>
                         </li>
                     <?php
-                        } else { ?>
+                                                    } else { ?>
                         <li><a href="login.php">Iniciar Sesión</a></li>
                     <?php } ?>
                 </ul>
