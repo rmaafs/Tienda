@@ -12,7 +12,7 @@ session_start();
 <script src="../plugins/sweetalert/dist/sweetalert2.all.js"></script>
 <script src="../dist/js/alertas.js"></script>
 <header class="main-header">
-    <nav class="navbar navbar-top">
+    <nav class="navbar navbar-top"> <!-- aquí css -->
         <div class="container">
             <div class="navbar-header">
                 <a href="index.php" class="navbar-brand"><b>SMS</b>hop</a>
@@ -21,13 +21,11 @@ session_start();
                 </button>
             </div>
 
-            <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
 
                     <!-- LINK DE INICIO -->
                     <li class="active"><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
-                    <!-- LINK DE TIENDA -->
-                    <li><a href="#">Tienda</a></li>
                     <!-- LINK DE ACERCA DE -->
                     <li><a href="acercaDe.php">Acerca De</a></li>
                     <!-- CONTACTANOS -->
@@ -47,17 +45,15 @@ session_start();
                     </li>
                 </ul>
 
-                <!-- BUSQUEDA -->
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="navbar-search-input" placeholder="Buscar">
-                    </div>
-                </form>
-            </div>
-
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
+
+            <!-- Liciados -->
+            <li class="dropdown messages-menu" id="html-carrito-compras">
+                <?php include "Access.php"; ?>
+            </li>
+            <!-- End Liciados -->
                     <!-- CARRITO DE COMPRAS -->
                     <li class="dropdown messages-menu" id="html-carrito-compras">
                         <?php include "iconCarritoCompras.php"; ?>
