@@ -9,6 +9,8 @@ session_start();
 <!-- Font Awesome -->
 <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 <script src="https://kit.fontawesome.com/4328fe96d6.js" crossorigin="anonymous"></script>
+<script src="../plugins/sweetalert/dist/sweetalert2.all.js"></script>
+<script src="../dist/js/alertas.js"></script>
 <header class="main-header">
     <nav class="navbar navbar-top">
         <div class="container">

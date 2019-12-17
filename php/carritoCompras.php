@@ -247,9 +247,9 @@ $total = 0;
             var existencias = parseInt(document.getElementById(id + "-existencias").value);
             var precio = parseInt(document.getElementById(id + "-precio").value);
             if (val + value <= 0) {
-                alert("Necesitas tener mínimo 1 producto a pedir.");
+                alertError("Necesitas tener mínimo 1 producto a pedir.");
             } else if (val + value > existencias) {
-                alert("Lo sentimos, solo quedan " + existencias + " existencias de este producto.");
+                alertError("Lo sentimos, solo quedan " + existencias + " existencias de este producto.");
             } else {
                 val += value;
                 document.getElementById(id + "-cantidad").value = val;

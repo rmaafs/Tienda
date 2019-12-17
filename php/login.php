@@ -110,21 +110,22 @@ setcookie("pass", '', time() - 1, '/');
     <!-- iCheck -->
     <script src="../plugins/iCheck/icheck.min.js"></script>
     <script src="../plugins/sweetalert/dist/sweetalert2.all.js"></script>
+    <script src="../dist/js/alertas.js"></script>
     <script>
 
         <?php
         if (isset($_GET["s"]) && $_GET["s"] == "1") {
-            echo "mandarSuccess('Usuario registrado con éxito.');";
+            echo "alertSuccess('Usuario registrado con éxito.');";
         }
         ?>
 
         function verificar() {
             if (document.getElementsByName("user")[0].value.length == 0) {
-                mandarError("El dato Usuario no puede estar vacío.");
+                alertError("El dato Usuario no puede estar vacío.");
             } else if (document.getElementsByName("passwd")[0].value.length == 0) {
-                mandarError("El dato Contraseña no puede estar vacío.");
+                alertError("El dato Contraseña no puede estar vacío.");
             } else if (document.getElementsByName("captcha")[0].value.length == 0) {
-                mandarError("El captcha no puede estar vacío.");
+                alertError("El captcha no puede estar vacío.");
             } else {
                 send();
             }
@@ -136,30 +137,6 @@ setcookie("pass", '', time() - 1, '/');
             var y = document.getElementById('passwd1').value;
             console.log(y);
             document.getElementById("formLogin").submit();
-        }
-
-        function mandarError(s) {
-            swal({
-                type: 'error',
-                title: 'Error',
-                text: s,
-                showConfirmButton: false,
-                showCancelButton: true,
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'Entendido'
-            });
-        }
-
-        function mandarSuccess(s) {
-            swal({
-                type: 'success',
-                title: 'Correcto',
-                text: s,
-                showConfirmButton: false,
-                showCancelButton: true,
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'Entendido'
-            });
         }
     </script>
     <script>

@@ -127,7 +127,7 @@ if ($conexion->connect_errno) {
                                             if (this.readyState == 4 && this.status == 200) {
                                                 //Regresará 1 si el producto se añadió perfectamente
                                                 if (this.responseText == "0") {
-                                                    alert("Ya has añadido este producto.");
+                                                    alertError("Ya has añadido este producto.");
                                                 } else {
                                                     actualizarCarrito();
                                                 }
