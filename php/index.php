@@ -166,7 +166,7 @@ if ($conexion->connect_errno) {
                                     }
 
 
-                                    $sql = "SELECT * from productos_1 where tipo='" . $tipo . "'";
+                                    $sql = "SELECT * from productos_1 where tipo='" . $tipo . "' AND Cantidad > 0";
                                     $result = mysqli_query($conexion, $sql);
                                     while ($mostrar = mysqli_fetch_array($result)) {
                                         ?>
