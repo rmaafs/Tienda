@@ -61,14 +61,11 @@
                     <div class="box box-info" style="background-color: white">
                         
                         <?php
-                            $_GET["categoria"] = "Celular";
-                            include("includes/listaArticulos.php"); 
+                            $_GET["categoria"] = "Todos los productos";
+                            include("includes/listaTodosArticulos.php"); 
                         ?>
                         
-                        <?php
-                        $_GET["categoria"] = "Laptop";
-                        include("includes/listaArticulos.php"); 
-                        ?>
+                        
                             
                     </div>
 

@@ -40,11 +40,11 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
 
             <form action="conecLogin.php" method="post" id="formLogin" onsubmit="return false;">
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="Usuario" name="user" id="user1">
+                    <input type="text" class="form-control" placeholder="Usuario" name="user" id="user1" value="<?php echo $_COOKIE['user'];?>">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="pass" class="form-control" placeholder="Contraseña" name="passwd" id="passwd1">
+                    <input type="pass" class="form-control" placeholder="Contraseña" name="passwd" id="passwd1" value="<?php echo $_COOKIE['con'];?>">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <center>
@@ -98,6 +98,18 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
                                                                 echo "alertSuccess('Usuario registrado con éxito.');";
                                                             } else if (isset($_GET["s"]) && $_GET["s"] == "2") {
                                                                 echo "alertSuccess('Contraseña cambiada con éxito.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "3") {
+                                                                echo "alertError('No has resuelto el captcha correctamente.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "4") {
+                                                                echo "alertError('El usuario ha sido bloqueado por múltiples intentos fallidos.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "5") {
+                                                                echo "alertError('Contraseña incorrecta.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "6") {
+                                                                echo "alertError('Error al recibir el estado del usuario.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "7") {
+                                                                echo "alertError('Este usuario no está registrado.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "8") {
+                                                                echo "alertError('Por favor, resuelve el captcha.');";
                                                             }
         ?>
 
