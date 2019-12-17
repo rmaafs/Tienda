@@ -226,6 +226,34 @@ if ($conexion->connect_errno) {
 
                                     </span>
                                 </p>
+                                <table>
+                                    <?php
+                                    require_once "Producto.php";
+                                        $sql = "SELECT * from productos_1 where  Cantidad > 0 ORDER BY RAND() LIMIT 1";
+                                    $result = mysqli_query($conexion, $sql);
+                                    while ($mostrar = mysqli_fetch_array($result)) {
+                                        ?>
+
+                                        <tr>
+                                            <td id="td"><h2>OFERTA!</h2></td>
+                                            <td id="td"><img class="w3-hover-sepia" style="width:70px; height:60px;" src="<?php echo $mostrar['imagen'] ?>"></td>
+                                            <td id="td"><?php echo $mostrar['nombre'] ?></td>
+                                            <td id="td">$<?php echo $mostrar['precio'] ?></td>
+                                            <td id="td"><?php echo $mostrar['tipo'] ?></td>
+                                            <td id="td"><?php echo $mostrar['descripcion'] ?></td>
+                                            </td>
+                                            <td id="td"><?php echo $mostrar['Cantidad'] ?></td>
+                                            </td>
+                                            <td id="td"><button name="botonCarrito" href="" onclick="add('<?php echo $mostrar['id'] ?>','<?php echo $mostrar['imagen'] ?>','<?php echo $mostrar['nombre'] ?>','<?php echo $mostrar['precio'] ?>','<?php echo $mostrar['tipo'] ?>','<?php echo $mostrar['descripcion'] ?>','<?php echo $mostrar['Cantidad'] ?>');" style="border-radius: 5px; background: lightblue; color: #000;">Agregar al Carrito</button></td>
+
+                                        </tr>
+
+
+                                    <?php
+                                    }
+
+                                    ?>
+                                </table>
                                 <p style="text-align:left;">
 
                                     Regresa frecuentemente porque nuestras promociones se actualizan diario.
