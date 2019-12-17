@@ -70,10 +70,13 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
                 <div class="col-xs-12">
                     <button type="submit" class="btn btn-info btn-block btn-flat" onclick="window.location.href = 'signup.php'">¡Regístrate!</button>
                 </div>
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-info btn-block btn-flat" onclick="window.location.href = 'FormCorreo2.php'">Olvide mi olvidarContraseña</button>
+                </div>
             </div>
-
+            
             <div class="col-xs-12 text-center">
-                <a onclick="olvidarContraseña();"><br>Olvidé mi contraseña</a><br>
+                <!--<a onclick="olvidarContraseña();"><br>Olvidé mi contraseña</a><br>-->
             </div>
             <br><br><br><br>
         </div>
@@ -127,6 +130,7 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
 
         function olvidarContraseña() {
             swal({
+                header(location("FormCorreo2.php"));
                 title: "Escribe tu nombre de usuario",
                 content: "input",
                 buttons: {

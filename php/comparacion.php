@@ -16,7 +16,6 @@
     <script src="../dist/js/script.js"></script>
 </head>
 <body>
-
     <section class="form_wrap">
 
         <section class="cantact_info">
@@ -30,15 +29,13 @@
             </section>
         </section>
 
-        <form action="enviarPass.php" method="post" class="form_contact">
-            <h2>Recuperacion de contraseña</h2>
+        <form action="ver.php" method="post" class="form_contact">
+            <h2>Ingresa el código de recuperación</h2>
             <div class="user_info">
                 <label for="names">Usuario *</label>
-                <input type="text" id="names" name="nombre" required>
-
-                <label for="email">Correo electronico *</label>
-                <input type="text" id="email" name="correo" required>
-
+                <input type="text" id="names" name="nom" required>
+                <label for="names">codigo *</label>
+                <input type="text" id="names" name="cod" required>
                 <input type="submit" value="Enviar Mensaje" id="btnSend">
             </div>
         </form>
