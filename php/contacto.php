@@ -27,9 +27,24 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <style>
-        .formS {
-            background: lightblue;
+        input {
+            border-bottom: 3px #0051FF;
+            border-radius: 7px;
             color: black;
+        }
+
+        button {
+            border-radius: 7px;
+        }
+
+        select {
+            border-bottom: 3px solid #0051FF;
+            border-radius: 6px;
+        }
+
+        textarea {
+            border-bottom: 3px solid #0051FF;
+            border-radius: 6px;
         }
     </style>
 
@@ -98,7 +113,7 @@
                     </div>
                     <!-- Accordion end -->
 
-                    <div class="box-header with-border">
+                    <div class="box-header with-border" style="background-image: url(../img/contacto_bg.jpg); border-radius:10px;">
 
 
                         <!--------------------------------------------------------------- INFO CONTACTO ------------------------------------------------------------->
@@ -107,7 +122,7 @@
                         <!--------------------------------------------------------------- FORM ------------------------------------------------------------->
 
 
-                        <div class="box-footer clearfix formS" style="display:block;">
+                        <div class="box-footer clearfix formS" style="background-image: url(../img/contacto_bg.jpg); color:whitesmoke; border-radius:10px;">
                             <form action="enviarForm.php" method="post" style="text-align:center">
                                 <h2>Contáctanos</h2><br>
                                 <p>En caso de contar con algún otro comentario, duda o
@@ -118,103 +133,102 @@
 
                                 <!-- FORMULARIO -->
                                 <div>
-                                    <fieldset style="width: 100%;">
-                                        <dl>
-                                            <dt><label>Area que desea contactar:</label></dt>
-                                            <dd>
-                                                <span class="select"><select>
-                                                        <option value="">-No Seleccionado-</option>
-                                                        <option value="BOLSA DE TRABAJO">BOLSA DE TRABAJO</option>
-                                                        <option value="CREDITO">CREDITO</option>
-                                                        <option value="INTERNET">INTERNET</option>
-                                                        <option value="OPERACIONES">OPERACIONES</option>
-                                                        <option value="MESA DE REGALOS">MESA DE REGALOS</option>
-                                                        <option value="SERVICIO TECNICO">SERVICIO TECNICO</option>
-                                                    </select></span></dd>
-                                        </dl>
-                                        <dl>
-                                            <dt><label>Nombre:</label></dt>
-                                            <dd>
-                                                <input type="text" name="nombre" placeholder="Ingresa tu nombre" required=""></dd>
-                                        </dl>
-                                        <dl>
-                                            <dt>
-                                                <label>Apellido Paterno:</label></dt>
-                                            <dd>
-                                                <input type="text" name="apellido" placeholder="Ingresa tu Apellido Paterno" required=""></dd>
-                                        </dl>
-                                        <dl>
-                                            <dt>
-                                                <label>Apellido Materno:</label></dt>
-                                            <dd>
-                                                <input type="text" placeholder="Ingresa tu Apellido Materno" required=""></dd>
-                                        </dl>
-                                        <dl>
-                                            <dt>
-                                                <label>Correo Electrónico:</label></dt>
-                                            <dd>
-                                                <input type="email" name="correo" placeholder="Ingresa tu Correo Electrónico" required=""></dd>
-                                        </dl>
-                                        <dl>
-                                            <dt>
-                                                <label>Estado:</label></dt>
-                                            <dd><span class="select">
-                                                    <select name="estado">
-                                                        <option value="">-No Seleccionado-</option>
-                                                        <option value="Aguascalientes">Aguascalientes</option>
-                                                        <option value="Baja California">Baja California</option>
-                                                        <option value="Baja California Sur">Baja California Sur</option>
-                                                        <option value="Campeche">Campeche</option>
-                                                        <option value="Coahuila">Coahuila</option>
-                                                        <option value="Colima">Colima</option>
-                                                        <option value="Chiapas">Chiapas</option>
-                                                        <option value="Chihuahua">Chihuahua</option>
-                                                        <option value="Distrito Federal">Distrito Federal</option>
-                                                        <option value="Durango">Durango</option>
-                                                        <option value="Guanajuato">Guanajuato</option>
-                                                        <option value="Guerrero">Guerrero</option>
-                                                        <option value="Hidalgo">Hidalgo</option>
-                                                        <option value="Jalisco">Jalisco</option>
-                                                        <option value="México">México</option>
-                                                        <option value="Michoacán">Michoacán</option>
-                                                        <option value="Morelos">Morelos</option>
-                                                        <option value="Nayarit">Nayarit</option>
-                                                        <option value="Nuevo León">Nuevo León</option>
-                                                        <option value="Oaxaca">Oaxaca</option>
-                                                        <option value="Puebla">Puebla</option>
-                                                        <option value="Querétaro">Querétaro</option>
-                                                        <option value="Quintana Roo">Quintana Roo</option>
-                                                        <option value="San Luis Potosí">San Luis Potosí</option>
-                                                        <option value="Sinaloa">Sinaloa</option>
-                                                        <option value="Sonora">Sonora</option>
-                                                        <option value="Tabasco">Tabasco</option>
-                                                        <option value="Tamaulipas">Tamaulipas</option>
-                                                        <option value="Tlaxcala">Tlaxcala</option>
-                                                        <option value="Veracruz">Veracruz</option>
-                                                        <option value="Yucatán">Yucatán</option>
-                                                        <option value="Zacatecas">Zacatecas</option>
-                                                    </select>
 
-                                                </span></dd>
-                                        </dl>
-                                        <dl>
-                                            <dt><label>Código Postal:</label></dt>
-                                            <dd>
-                                                <input name="cp" type="text" placeholder="Ingresa tu C.P." required=""></dd>
-                                        </dl>
-                                        <dl>
-                                            <dt>
-                                                <label>Comentario:</label></dt>
-                                            <dd>
-                                                <textarea name="mensaje" placeholder="Ingresa un comentario.">
+                                    <dl>
+                                        <dt><label>Area que desea contactar:</label></dt>
+                                        <dd>
+                                            <span class="select" style="color: black;"><select>
+                                                    <option value="">-No Seleccionado-</option>
+                                                    <option value="BOLSA DE TRABAJO">BOLSA DE TRABAJO</option>
+                                                    <option value="CREDITO">CREDITO</option>
+                                                    <option value="INTERNET">INTERNET</option>
+                                                    <option value="OPERACIONES">OPERACIONES</option>
+                                                    <option value="MESA DE REGALOS">MESA DE REGALOS</option>
+                                                    <option value="SERVICIO TECNICO">SERVICIO TECNICO</option>
+                                                </select></span></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt><label>Nombre:</label></dt>
+                                        <dd>
+                                            <input type="text" name="nombre" placeholder="Ingresa tu nombre" required=""></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            <label>Apellido Paterno:</label></dt>
+                                        <dd>
+                                            <input type="text" name="apellido" placeholder="Ingresa tu Apellido Paterno" required=""></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            <label>Apellido Materno:</label></dt>
+                                        <dd>
+                                            <input type="text" placeholder="Ingresa tu Apellido Materno" required=""></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            <label>Correo Electrónico:</label></dt>
+                                        <dd>
+                                            <input type="email" name="correo" placeholder="Ingresa tu Correo Electrónico" required=""></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            <label>Estado:</label></dt>
+                                        <dd><span class="select" style="color: black;">
+                                                <select name="estado">
+                                                    <option value="">-No Seleccionado-</option>
+                                                    <option value="Aguascalientes">Aguascalientes</option>
+                                                    <option value="Baja California">Baja California</option>
+                                                    <option value="Baja California Sur">Baja California Sur</option>
+                                                    <option value="Campeche">Campeche</option>
+                                                    <option value="Coahuila">Coahuila</option>
+                                                    <option value="Colima">Colima</option>
+                                                    <option value="Chiapas">Chiapas</option>
+                                                    <option value="Chihuahua">Chihuahua</option>
+                                                    <option value="Distrito Federal">Distrito Federal</option>
+                                                    <option value="Durango">Durango</option>
+                                                    <option value="Guanajuato">Guanajuato</option>
+                                                    <option value="Guerrero">Guerrero</option>
+                                                    <option value="Hidalgo">Hidalgo</option>
+                                                    <option value="Jalisco">Jalisco</option>
+                                                    <option value="México">México</option>
+                                                    <option value="Michoacán">Michoacán</option>
+                                                    <option value="Morelos">Morelos</option>
+                                                    <option value="Nayarit">Nayarit</option>
+                                                    <option value="Nuevo León">Nuevo León</option>
+                                                    <option value="Oaxaca">Oaxaca</option>
+                                                    <option value="Puebla">Puebla</option>
+                                                    <option value="Querétaro">Querétaro</option>
+                                                    <option value="Quintana Roo">Quintana Roo</option>
+                                                    <option value="San Luis Potosí">San Luis Potosí</option>
+                                                    <option value="Sinaloa">Sinaloa</option>
+                                                    <option value="Sonora">Sonora</option>
+                                                    <option value="Tabasco">Tabasco</option>
+                                                    <option value="Tamaulipas">Tamaulipas</option>
+                                                    <option value="Tlaxcala">Tlaxcala</option>
+                                                    <option value="Veracruz">Veracruz</option>
+                                                    <option value="Yucatán">Yucatán</option>
+                                                    <option value="Zacatecas">Zacatecas</option>
+                                                </select>
+
+                                            </span></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt><label>Código Postal:</label></dt>
+                                        <dd>
+                                            <input name="cp" type="text" placeholder="Ingresa tu C.P." required=""></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            <label>Comentario:</label></dt>
+                                        <dd>
+                                            <textarea name="mensaje" placeholder="Ingresa un comentario.">
                                         </textarea></dd>
-                                        </dl>
-                                        <fleldset>
-                                            <button type="submit">Enviar Mensaje</button>
-                                            <br>
-                                        </fleldset>
+                                    </dl>
+                                    <fleldset>
+                                        <button type="submit" style="color: black;">Enviar Mensaje</button>
                                         <br>
-                                    </fieldset>
+                                    </fleldset>
+                                    <br>
                                 </div>
 
 
@@ -223,26 +237,25 @@
                             </form>
 
                             <!-- MAPA DE GOOGLE -->
-                            <div class="box-header with-border;">
-                                <div class="mapouter" style="padding:10px;">
-                                    <div class="gmap_canvas"><iframe width="328" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=universidad%20autonoma%20de%20aguascalientes&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
-                                    <style>
-                                        .mapouter {
-                                            position: relative;
-                                            text-align: right;
-                                            height: 339px;
-                                            width: 528px;
-                                        }
+                            <div class="mapouter" style="margin-left:155px; margin-top:40px;">
+                                <div class="gmap_canvas"><iframe width="328" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=universidad%20autonoma%20de%20aguascalientes&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+                                <style>
+                                    .mapouter {
+                                        position: relative;
+                                        text-align: right;
+                                        height: 339px;
+                                        width: 528px;
+                                    }
 
-                                        .gmap_canvas {
-                                            overflow: hidden;
-                                            background: none !important;
-                                            height: 339px;
-                                            width: 528px;
-                                        }
-                                    </style>
-                                </div>
+                                    .gmap_canvas {
+                                        overflow: hidden;
+                                        background: none !important;
+                                        height: 339px;
+                                        width: 528px;
+                                    }
+                                </style>
                             </div>
+
                             <!-- MAPA DE GOOGLE FIN-->
 
 
@@ -251,7 +264,7 @@
 
                         <!-- OPCION DE REGISTRO-->
 
-                        <div class="w3-container w3-hide-small" >
+                        <div class="w3-container w3-hide-small" style="border:1px black solid; width:50%; height:160%; margin-left:25%; margin-bottom:10%;padding:15px; background:#323232; color:white;">
                             <div>
                                 <div>
                                     <div>
@@ -260,15 +273,15 @@
                                     <div>
                                         <form action="envio2.php" method="POST" enctype="multipart/form-data">
 
-                                        <input type="text" id="newsletter" name="correo" placeholder="Tu correo electrónico" style="color:black; box-sizing: border-box; height:30px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px;">
-                                        
-                                        <select name="archivo" >
-                        
-                                            <option value="https://fmaps.xyz/Tienda/dist/img/GINA25.jpeg">Premio 1</option>
-                                            <option value="https://fmaps.xyz/Tienda/dist/img/GINA30.jpeg">Premio 2</option>
-                                            <option value="https://fmaps.xyz/Tienda/dist/img/PASEME.jpeg">Premio 3</option>
-                                        </select>
-                                        <button type="submit" name="botonsub" style="box-sizing: border-box;height: 40px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px; min-width: 50px;background: #fff!important; color: #000;">Suscribirse</button>
+                                            <input type="text" id="newsletter" name="correo" placeholder="Tu correo electrónico">
+
+                                            <select name="archivo" style="color: black;">
+
+                                                <option value="https://fmaps.xyz/Tienda/dist/img/GINA25.jpeg">Premio 1</option>
+                                                <option value="https://fmaps.xyz/Tienda/dist/img/GINA30.jpeg">Premio 2</option>
+                                                <option value="https://fmaps.xyz/Tienda/dist/img/PASEME.jpeg">Premio 3</option>
+                                            </select>
+                                            <button type="submit" name="botonsub" style="color: black;">Suscribirse</button>
                                         </form>
                                     </div>
                                 </div>
