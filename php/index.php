@@ -50,6 +50,14 @@ if ($conexion->connect_errno) {
     <!-- Extra styles -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="../dist/js/carrito.js"></script>
+
+    <style>
+        .darkt {
+            background-color: #323232;
+            color: whitesmoke;
+        }
+    </style>
+
     <!------------------------------------------------------------ LINKS FIN ------------------------------------------------------------>
 
 
@@ -87,13 +95,13 @@ if ($conexion->connect_errno) {
                     <!------------------------------------------------------- DATOS DE PRODUCTOS ------------------------------------------------------->
 
 
-                    <?php 
+                    <?php
                     $_GET["categoria"] = "Celular";
-                    include("includes/listaArticulos.php");?>
+                    include("includes/listaArticulos.php"); ?>
 
-                    <?php 
+                    <?php
                     $_GET["categoria"] = "Laptop";
-                    include("includes/listaArticulos.php");?>
+                    include("includes/listaArticulos.php"); ?>
 
 
                     <div class="box box-info" style="padding:10px;">
@@ -130,8 +138,8 @@ if ($conexion->connect_errno) {
                                     function redirectCat2() {
                                         location.replace("http://localhost/Tienda/php/index.php?CAT=2");
                                     }
-                                //Funcion que agrega al carrito
-                                    function add(id,imagen,nombre,precio,tipo,descripcion,Cantidad,existencias) {
+                                    //Funcion que agrega al carrito
+                                    function add(id, imagen, nombre, precio, tipo, descripcion, Cantidad, existencias) {
                                         var xhttp = new XMLHttpRequest();
                                         xhttp.onreadystatechange = function() {
                                             if (this.readyState == 4 && this.status == 200) {
@@ -145,11 +153,10 @@ if ($conexion->connect_errno) {
                                         };
 
                                         //pasa por el metodo get a addArray.php
-                                        xhttp.open("GET", "addArray.php?id="+id+"&imagen="+imagen+"&nombre="+nombre+"&precio="+precio+"&tipo="+tipo+"&descripcion="+descripcion+"&Cantidad=1&existencias=" + existencias, true);
+                                        xhttp.open("GET", "addArray.php?id=" + id + "&imagen=" + imagen + "&nombre=" + nombre + "&precio=" + precio + "&tipo=" + tipo + "&descripcion=" + descripcion + "&Cantidad=1&existencias=" + existencias, true);
                                         xhttp.send();
-                                    
-                                    }
 
+                                    }
                                 </script>
                                 <!-- CHECA EL TIPO DE CATEGORIA -->
 
@@ -170,7 +177,7 @@ if ($conexion->connect_errno) {
 
                                         if ($tipo == 1) {
                                             $tipo = "Laptop";
-                                        }else{
+                                        } else {
                                             $tipo = "Celular";
                                         }
                                     }
@@ -179,7 +186,7 @@ if ($conexion->connect_errno) {
                                     $sql = "SELECT * from productos_1 where tipo='" . $tipo . "' AND Cantidad > 0";
                                     $result = mysqli_query($conexion, $sql);
                                     while ($mostrar = mysqli_fetch_array($result)) {
-                                        ?>
+                                    ?>
 
                                         <tr>
                                             <td id="td"><?php echo $mostrar['id'] ?></td>
@@ -197,7 +204,7 @@ if ($conexion->connect_errno) {
 
 
                                     <?php
-                                    }
+                                                                                                                                                                                                                                                                                                                        }
 
                                     ?>
                                 </table>
@@ -239,7 +246,7 @@ if ($conexion->connect_errno) {
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
-                                    
+
 
                 </section>
                 <!-- /.content -->
@@ -256,7 +263,7 @@ if ($conexion->connect_errno) {
 
         <a href="" title="contador visitas">
             <img src="https://www.cerotec.net/contador.php?t=13&s=3&i=1863" alt="">
-        </a>  
+        </a>
 
         <!------------------------------------------------------------ CONTADOR DE VISITAS FIN ------------------------------------------------------------>
 

@@ -12,7 +12,7 @@ session_start();
 <script src="../plugins/sweetalert/dist/sweetalert2.all.js"></script>
 <script src="../dist/js/alertas.js"></script>
 <header class="main-header">
-    <nav class="navbar navbar-top">
+    <nav class="navbar navbar-top"> <!-- aquí css -->
         <div class="container">
             <div class="navbar-header">
                 <a href="index.php" class="navbar-brand"><b>SMS</b>hop</a>
