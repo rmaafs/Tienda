@@ -126,10 +126,10 @@ if ($conexion->connect_errno) {
                                         xhttp.onreadystatechange = function() {
                                             if (this.readyState == 4 && this.status == 200) {
                                                 //Regresará 1 si el producto se añadió perfectamente
-                                                if (this.responseText == "1") {
-                                                    actualizarCarrito();
-                                                } else {
+                                                if (this.responseText == "0") {
                                                     alert("Ya has añadido este producto.");
+                                                } else {
+                                                    actualizarCarrito();
                                                 }
                                             }
                                         };

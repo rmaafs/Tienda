@@ -55,7 +55,10 @@
                 <ul class="nav navbar-nav">
 
                     <!-- CARRITO DE COMPRAS -->
-                    <?php include "iconCarritoCompras.php";?>
+                    <li class="dropdown messages-menu" id="html-carrito-compras">
+                        <?php include "iconCarritoCompras.php"; ?>
+                    </li>
+
                     <!-- CARRITO DE COMPRAS FIN -->
 
                     <!------------------------------------ Usuario (LOGIN)----------------------------------------------->

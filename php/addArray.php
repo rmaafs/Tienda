@@ -35,5 +35,5 @@ $p->cantidad = 1;
 
 array_push($productos, $p);
 setcookie('array', serialize($productos), time() + (86400 * 30), "/"); // 86400 = 1 day
-echo "1";
+
 ?>
