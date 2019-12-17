@@ -8,7 +8,7 @@ if ($resultado) {
     $fila = $resultado->fetch_assoc();
     $user = $fila["usuario"];
 
-    if (updateDB("UPDATE login SET con='$passwd' WHERE usuario='$user'")) {
+    if (updateDB("UPDATE login SET con='$passwd', estado=1, intentos=0, acc=1 WHERE usuario='$user'")) {
         echo "Redireccionando...";
 ?>
         <script>
