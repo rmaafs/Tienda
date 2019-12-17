@@ -258,8 +258,11 @@
                                         <h5>¡Regístrate a nuestro Newsletter!</h5>
                                     </div>
                                     <div>
+                                        <form action="envior2.php"></form>
+                                        
                                         <input type="text" id="newsletter" name="newsletter" placeholder="Tu correo electrónico" style="color:black; box-sizing: border-box; height:30px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px;">
                                         <button name="botonsub" href="#" onclick="" style="box-sizing: border-box;height: 40px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px; min-width: 50px;background: #fff!important; color: #000;">Suscribirse</button>
+                                    </form>
                                     </div>
                                 </div>
                             </div>

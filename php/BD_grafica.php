@@ -5,7 +5,7 @@
     <meta charset='UTF-8'>
     <title><?php echo "Documento"; ?></title>
     <script src='..\dist\js\Chart.bundle.min.js'></script>   
-    <script src='..\dist\js\jquery-3.1.1.min.js'></script>   
+    <script src='..\dist\js\jquery-3.2.1.js'></script>   
     <script type='text/ecmascript'>
     $(document).ready(function(){
         var datos = {
@@ -21,16 +21,14 @@
                         '#46BFBD',
                         '#FDB45C',
                         '#949FB1',
-                        
-                        
+                        '#37E115',
+                        '#E115DD',
+                        '#E1E015',                        
                     ],
                   
                 }],
                 labels : [
-                    'datos1',
-                    'datos2',
-                    'datos3',
-                    'datos4',
+                    <?php require 'datos2.php'; ?>  
                 
                     
                     

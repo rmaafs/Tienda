@@ -1,9 +1,9 @@
 <?php
 require "mysql.php";
-$resultado = selectBD('select valores from valores_grafica');
+$resultado = selectBD('select cantidad from productos_1');
 if ($resultado){
     while ($fila=$resultado -> fetch_assoc()){
-        echo $fila['valores'].",";
+        echo $fila['cantidad'].",";
     }
    
 }

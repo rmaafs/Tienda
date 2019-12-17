@@ -78,16 +78,15 @@ if ($conexion->connect_errno) {
                         Altas, bajas o modificacion de Productos
                         <small></small>
                     </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Layout</a></li>
-                        <li class="active">Top Navigation</li>
-                    </ol>
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
                     <div class="box box-default">
+                        <br>
+                        
+                           <a href="Estadisticas.php" style="margin-left:90%">Estadísticas</a>
+                      
                         <div class="box-header with-border">
                             <h3 class="box-title"></h3>
                         </div>
