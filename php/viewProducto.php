@@ -234,6 +234,14 @@ if ($resultado) {
         }
 
         function addCarrito() {
+
+            //Solo permitir comprar si el usuario está logeueado.
+            if (!<?php echo isset($_SESSION["nombre"]) ? "true" : "false"; ?>) {
+                alertError("Necesitas tener una sesión iniciada para poder añadir productos al carrito de compras.");
+                return false;
+            }
+            
+
             var id = '<?php echo $prod->id; ?>';
             var imagen = '<?php echo $prod->imagen; ?>';
             var nombre = '<?php echo $prod->nombre; ?>';
