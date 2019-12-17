@@ -107,7 +107,6 @@ if ($conexion->connect_errno) {
                                     $res = mysqli_query($conexion, $sql1);
                                     while ($mostrar = mysqli_fetch_array($res)) {
                                         ?>
-
                                         <tr class="active">
                                             <td><?php echo $mostrar['prodID'] ?></td>
                                             <td><?php echo $mostrar['prodNombre'] ?></td>
@@ -116,7 +115,6 @@ if ($conexion->connect_errno) {
                                             <td><?php echo $mostrar['prodExistencias'] ?> Unidades</td>
                                             <td><img class="img-rounded" src="<?php echo $mostrar['prodImagen'] ?>" alt="imagen">
                                                 Ruta: <b><?php echo $mostrar['prodImagen'] ?></b></td>
-
                                         </tr>
                                     <?php
                                     }
