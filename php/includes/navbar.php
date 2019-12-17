@@ -21,13 +21,11 @@ session_start();
                 </button>
             </div>
 
-            <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
 
                     <!-- LINK DE INICIO -->
                     <li class="active"><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
-                    <!-- LINK DE TIENDA -->
-                    <li><a href="#">Tienda</a></li>
                     <!-- LINK DE ACERCA DE -->
                     <li><a href="acercaDe.php">Acerca De</a></li>
                     <!-- CONTACTANOS -->
@@ -46,14 +44,6 @@ session_start();
                         </ul>
                     </li>
                 </ul>
-
-                <!-- BUSQUEDA -->
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="navbar-search-input" placeholder="Buscar">
-                    </div>
-                </form>
-            </div>
 
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
