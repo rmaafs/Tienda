@@ -237,7 +237,7 @@
                             </form>
 
                             <!-- MAPA DE GOOGLE -->
-                            <div class="mapouter" style="margin-left:155px; margin-top:40px;">
+                            <div class="mapouter w3-container w3-hide-small" style="margin-left:155px; margin-top:40px;">
                                 <div class="gmap_canvas"><iframe width="328" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=universidad%20autonoma%20de%20aguascalientes&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
                                 <style>
                                     .mapouter {
