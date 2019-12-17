@@ -46,6 +46,17 @@ session_start();
 
                         </ul>
                     </li>
+                    <?php 
+                   
+                    if ((isset($_SESSION['nombre'])&& $_SESSION['nombre'])=="Rodrigo") {
+                        ?>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"></a></li>                           
+                            <li><a href="AyBdeproductos.php">A o B productos</a></li>
+                        </ul>
+                    </li><?php } ?>
                 </ul>
 
             <!-- Navbar Right Menu -->

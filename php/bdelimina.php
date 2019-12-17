@@ -10,7 +10,7 @@ if ($conexion->connect_errno) {
 
 $id=$_GET['a'];
 
-$query2="DELETE FROM producto WHERE prodID='$id'";
+$query2="DELETE FROM productos_1 WHERE id='$id'";
 
 $resultado=$conexion->query($query2);
 
