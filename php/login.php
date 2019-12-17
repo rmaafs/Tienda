@@ -47,7 +47,7 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
                     <input type="pass" class="form-control" placeholder="Contraseña" name="passwd" id="passwd1">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
-                <div class="g-recaptcha" data-sitekey="<?php echo $clave_sitio; ?>"></div>
+                <center><div class="g-recaptcha" data-sitekey="<?php echo $clave_sitio; ?>"></div></center><br>
                 <div class="row">
                     <div class="col-xs-7">
                         <div class="checkbox icheck">
