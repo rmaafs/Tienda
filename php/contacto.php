@@ -108,7 +108,7 @@
 
 
                         <div class="box-footer clearfix formS" style="display:block;">
-                            <form action="post" style="text-align:center">
+                            <form  action="enviarForm.php" method="post" style="text-align:center">
                                 <h2>Contáctanos</h2><br>
                                 <p>En caso de contar con algún otro comentario, duda o
                                     sugerencia puedes hacerla llegar vía electrónica en el siguiente formulario,
@@ -135,13 +135,13 @@
                                         <dl>
                                             <dt><label>Nombre:</label></dt>
                                             <dd>
-                                                <input type="text" placeholder="Ingresa tu nombre" required=""></dd>
+                                                <input type="text" name="nombre" placeholder="Ingresa tu nombre" required=""></dd>
                                         </dl>
                                         <dl>
                                             <dt>
                                                 <label>Apellido Paterno:</label></dt>
                                             <dd>
-                                                <input type="text" placeholder="Ingresa tu Apellido Paterno" required=""></dd>
+                                                <input type="text" name="apellido" placeholder="Ingresa tu Apellido Paterno" required=""></dd>
                                         </dl>
                                         <dl>
                                             <dt>
@@ -153,13 +153,13 @@
                                             <dt>
                                                 <label>Correo Electrónico:</label></dt>
                                             <dd>
-                                                <input type="email" placeholder="Ingresa tu Correo Electrónico" required=""></dd>
+                                                <input type="email" name="correo" placeholder="Ingresa tu Correo Electrónico" required=""></dd>
                                         </dl>
                                         <dl>
                                             <dt>
                                                 <label>Estado:</label></dt>
-                                            <dd><span class="select">
-                                                    <select>
+                                            <dd><span  class="select">
+                                                    <select name="estado">
                                                         <option value="">-No Seleccionado-</option>
                                                         <option value="Aguascalientes">Aguascalientes</option>
                                                         <option value="Baja California">Baja California</option>
@@ -200,13 +200,13 @@
                                         <dl>
                                             <dt><label>Código Postal:</label></dt>
                                             <dd>
-                                                <input type="text" placeholder="Ingresa tu C.P." required=""></dd>
+                                                <input name="cp" type="text" placeholder="Ingresa tu C.P." required=""></dd>
                                         </dl>
                                         <dl>
                                             <dt>
                                                 <label>Comentario:</label></dt>
                                             <dd>
-                                                <textarea placeholder="Ingresa un comentario.">
+                                                <textarea name="mensaje" placeholder="Ingresa un comentario.">
                                         </textarea></dd>
                                         </dl>
                                         <fleldset>

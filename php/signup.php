@@ -38,9 +38,9 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   <link rel="stylesheet" href="../dist/css/style.css">
 </head>
 
-<body>
+<body style="background: #EFEFEF;">
 
-  <?php require 'partials/header.php' ?>
+  <?php require 'includes/header.php' ?>
 
   <?php if (!empty($message)) : ?>
     <p> <?= $message ?></p>
@@ -59,6 +59,35 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     <input name="ape_mat" type="text" placeholder="Apellido Materno" required value="<?php echo $ape_mat;?>">
     <input type="submit" value="Enviar">
   </form>
+
+  <script src="https://kit.fontawesome.com/4328fe96d6.js" crossorigin="anonymous"></script>
+  <footer class="main-footer" style="background: #323232; color: gray;">
+
+
+    <!-- REDES -->
+    <div class="box-tools pull-left">
+        <a href="https://www.facebook.com/SMShopMX/" target="_blank"><i class="fab f099 fa-facebook" style="color: white; font-size:200%;"></i></a></li>
+        <a href="https://www.instagram.com/smshopags/" target="_blank"><i class="fab fa-instagram" style="color: white; font-size:200%;"></i></a></li>
+        <a href="https://www.youtube.com/channel/UChs_TB71WUFcNx-O7lmLAVg" target="_blank"><i class="fab fa-youtube" style="color: white; font-size:200%;"></i></a></li>
+        <a href="https://twitter.com/SMShopMX" target="_blank"><i class="fab fa-twitter" style="color: white; font-size:200%;"></i></a></li>
+
+
+
+
+    </div>
+    <!-- REDES FIN -->
+
+
+    <div class="container">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 4.0.0
+        </div>
+        <strong>Copyright &copy; 2016-2019 <a style="color: white;" href="contacto.php">SMShop RESERVED</a>.</strong> Todos los derechos reservados.
+    </div>
+
+
+    <!-- /.container -->
+</footer>
 
 </body>
 

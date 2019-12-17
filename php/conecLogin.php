@@ -8,10 +8,6 @@ if (!validarCaptcha()) {//Retorna verdadero si el captcha fue resuleto correctam
     die("Captcha erroneo");
 }
 
-//echo "Nombre: " . $user;
-//echo "passwd: " . $passwd;
-//  "nombre: " . $nom . " "
-//  "nombre : '" . $nom .  "'  "
 if (1) {
     $nom = selectBD('select usuario from login where usuario = "' . $user . '"');
     if ($nom) {
@@ -67,9 +63,11 @@ if (1) {
                         //echo "<br>";
                         //echo "se actualizo el intento";
                     } else {
-                        echo "<br>";
-                        echo "Fallo el actualizar el intento";
-                    }header('Location:login.php');
+                       //echo "<br>";
+                        //echo "Fallo el actualizar el intento";
+                    }
+                    
+                    header('Location:login.php');
                 }
             }
         } else {
@@ -79,6 +77,7 @@ if (1) {
         header('Location:login.php');
     }
 } else {
+    echo"alert('Usuario no registrado')";
     //header('Location:FormCorreo2.php');
 }
 
