@@ -150,10 +150,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
                                 </div>
                                 <div class="box box-info">
                                     <div class="accordion" id="accordionExample">
