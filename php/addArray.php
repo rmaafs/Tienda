@@ -15,6 +15,14 @@ if(isset($_COOKIE['array'])){
     $productos = unserialize($_COOKIE['array'], ["allowed_classes" => true]);
 }
 
+//Verificamos si el producto ya existe en el carrito, en caso de que exista
+//vamos a retornar una respuesta 0
+foreach ($productos as $p) {
+    if ($p->id == $id) {
+        die("0");
+    }
+}
+
 $p = new Producto();
 $p->id = $id;
 $p->nombre = $nombre;
@@ -27,8 +35,5 @@ $p->cantidad = 1;
 
 array_push($productos, $p);
 setcookie('array', serialize($productos), time() + (86400 * 30), "/"); // 86400 = 1 day
+echo "1";
 ?>
-
-<script>
-    console.log("<?php echo unserialize($_COOKIE['array'], ["allowed_classes" => true]);?>");
-</script>
