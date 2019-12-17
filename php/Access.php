@@ -27,7 +27,7 @@
 <!-- LINKS END -->
 
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    <i class="fas fa-blind" style="font-size:150%;"></i>
+    <i class="fas fa-blind" style="font-size:150%;" id="tam5"></i>
 </a>
 
 
@@ -40,16 +40,18 @@
                 <br>
                 <div>
                     <p style="text-align:center;">Tipo:
-                        <button onclick="Light();" value="Light">Claro</button>
-                        <button onclick="Dark();" value="Dark">Oscuro</button>
+                        <button onclick="Light();" value="Light" style="background: whitesmoke; color:black;">Claro</button>
+                        <button onclick="Dark();" value="Dark" style="background: #636363; color:white;">Oscuro</button>
                 </div>
 
                 <br>
 
                 <div>
                     <p style="text-align:center;">Tamaño de Letra:
-                        <button onclick="Big();" value="big">Grande</button>
-                        <button onclick="Small();" value="small">Chico</button>
+                        <br>
+                        <button onclick="Big();" value="big" style="background: #0077ff; color:whitesmoke;">Grande</button>
+                        <button onclick="Normal();" value="normal" style="background: #2582EE; color:whitesmoke;">Normal</button>
+                        <button onclick="Small();" value="small" style="background: #0077ff; color:whitesmoke;">Chico</button>
                 </div>
 
             </li>
@@ -61,6 +63,38 @@
 
 <script>
     function Dark() {
-        document.getElementById("content-wrapper").style.background-color("#323232");
+        document.getElementById("acc").style.background= "#323232";
+    }
+
+    function Light(){
+        document.getElementById("acc").style.background= "#3C8DBC";
+    }
+
+    function Big(){
+        document.getElementById("tam").style.fontSize = "300%";
+        document.getElementById("tam1").style.fontSize = "300%";
+        document.getElementById("tam2").style.fontSize = "300%";
+        document.getElementById("tam3").style.fontSize = "300%";
+        document.getElementById("tam4").style.fontSize = "300%";
+        document.getElementById("tam5").style.fontSize = "250%";
+
+    }
+
+    function Normal(){
+        document.getElementById("tam").style.fontSize = "200%";
+        document.getElementById("tam1").style.fontSize = "200%";
+        document.getElementById("tam2").style.fontSize = "200%";
+        document.getElementById("tam3").style.fontSize = "200%";
+        document.getElementById("tam4").style.fontSize = "200%";
+        document.getElementById("tam5").style.fontSize = "150%";
+    }
+
+    function Small(){
+        document.getElementById("tam").style.fontSize = "100%";
+        document.getElementById("tam1").style.fontSize = "100%";
+        document.getElementById("tam2").style.fontSize = "100%";
+        document.getElementById("tam3").style.fontSize = "100%";
+        document.getElementById("tam4").style.fontSize = "100%";
+        document.getElementById("tam5").style.fontSize = "100%";
     }
 </script>
