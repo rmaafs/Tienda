@@ -22,6 +22,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   }
 }
 ?>
+<!--CHAT-->
+<?php include "includes/chat.php" ?>
 <!DOCTYPE html>
 <html>
 
