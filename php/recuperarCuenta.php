@@ -1,9 +1,14 @@
 <?php
-setcookie("user", '', time() - 1, '/');
-setcookie("pass", '', time() - 1, '/');
-
-$clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
-
+require "mysql.php";
+$key = $_GET["key"];
+$user = "";
+$resultado = selectBD('SELECT usuario FROM recuperar WHERE id = "' . $key . '" ');
+if ($resultado) {
+    $fila = $resultado -> fetch_assoc();
+    $user = $fila["usuario"];
+} else {
+    header("Location: login.php");
+}
 ?>
 <html>
 
@@ -26,7 +31,6 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
     <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="hold-transition login-page" style="background-color: #000230">
@@ -36,27 +40,20 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-            <p class="login-box-msg">La tienda mas innovadora del mundo</p>
+            <p class="login-box-msg">Recuperar cuenta</p>
 
-            <form action="conecLogin.php" method="post" id="formLogin" onsubmit="return false;">
+            <form action="changePasswd.php" method="post" id="formLogin" onsubmit="return false;">
+            <input type="hidden" name="key" value="<?php echo $key;?>">
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="Usuario" name="user" id="user1">
+                    <input type="pass" class="form-control" placeholder="Nueva contraseña" name="passwd" id="user1">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="pass" class="form-control" placeholder="Contraseña" name="passwd" id="passwd1">
+                    <input type="pass" class="form-control" placeholder="Repetir contraseña" name="passwd1" id="passwd1">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
-                <center>
-                    <div class="g-recaptcha" data-sitekey="<?php echo $clave_sitio; ?>"></div>
-                </center><br>
                 <div class="row">
                     <div class="col-xs-7">
-                        <div class="checkbox icheck">
-                            <label>
-                                <input type="checkbox" name="chbx" id="chbx"> Recordarme
-                            </label>
-                        </div>
                     </div>
                     <div class="col-xs-5">
                         <button type="submit" id="btnLogin" class="btn btn-info btn-block btn-flat" onclick="verificar()">Ingresar</button>
@@ -71,10 +68,6 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
                     <button type="submit" class="btn btn-info btn-block btn-flat" onclick="window.location.href = 'signup.php'">¡Regístrate!</button>
                 </div>
             </div>
-
-            <div class="col-xs-12 text-center">
-                <a onclick="olvidarContraseña();"><br>Olvidé mi contraseña</a><br>
-            </div>
             <br><br><br><br>
         </div>
     </div>
@@ -87,22 +80,15 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
     <script src="../plugins/iCheck/icheck.min.js"></script>
     <script src="../plugins/sweetalert/dist/sweetalert2.all.js"></script>
     <script src="../dist/js/alertas.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
     </script>
     <script>
-        <?php
-                                                            if (isset($_GET["s"]) && $_GET["s"] == "1") {
-                                                                echo "alertSuccess('Usuario registrado con éxito.');";
-                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "2") {
-                                                                echo "alertSuccess('Contraseña cambiada con éxito.');";
-                                                            }
-        ?>
-
         function verificar() {
-            if (document.getElementsByName("user")[0].value.length == 0) {
-                alertError("El dato Usuario no puede estar vacío.");
-            } else if (document.getElementsByName("passwd")[0].value.length == 0) {
-                alertError("El dato Contraseña no puede estar vacío.");
+            if (document.getElementsByName("passwd")[0].value.length == 0) {
+                alertError("La contraseña no puede ser incorrecta.");
+            } else if (document.getElementsByName("passwd1")[0].value.length == 0) {
+                alertError("Por favor ingresa de nuevo la contraseña.");
+            } else if (document.getElementsByName("passwd")[0].value != document.getElementsByName("passwd1")[0].value) {
+                alertError("Las contraseñas no coinciden.");
             } else {
                 send();
             }
@@ -124,30 +110,6 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
                 increaseArea: '20%' /* optional */
             });
         });
-
-        function olvidarContraseña() {
-            swal({
-                title: "Escribe tu nombre, no apellidos",
-                content: "input",
-                buttons: {
-                    cancel: true,
-                    confirm: "Confirmar"
-                }
-            }).then(val2 => {
-                if (val2) {
-                    $.post('olvidarContrasena.php', {
-                        user: val2
-                    }, function(resp) {
-                        if (resp == "false") {
-                            alertError("Este usuario no existe.");
-                            return false;
-                        } else {
-                            alertSuccess("Correo enviado a " + resp);
-                        }
-                    });
-                }
-            });
-        }
     </script>
 </body>
 

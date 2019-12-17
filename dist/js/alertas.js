@@ -1,23 +1,22 @@
 function alertError(s) {
     swal({
-        type: 'error',
+        icon: 'error',
         title: 'Error',
         text: s,
-        showConfirmButton: false,
-        showCancelButton: true,
-        cancelButtonColor: '#d33',
-        cancelButtonText: 'Entendido'
+        dangerMode: true,
+        buttons: {
+            confirm: "Confirmar"
+        }
     });
 }
 
 function alertSuccess(s) {
     swal({
-        type: 'success',
+        icon: 'success',
         title: 'Correcto',
         text: s,
-        showConfirmButton: false,
-        showCancelButton: true,
-        cancelButtonColor: '#00B50C',
-        cancelButtonText: 'Entendido'
+        buttons: {
+            confirm: "Confirmar"
+        }
     });
 }
