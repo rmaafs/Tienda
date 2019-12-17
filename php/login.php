@@ -129,28 +129,29 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
         });
 
         function olvidarContraseña() {
-            swal({
-                header(location("FormCorreo2.php"));
-                title: "Escribe tu nombre de usuario",
-                content: "input",
-                buttons: {
-                    cancel: true,
-                    confirm: "Confirmar"
-                }
-            }).then(val2 => {
-                if (val2) {
-                    $.post('olvidarContrasena.php', {
-                        user: val2
-                    }, function(resp) {
-                        if (resp == "false") {
-                            alertError("Este usuario no existe.");
-                            return false;
-                        } else {
-                            alertSuccess("Correo enviado a " + resp);
-                        }
-                    });
-                }
-            });
+            header(location("FormCorreo2.php"));
+            // swal({
+            //     header(location("FormCorreo2.php"));
+            //     title: "Escribe tu nombre de usuario",
+            //     content: "input",
+            //     buttons: {
+            //         cancel: true,
+            //         confirm: "Confirmar"
+            //     }
+            // }).then(val2 => {
+            //     if (val2) {
+            //         $.post('olvidarContrasena.php', {
+            //             user: val2
+            //         }, function(resp) {
+            //             if (resp == "false") {
+            //                 alertError("Este usuario no existe.");
+            //                 return false;
+            //             } else {
+            //                 alertSuccess("Correo enviado a " + resp);
+            //             }
+            //         });
+            //     }
+            // });
         }
     </script>
 </body>
