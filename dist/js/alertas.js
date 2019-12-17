@@ -17,7 +17,7 @@ function alertSuccess(s) {
         text: s,
         showConfirmButton: false,
         showCancelButton: true,
-        cancelButtonColor: '#d33',
+        cancelButtonColor: '#00B50C',
         cancelButtonText: 'Entendido'
     });
 }
