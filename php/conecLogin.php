@@ -4,10 +4,8 @@ require "mysql.php";
 $user = $_POST['user'];
 $passwd = openssl_encrypt($_POST['passwd'], "AES-128-ECB", "123");
 
-if (!validarCaptcha()) {
+if (!validarCaptcha()) {//Retorna verdadero si el captcha fue resuleto correctamente
     die("Captcha erroneo");
-} else {
-    die("BIEN");
 }
 
 //echo "Nombre: " . $user;
@@ -87,26 +85,24 @@ if (1) {
 
 function validarCaptcha()
 {
-    if (!isset($_POST["g-recaptcha-response"])) {
+    if (!isset($_POST["g-recaptcha-response"]) || $_POST["g-recaptcha-response"] == "") {
         die("No has pasado el captcha correctamente.");
     }
     $clave_secreta = "6Ld_FsgUAAAAAElDXz1-aXExH0myJ-ONn_RngcTA";
     $recaptcha = $_POST["g-recaptcha-response"];
 
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
-    $data = array(
-        'secret' => $clave_secreta,
-        'response' => $recaptcha
-    );
-    $options = array(
-        'https' => array(
-            'method' => 'POST',
-            'content' => http_build_query($data)
-        )
-    );
-    $context  = stream_context_create($options);
-    $verify = file_get_contents($url, false, $context);
-    $captcha_success = json_decode($verify);
-    echo $captcha_success->success . " - " . $verify;
-    return $captcha_success->success;
+    $post_data = "secret=" . $clave_secreta . "&response=" . $recaptcha . "&remoteip=" . $_SERVER['REMOTE_ADDR'];
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded; charset=utf-8', 'Content-Length: ' . strlen($post_data)));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+    $googresp = curl_exec($ch);
+    $decgoogresp = json_decode($googresp);
+    curl_close($ch);
+    //echo $googresp;
+
+    return $decgoogresp->success == true;
 }
