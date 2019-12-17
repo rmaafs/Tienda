@@ -53,12 +53,10 @@
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-
                     <!-- CARRITO DE COMPRAS -->
                     <li class="dropdown messages-menu" id="html-carrito-compras">
                         <?php include "iconCarritoCompras.php"; ?>
                     </li>
-
                     <!-- CARRITO DE COMPRAS FIN -->
 
                     <!------------------------------------ Usuario (LOGIN)----------------------------------------------->

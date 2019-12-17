@@ -10,13 +10,12 @@ if (isset($_COOKIE['array'])) {
 $size = sizeof($productos);
 ?>
 
-
-<input type="hidden" id="total-productos-carrito" value="<?php echo $size; ?>">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
     <i class="fa fa-shopping-cart"></i>
     <span class="label label-danger" id="numero-total-productos-carrito"><?php echo $size; ?></span>
 </a>
 <ul class="dropdown-menu">
+    <input type="hidden" id="total-productos-carrito" value="<?php echo $size; ?>">
     <li class="header" id="cuantos-productos-tiene-carrito">Tienes <?php echo $size; ?> productos agregados</li>
     <li>
         <!-- inner menu: contains the actual data -->
