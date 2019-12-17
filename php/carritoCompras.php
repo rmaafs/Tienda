@@ -85,7 +85,7 @@ $total = 0;
                 <!-- Main content -->
                 <section class="content">
                     <div class="box box-info">
-                        <form action="finalizarCompra.php" method="POST" id="formCarrito">
+                        <form action="finalizarCompra.php" method="POST" id="formCarrito" onsubmit="return confirmarCompra();">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Carrito de compras</h3>
 
@@ -165,7 +165,7 @@ $total = 0;
                             <!-- /.box-body -->
                             <div class="box-footer clearfix">
                                 <input type="checkbox" onchange="seleccionarTodos(this);"> Seleccionar todo
-                                <button type="button" class="btn btn-success">Seguir comprando</button>
+                                <button type="button" class="btn btn-success" onclick="location.href='index.php'">Seguir comprando</button>
                                 <button type="button" class="btn btn-danger" onclick="borrarSeleccionados();">Borrar productos seleccionados</button>
                                 <table class="col-sm-2 pull-right">
                                     <tr>
@@ -242,6 +242,16 @@ $total = 0;
     </script>
 
     <script>
+        function confirmarCompra() {
+            //Solo permitir comprar si el usuario está logeueado.
+            if (<?php echo isset($_SESSION["nombre"]) ? "true" : "false"; ?>) {
+                return true;
+            } else {
+                alertError("Necesitas tener una sesión iniciada para poder comprar productos.");
+            }
+            return false;
+        }
+
         function changeCantidad(id, value) {
             var val = parseInt(document.getElementById(id + "-cantidad").value);
             var existencias = parseInt(document.getElementById(id + "-existencias").value);

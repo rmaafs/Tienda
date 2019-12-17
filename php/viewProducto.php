@@ -147,7 +147,17 @@ if ($resultado) {
                                                                 <div class="input-group-btn">
                                                                     <button type="button" class="btn btn-danger" onclick="changeCantidad(<?php echo $prod->id . ", -1"; ?>);">-</button>
                                                                 </div>
-                                                                <input type="number" class="form-control" id="<?php echo $prod->id; ?>-cantidad" name="<?php echo $prod->id; ?>-cantidad" value="<?php echo $prod->unidades; ?>" style="text-align: center;">
+                                                                <form action="finalizarCompra.php" method="POST" id="formComprar">
+                                                                    <input type="hidden" name="producto[]" value="<?php echo $prod->id; ?>">
+                                                                    <input type="hidden" name="<?php echo $prod->id; ?>-nombre" value="<?php echo $prod->nombre; ?>">
+                                                                    <input type="hidden" name="<?php echo $prod->id; ?>-descripcion" value="<?php echo $prod->descripcion; ?>">
+                                                                    <input type="hidden" name="<?php echo $prod->id; ?>-precio" value="<?php echo $prod->precio; ?>">
+                                                                    <input type="hidden" name="subtotal" value="0">
+                                                                    <input type="hidden" name="promocion" value="0">
+                                                                    <input type="hidden" name="total" value="0">
+                                                                    <input type="number" class="form-control" id="<?php echo $prod->id; ?>-cantidad" name="<?php echo $prod->id; ?>-cantidad" value="<?php echo $prod->unidades; ?>" style="text-align: center;">
+                                                                </form>
+
                                                                 <div class="input-group-btn">
                                                                     <button type="button" class="btn btn-danger" onclick="changeCantidad(<?php echo $prod->id . ", 1"; ?>);">+</button>
                                                                 </div>
@@ -160,7 +170,7 @@ if ($resultado) {
                                                     <tr>
                                                         <td colspan="2">
                                                             <div class="col-md-6" style="padding:1px;"><button type="button" class="btn btn-block btn-danger btn-lg" onclick="addCarrito();">Añadir al carrito</button></div>
-                                                            <div class="col-md-6" style="padding:1px;"><button type="button" class="btn btn-block btn-warning btn-lg">Comprar ahora</button></div>
+                                                            <div class="col-md-6" style="padding:1px;"><button type="button" class="btn btn-block btn-warning btn-lg" onclick="comprarAhora();">Comprar ahora</button></div>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -170,13 +180,13 @@ if ($resultado) {
                                 </div>
                             </div>
 
-                            <?php 
-                    $_GET["categoria"] = "Celular";
-                    include("includes/listaArticulos.php");?>
+                            <?php
+                                                                                                                                                                                                                                                                                                                                    $_GET["categoria"] = "Celular";
+                                                                                                                                                                                                                                                                                                                                    include("includes/listaArticulos.php"); ?>
 
-                    <?php 
-                    $_GET["categoria"] = "Laptop";
-                    include("includes/listaArticulos.php");?>
+                            <?php
+                                                                                                                                                                                                                                                                                                                                    $_GET["categoria"] = "Laptop";
+                                                                                                                                                                                                                                                                                                                                    include("includes/listaArticulos.php"); ?>
 
                         </div>
                         <!-- /.box -->
@@ -252,6 +262,21 @@ if ($resultado) {
             //pasa por el metodo get a addArray.php
             xhttp.open("GET", "addArray.php?id=" + id + "&imagen=" + imagen + "&nombre=" + nombre + "&precio=" + precio + "&tipo=" + tipo + "&descripcion=" + descripcion + "&Cantidad=" + Cantidad + "&existencias=" + existencias, true);
             xhttp.send();
+
+        }
+
+        function comprarAhora() {
+            //Solo permitir comprar si el usuario está logeueado.
+            if (<?php echo isset($_SESSION["nombre"]) ? "true" : "false"; ?>) {
+                var id = '<?php echo $prod->id; ?>';
+                var precio = '<?php echo $prod->precio; ?>';
+                var Cantidad = parseInt(document.getElementById(id + "-cantidad").value);
+                $("#subtotal").val(parseInt(precio * Cantidad));
+                $("#total").val($("#subtotal").val());
+                $("#formComprar").submit();
+            } else {
+                alertError("Necesitas tener una sesión iniciada para poder comprar productos.");
+            }
 
         }
     </script>

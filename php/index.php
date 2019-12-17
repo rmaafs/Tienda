@@ -86,6 +86,16 @@ if ($conexion->connect_errno) {
                 <section class="content">
                     <!------------------------------------------------------- DATOS DE PRODUCTOS ------------------------------------------------------->
 
+
+                    <?php 
+                    $_GET["categoria"] = "Celular";
+                    include("includes/listaArticulos.php");?>
+
+                    <?php 
+                    $_GET["categoria"] = "Laptop";
+                    include("includes/listaArticulos.php");?>
+
+
                     <div class="box box-info" style="padding:10px;">
 
                         <!-- Categoria -->
@@ -229,15 +239,6 @@ if ($conexion->connect_errno) {
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
-
-
-                    <?php 
-                    $_GET["categoria"] = "Celular";
-                    include("includes/listaArticulos.php");?>
-
-                    <?php 
-                    $_GET["categoria"] = "Laptop";
-                    include("includes/listaArticulos.php");?>
                                     
 
                 </section>

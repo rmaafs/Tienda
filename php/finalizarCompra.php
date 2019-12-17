@@ -1,6 +1,6 @@
 <?php
 $envio = rand(100,500);
-$productos = $_POST["producto"];
+$prods = $_POST["producto"];
 $subtotal = $_POST["subtotal"];
 $promocion = $_POST["promocion"];
 $total = $subtotal + ($subtotal * 16 / 100);
@@ -49,18 +49,6 @@ $total = $subtotal + ($subtotal * 16 / 100);
         <!-- Full Width Column -->
         <div class="content-wrapper">
             <div class="container">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Top Navigation
-                        <small>Example 2.0</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Layout</a></li>
-                        <li class="active">Top Navigation</li>
-                    </ol>
-                </section>
 
                 <!-- Main content -->
                 <section class="invoice">
@@ -90,14 +78,14 @@ $total = $subtotal + ($subtotal * 16 / 100);
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach ($productos as $p) { ?>
+                                    foreach ($prods as $prod) { ?>
                                         <tr>
-                                            <td><?php echo $_POST[$p->id . "-cantidad"]; ?></td>
-                                            <td><?php echo $_POST[$p->id . "-nombre"]; ?></td>
-                                            <td><?php echo $p->id; ?></td>
-                                            <td><?php echo $_POST[$p->id . "-descripcion"]; ?></td>
-                                            <td><?php echo $_POST[$p->id . "-precio"]; ?></td>
-                                            <td><?php echo $_POST[$p->id . "-precio"] * $_POST[$p->id . "-cantidad"]; ?></td>
+                                            <td><?php echo $_POST[$prod . "-cantidad"]; ?></td>
+                                            <td><?php echo $_POST[$prod . "-nombre"]; ?></td>
+                                            <td><?php echo $prod; ?></td>
+                                            <td><?php echo $_POST[$prod . "-descripcion"]; ?></td>
+                                            <td><?php echo $_POST[$prod . "-precio"]; ?></td>
+                                            <td><?php echo $_POST[$prod . "-precio"] * $_POST[$prod . "-cantidad"]; ?></td>
                                         </tr>
                                     <?php }
                                     ?>
@@ -115,7 +103,7 @@ $total = $subtotal + ($subtotal * 16 / 100);
                             <img src="../dist/img/credit/visa.png" alt="Visa" onclick="tarjeta('VISA');" style="cursor: pointer;">
                             <img src="../dist/img/credit/mastercard.png" alt="Mastercard" onclick="tarjeta('Mastercard')" style="cursor: pointer;">
                             <img src="../dist/img/credit/american-express.png" alt="American Express" onclick="tarjeta('American Express')" style="cursor: pointer;">
-                            <img src="../img/oxxo.png" alt="Paypal" style="float: right;" style="cursor: pointer;" onclick="oxxo();">
+                            <img src="../img/oxxo.png" alt="Paypal" style="float: right; cursor: pointer;" onclick="oxxo();">
 
                             <div id="modo-tarjeta">
                                 <div class="form-group">
@@ -245,7 +233,7 @@ $total = $subtotal + ($subtotal * 16 / 100);
                     <div class="row no-print">
                         <div class="col-xs-12">
                             <a href="carritoCompras.php" class="btn btn-default"><i class="fa fa-print"></i> Regresar</a>
-                            <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Confirmar compra
+                            <button type="button" class="btn btn-success pull-right" onclick="confirmarCompra();"><i class="fa fa-credit-card"></i> Confirmar compra
                             </button>
                         </div>
                     </div>
@@ -296,6 +284,15 @@ $total = $subtotal + ($subtotal * 16 / 100);
         function oxxo() {
             $("#modo-tarjeta").hide();
             $("#modo-oxxo").show();
+        }
+
+        function confirmarCompra() {
+            //Solo permitir comprar si el usuario está logeueado.
+            if (<?php echo isset($_SESSION["nombre"]) ? "true" : "false"; ?>) {
+                //Comprar...
+            } else {
+                alertError("Necesitas tener una sesión iniciada para poder comprar productos.");
+            }
         }
     </script>
 </body>
