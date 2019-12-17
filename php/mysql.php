@@ -25,6 +25,7 @@ function selectBD($sql) {
 function insertDB($sql) {
     $conexion = conexion();
     $conexion->query($sql);
+    echo  $conexion->error;
     return $conexion->affected_rows >= 1;
 }
 

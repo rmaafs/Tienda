@@ -2,7 +2,7 @@
     require "mysql.php";
 
     $user = $_POST['user'];
-    $passwd = $_POST['passwd'];
+    $passwd = openssl_encrypt($_POST['passwd'],"AES-128-ECB", "123");
 
     //echo "Nombre: " . $user;
     //echo "passwd: " . $passwd;
@@ -19,7 +19,7 @@
                 echo "<br>";
                 echo "Usuario bloqueado";
             }else{
-                $resultado = selectBD('select usuario, con from login where usuario = "' . $user . '" and con = "'.$passwd.'" ');
+                $resultado = selectBD('select usuario, con, nombre, apellidoPat, apellidoMat from login where usuario = "' . $user . '" and con = "'.$passwd.'" ');
                 if( $resultado){
                     //echo "<br>";
                     echo "Bienvenido";
@@ -34,6 +34,13 @@
                         //echo "<br>";
                         //echo "Fallo al actualizar el estado";
                     }
+
+                    session_start();
+                    $fila = $resultado -> fetch_assoc();
+                    $_SESSION["nombre"] = $fila['nombre'];
+                    $_SESSION["apellidoPat"] = $fila['apellidoPat'];
+                    $_SESSION["apellidoMat"] = $fila['apellidoMat'];
+
                     header('Location: checkLogin.php');
                 }else{
                     echo "<br>";

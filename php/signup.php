@@ -1,19 +1,23 @@
 <?php
 
-require 'database.php';
+require 'mysql.php';
 
 $message = '';
+$usuario = isset($_POST['usuario']) ? $_POST['usuario'] : "";
+$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : "";
+$ape_pat = isset($_POST['ape_pat']) ? $_POST['ape_pat'] : "";
+$ape_mat = isset($_POST['ape_mat']) ? $_POST['ape_mat'] : "";
+$email = isset($_POST['email']) ? $_POST['email'] : "";
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
   if ($_POST['password'] == $_POST['confirm_password']) {
-    $sql = "INSERT INTO users (email, password, id) VALUES (:email, :password, :id)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':email', $_POST['email']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $stmt->bindParam(':password', $password);
-    $stmt->bindParam(':id', $_POST['id']);
-    if ($stmt->execute()) {
-      $message = 'Usuario creado satisfactoriamente';
+
+    $password = openssl_encrypt($_POST['password'],"AES-128-ECB", "123");
+
+    $sql = "INSERT INTO login (usuario, con, nombre, apellidoPat, apellidoMat, email, estado, intentos, acc, tam, fondo, letra) ";
+    $sql .= "VALUES('$usuario', '$password', '$nombre', '$ape_pat', '$ape_mat', '$email', '1', '0', '1', '0.9', '#FFF', '#000')";
+    if (insertDB($sql)) {
+      header('Location: login.php?s=1');
     } else {
       $message = 'Lo sentimos, debe haber habido un problema al crear su cuenta';
     }
@@ -46,10 +50,13 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   <span>o <a href="login.php">Login</a></span>
 
   <form action="signup.php" method="POST">
-    <input name="id" type="number" placeholder="id" required>
-    <input name="email" type="text" placeholder="Email" required>
-    <input name="password" type="password" placeholder="Password" required>
-    <input name="confirm_password" type="password" placeholder="Confirmar Password" required>
+    <input name="usuario" type="text" placeholder="Usuario" required value="<?php echo $usuario;?>">
+    <input name="email" type="text" placeholder="Email" required value="<?php echo $email;?>">
+    <input name="password" type="password" placeholder="Contraseña" required>
+    <input name="confirm_password" type="password" placeholder="Confirmar Contraseña" required>
+    <input name="nombre" type="text" placeholder="Nombre" required value="<?php echo $nombre;?>">
+    <input name="ape_pat" type="text" placeholder="Apellido Paterno" required value="<?php echo $ape_pat;?>">
+    <input name="ape_mat" type="text" placeholder="Apellido Materno" required value="<?php echo $ape_mat;?>">
     <input type="submit" value="Enviar">
   </form>
 

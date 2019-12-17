@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!------------------------------------------------------------ HEADER Y NAV ------------------------------------------------------------>
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -60,33 +63,40 @@
                     <!-- CARRITO DE COMPRAS FIN -->
 
                     <!------------------------------------ Usuario (LOGIN)----------------------------------------------->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Maafs</span>
-                        </a>
+                    <?php
+                        //Si el usuario está logeado...
+                        if (isset($_SESSION["nombre"])) { ?>
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs"><?php echo $_SESSION["nombre"];?></span>
+                            </a>
 
-                        <ul class="dropdown-menu">
-                            <!-- Opciones del Perfil -->
-                            <li class="user-header">
-                                <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                <p>
-                                    El buen maafs - Web Developer
-                                    <small>Miembro desde 2018</small>
-                                </p>
-                            </li>
+                            <ul class="dropdown-menu">
+                                <!-- Opciones del Perfil -->
+                                <li class="user-header">
+                                    <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        <?php echo $_SESSION["nombre"] . " " . $_SESSION["apellidoPat"] . " " . $_SESSION["apellidoMat"];?> - Web Developer
+                                        <small>Miembro desde 2019</small>
+                                    </p>
+                                </li>
 
-                    </li>
-                    <!-- Menu Footer-->
-                    <li class="user-footer">
-                        <div class="pull-left">
-                            <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                        </div>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                            </div>
 
-                        <div class="pull-right">
-                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                        </div>
-                    </li>
+                            <div class="pull-right">
+                                <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                    <?php
+                        } else { ?>
+                        <li><a href="login.php">Iniciar Sesión</a></li>
+                    <?php } ?>
                 </ul>
                 </li>
                 </ul>
