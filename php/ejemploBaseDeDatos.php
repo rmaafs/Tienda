@@ -3,14 +3,14 @@
 //require "mysql.php"; //Descomenté esta línea para evitar hacer peticiones la base de datos sin querer.
 
 //Obtenemos resultados
-$resultado = selectBD('select usNombre from usuarios');//Seleccionar el campo usNombre de la tabla usuarios
+$resultado = selectBD('SELECT usNombre FROM usuarios');//Seleccionar el campo usNombre de la tabla usuarios
 if ($resultado){//Si $resultado != null, significa que si hay resultados del query.
     $fila = $resultado -> fetch_assoc();//Obtenemos los resultados de LA PRIMERA FILA y lo ponemos en $fila.
     echo "Hola " . $fila['usNombre'];//Obtenemos el campo usNombre de $fila.
 }
 
 //Obtenemos resultados
-$resultado = selectBD('select usNombre from usuarios');//Seleccionar el campo usNombre de la tabla usuarios
+$resultado = selectBD('SELECT usNombre FROM usuarios');//Seleccionar el campo usNombre de la tabla usuarios
 if ($resultado){//Si $resultado != null, significa que si hay resultados del query.
     while ($fila = $resultado -> fetch_assoc()) {//Vamos a ciclar cada FILA que nos ha retornado la consulta, y se guarda en $fila
         //En caso de que el query nos retorne 3 filas, en cada vuelta del while, $fila va a cambiar.

@@ -1,5 +1,5 @@
 <?php
-$envio = rand(100,500);
+$envio = rand(100, 500);
 $prods = $_POST["producto"];
 $subtotal = $_POST["subtotal"];
 $promocion = $_POST["promocion"];
@@ -112,12 +112,12 @@ $total = $subtotal + ($subtotal * 16 / 100);
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="width: 100%;">Titular de la tarjeta</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Rodrigo Maafs Atilano">
+                                    <input type="text" class="form-control" id="titular-tarjeta" placeholder="Rodrigo Maafs Atilano">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="width: 100%;">Número de tarjeta</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="0496 1252 51252">
+                                    <input type="text" class="form-control" id="numero-tarjeta" placeholder="0496 1252 51252">
                                 </div>
 
                                 <div class="form-group">
@@ -215,8 +215,8 @@ $total = $subtotal + ($subtotal * 16 / 100);
                                         <td>MXS $<?php echo $envio; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Descuento (Cupón):</th>
-                                        <td>MXS $<span id="total-promocion"><?php echo $promocion; ?></td>
+                                        <th>Descuento (Cupón) <label type="text" id="total-descuento">0</label>%:</th>
+                                        <td>MXS $<span id="total-promocion"><?php echo $promocion; ?></span></td>
                                     </tr>
                                     <tr>
                                         <th>Total:</th>
@@ -226,6 +226,29 @@ $total = $subtotal + ($subtotal * 16 / 100);
                             </div>
                         </div>
                         <!-- /.col -->
+
+
+                        <div class="col-md-6" style="padding-top:20px;">
+                            <legend>Cupones de descuento</legend>
+                            <div class="input-group">
+                                <input type="text" name="cupon1" id="cupon1" placeholder="Cupon 1" class="form-control">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-success btn-flat" onclick="verificarCupon(document.getElementById('cupon1'), this);">Canjear</button>
+                                </span>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" name="cupon2" id="cupon2" placeholder="Cupon 2" class="form-control">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-success btn-flat" onclick="verificarCupon(document.getElementById('cupon2'), this);">Canjear</button>
+                                </span>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" name="cupon3" id="cupon3" placeholder="Cupon 3" class="form-control">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-success btn-flat" onclick="verificarCupon(document.getElementById('cupon3'), this);">Canjear</button>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.row -->
 
@@ -261,6 +284,64 @@ $total = $subtotal + ($subtotal * 16 / 100);
     <script src="../dist/js/demo.js"></script>
 
     <script>
+        function verificarCupon(input, btn) {
+            //Si el botón dice quitar, mejor ejecutamos la función para quitar cupón
+            if (btn.innerHTML == "Quitar") {
+                quitarCupon(input, btn);
+                return;
+            }
+
+            if (input.value == "") {
+                alertError("Por favor ingresa un cupón");
+                return;
+            }
+
+            $.get("buscarCupon.php?cupon=" + input.value, function(data, status) {
+                if (data == "false") {
+                    alertError("Lo sentimos, este cupón no existe o está caducado");
+                } else if (data == "duplicate") {
+                    alertError("Este cupón ya lo estas utilizando");
+                } else {
+                    var json = JSON.parse(data);
+                    alertSuccess("¡Cupón compatible!");
+                    btn.innerHTML = "Quitar";
+                    btn.classList.remove("btn-success");
+                    btn.classList.add("btn-danger");
+                    input.disabled = true;
+                    $("#total-descuento").html(parseInt(parseInt($("#total-descuento").html()) + parseInt(json.descuento)));
+                    refreshPrecios();
+                    
+                }
+            });
+        }
+
+        function quitarCupon(input, btn) {
+            $.get("quitarCupon.php?cupon=" + input.value, function(data, status) {
+                if (data != "false") {
+                    alertSuccess("Cupon removido con éxito");
+                    btn.innerHTML = "Canjear";
+                    btn.classList.add("btn-success");
+                    btn.classList.remove("btn-danger");
+                    input.disabled = false;
+                    $("#total-descuento").html(parseInt(parseInt($("#total-descuento").html()) - parseInt(data)));
+                    refreshPrecios();
+                }
+            });
+        }
+
+        function refreshPrecios() {
+
+            cambiarPais(document.getElementById("pais").value);
+
+
+            var descuento = parseInt($("#total-descuento").html());
+            var total = parseInt($("#total-total").html());
+            var descontado = parseInt( descuento * total / 100 );
+            
+            $("#total-promocion").html(descontado);
+            $("#total-total").html(parseInt(total - descontado));
+        }
+
         function cambiarPais(select) {
             var impuesto = "16"; //Impuesto para MX
             if (select.value == "USA") {
