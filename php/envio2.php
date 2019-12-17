@@ -2,7 +2,7 @@
 	//variables para los campos de texto
 	$nombre = "isaias emmanuel ";
 	$apellidos = "ramirez gonzalez";
-	$mail = "king.isaias64@gmail.com";
+	$mail = "smshopmx@gmail.com";
 	$mensaje = "gracias por suscribirte , como agradecimiento le enviamos un cupon de regalo";
 
 	//variables para los datos del archivo
@@ -12,7 +12,16 @@
 	$tempFile = $_FILES["archivo"]["tmp_name"];
 	$fecha= time();
 	$fechaFormato = date("j/n/Y",$fecha);
-
+	$carta.="Content-type:text/html";
+	$carta = "<!DOCTYPE html>
+	<html>
+	<head>
+		
+	</head>
+	<body>
+	<img src='https://fmaps.xyz/Tienda/dist/img/GINA25.jpeg' alt=''>
+	</body>
+	</html>";
 	$correoDestino = "$mail";
 	
 	//asunto del correo
@@ -21,7 +30,7 @@
  	
  	// -> mensaje en formato Multipart MIME
 	$cabecera = "MIME-VERSION: 1.0\r\n";
-	$cabecera .= "Content-type: multipart/mixed;";
+	$cabecera .= "Content-type: text/html;";
 	//$cabecera .="boundary='=P=A=L=A=B=R=A=Q=U=E=G=U=S=T=E=N='"
 	$cabecera .="boundary=\"=C=T=E=C=\"\r\n";
 	$cabecera .= "From: {$mail}";
@@ -58,10 +67,8 @@
     $cuerpo .= "--=C=T=E=C=--\r\n";
     
 	//Enviar el correo
-	if(mail($correoDestino, $asunto, $cuerpo, $cabecera)){
+	if(mail($correoDestino, $asunto, $carta, $cabecera)){
 		echo "Correo enviado";
 	}else{
 		echo "Error de envio";
 	}
-
-?>
