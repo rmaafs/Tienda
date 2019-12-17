@@ -1,34 +1,10 @@
 <?php
 setcookie("user", '', time() - 1, '/');
 setcookie("pass", '', time() - 1, '/');
+
+$clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
+
 ?>
-
-
-<!--<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-   <form action="conecLogin.php" method="post" id="formLogin">
-       <label for="">Ingresa al usuario:</label>
-    <input type="text" name="user" required id="user1">
-    <br>
-    <label for="">Ingresa la contraseña:</label>
-    <input type="text" name="passwd" required id="passwd1">
-    <br>
-    <label for="">Captcha: </label>
-    <input type="text" name="cap" require id="captach">
-
-    <input type="button" onclick="verificar()" value="Enviar" >
-    <br>
-    <input type="checkbox">Recordar Usuario
-   </form>
-</body>
-</html>-->
-
-
 <html>
 
 <head>
@@ -50,6 +26,7 @@ setcookie("pass", '', time() - 1, '/');
     <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="hold-transition login-page" style="background-color: #000230">
@@ -70,10 +47,7 @@ setcookie("pass", '', time() - 1, '/');
                     <input type="pass" class="form-control" placeholder="Contraseña" name="passwd" id="passwd1">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
-                <div class="form-group has-feedback">
-                    <input type="pass" class="form-control" placeholder="Captcha" name="captcha" id="captcha">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                </div>
+                <div class="g-recaptcha" data-sitekey="<?php echo $clave_sitio; ?>"></div>
                 <div class="row">
                     <div class="col-xs-7">
                         <div class="checkbox icheck">
@@ -111,12 +85,13 @@ setcookie("pass", '', time() - 1, '/');
     <script src="../plugins/iCheck/icheck.min.js"></script>
     <script src="../plugins/sweetalert/dist/sweetalert2.all.js"></script>
     <script src="../dist/js/alertas.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+    </script>
     <script>
-
         <?php
-        if (isset($_GET["s"]) && $_GET["s"] == "1") {
-            echo "alertSuccess('Usuario registrado con éxito.');";
-        }
+                                                        if (isset($_GET["s"]) && $_GET["s"] == "1") {
+                                                            echo "alertSuccess('Usuario registrado con éxito.');";
+                                                        }
         ?>
 
         function verificar() {
@@ -124,8 +99,6 @@ setcookie("pass", '', time() - 1, '/');
                 alertError("El dato Usuario no puede estar vacío.");
             } else if (document.getElementsByName("passwd")[0].value.length == 0) {
                 alertError("El dato Contraseña no puede estar vacío.");
-            } else if (document.getElementsByName("captcha")[0].value.length == 0) {
-                alertError("El captcha no puede estar vacío.");
             } else {
                 send();
             }
