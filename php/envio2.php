@@ -10,8 +10,16 @@
 	
 	$fecha= time();
 	$fechaFormato = date("j/n/Y",$fecha);
-	$carta.="Content-type:image/jpeg";
-	$carta = $img;
+	$carta.="Content-type:text/html";
+	$carta = "<!DOCTYPE html>
+	<html>
+	<head>
+		
+	</head>
+	<body>
+	<img src='". $img . "' alt=''>
+	</body>
+	</html>";
 	$correoDestino = "$mail";
 	
 	//asunto del correo
@@ -20,7 +28,7 @@
  	
  	// -> mensaje en formato Multipart MIME
 	$cabecera = "MIME-VERSION: 1.0\r\n";
-	$cabecera .= "Content-type: text/html;";
+	$cabecera .= "Content-type: text/html; charset=iso-8859-1";
 	//$cabecera .="boundary='=P=A=L=A=B=R=A=Q=U=E=G=U=S=T=E=N='"
 	$cabecera .="boundary=\"=C=T=E=C=\"\r\n";
 	$cabecera .= "From: {$mail}";
