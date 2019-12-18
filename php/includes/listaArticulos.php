@@ -1,3 +1,6 @@
+<!-- Extra styles -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <?php
 require_once "mysql.php";
 
@@ -40,7 +43,7 @@ if ($resultado) { ?>
                     <div class="col-md-2" style="text-align: center;">
                         <div class="img-producto-categoria">
                             <a href="viewProducto.php?id=<?php echo $producto->id; ?>" title="<?php echo $producto->nombre ?>">
-                                <img class="zoom;" src="<?php echo $producto->imagen ?>" alt="<?php echo $producto->nombre ?>" title="<?php echo $producto->nombre ?>">
+                                <img class="w3-hover-sepia;" src="<?php echo $producto->imagen ?>" alt="<?php echo $producto->nombre ?>" title="<?php echo $producto->nombre ?>">
                             </a>
                         </div>
                         <h5 href="viewProducto.php?id=<?php echo $producto->id; ?>" title="<?php echo $producto->nombre ?>">

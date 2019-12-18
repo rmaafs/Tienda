@@ -51,13 +51,6 @@ if ($conexion->connect_errno) {
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="../dist/js/carrito.js"></script>
 
-    <style>
-        .darkt {
-            background-color: #323232;
-            color: whitesmoke;
-        }
-    </style>
-
     <!------------------------------------------------------------ LINKS FIN ------------------------------------------------------------>
 
 
