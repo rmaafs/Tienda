@@ -7,6 +7,10 @@ if ($conexion->connect_errno) {
     die('Error en la conexion');
 }
 ?>
+<?php  session_start();
+        if ((isset($_SESSION['usuario'])) && $_SESSION['usuario']=="elmaps"){
+
+        }else {header('Location: index.php'); }?>
 
 <!DOCTYPE html>
 <html>
@@ -68,7 +72,12 @@ if ($conexion->connect_errno) {
 <body class="hold-transition skin-blue layout-top-nav">
     <div class="wrapper">
 
-        <?php include("includes/navbar.php"); ?>
+        <?php include("includes/navbar.php"); 
+        
+        ?>
+        
+        
+
 
         <!-- Full Width Column -->
         <div class="content-wrapper">
@@ -110,15 +119,6 @@ if ($conexion->connect_errno) {
                                     while ($mostrar = mysqli_fetch_array($res)) {
                                         ?>
                                         <tr class="active">
-<<<<<<< HEAD
-                                            <td><?php echo $mostrar['prodID'] ?></td>
-                                            <td><?php echo $mostrar['prodNombre'] ?></td>
-                                            <td><?php echo $mostrar['prodDescripcion'] ?></td>
-                                            <td>$<?php echo $mostrar['prodPrecio'] ?></td>
-                                            <td><?php echo $mostrar['prodExistencias'] ?> Unidades</td>
-                                            <td><img class="img-rounded" src="<?php echo $mostrar['prodImagen'] ?>" alt="imagen">
-                                                Ruta: <b><?php echo $mostrar['prodImagen'] ?></b></td>
-=======
                                             <td><?php echo $mostrar['id'] ?></td>
                                             <td><?php echo $mostrar['nombre'] ?></td>
                                             <td><?php echo $mostrar['tipo'] ?></td>
@@ -127,7 +127,6 @@ if ($conexion->connect_errno) {
                                             <td><?php echo $mostrar['Cantidad'] ?> Unidades</td>
                                             <td><img class="img-rounded" src="<?php echo $mostrar['imagen'] ?>" alt="imagen"></td>
 
->>>>>>> e07ad5abb69f8b4cc41df79e1959dc725e6c9a48
                                         </tr>
                                     <?php
                                     }
