@@ -35,6 +35,7 @@ if (1) {
 
                     session_start();
                     $fila = $resultado->fetch_assoc();
+                    $_SESSION["usuario"]=$fila["usuario"];
                     $_SESSION["nombre"] = $fila['nombre'];
                     $_SESSION["apellidoPat"] = $fila['apellidoPat'];
                     $_SESSION["apellidoMat"] = $fila['apellidoMat'];

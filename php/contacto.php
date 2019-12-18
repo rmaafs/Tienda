@@ -26,12 +26,12 @@
     <!-- Extra styles -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<style>
-    .formS{
-        background:lightblue; 
-        color:black;
-    }
-</style>
+    <style>
+        .formS {
+            background: lightblue;
+            color: black;
+        }
+    </style>
 
 </head>
 <!--CHAT-->
@@ -49,10 +49,10 @@
                 <section class="content">
                     <div class="box box-info" style="background-color: white">
 
-<!--------------------------------------------------------------- INFO CONTACTO ------------------------------------------------------------->
-                     <!-- Accordion  -->
-                        <div class="accordion" id="accordionExample" >
-                            <div class="card" >
+                        <!--------------------------------------------------------------- INFO CONTACTO ------------------------------------------------------------->
+                        <!-- Accordion  -->
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
                                 <div class="card-header" id="headingOne" style="text-align:center;">
                                     <h2 class="mb-0">
                                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -63,52 +63,52 @@
 
                                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" style="margin-left:3%; margin-right:3%;">
                                     <div class="card-body">
-                                    <p>Ofrece servicio en los siguientes casos:</p>
-                            <ul>
-                                <li>Reporte de tarjeta robada o extraviada.</li>
-                                <li>Obtención de Número de Cliente.</li>
-                                <li>Saldos y fechas de pago vía telefónica.</li>
-                                <li>Aclaración o duda general sobre el Estado de Cuenta.</li>
-                            </ul>
+                                        <p>Ofrece servicio en los siguientes casos:</p>
+                                        <ul>
+                                            <li>Reporte de tarjeta robada o extraviada.</li>
+                                            <li>Obtención de Número de Cliente.</li>
+                                            <li>Saldos y fechas de pago vía telefónica.</li>
+                                            <li>Aclaración o duda general sobre el Estado de Cuenta.</li>
+                                        </ul>
 
-                            <p>D.F. y Área Metropolitana: <a href="tel: 51303900">51-30-39-00</a></p>
+                                        <p>D.F. y Área Metropolitana: <a href="tel: 51303900">51-30-39-00</a></p>
 
-                            <p>Interior de la República: <a href="tel: 018009002123">01-800-900-2123</a></p>
-                            <h3>Atención a Clientes de Servicio Técnico</h3>
-                            <p>D.F. y Área Metropolitana: <a href="tel: 51303940">5130•3940</a></p>
-                            <p>Interior de la República: <a href="tel: 018003373277">01•800•33•CUACK (73277)</a></p>
-                            <h3>Atención exclusiva a compras por Internet</h3>
-                            <p>Brindamos servicio personalizado a nuestros Clientes de Internet para atender temas como:</p>
-                            <ul>
-                                <li>Asesoría para navegar en la página y realizar sus compras.</li>
-                                <li>Dudas, comentarios e información referentes a sus Compras realizadas por Internet.</li>
-                                <li>Asistencia con contraseñas y activación de cuentas del portal.</li>
-                                <li>Aclaración de pagos en Línea.</li>
-                            </ul>
+                                        <p>Interior de la República: <a href="tel: 018009002123">01-800-900-2123</a></p>
+                                        <h3>Atención a Clientes de Servicio Técnico</h3>
+                                        <p>D.F. y Área Metropolitana: <a href="tel: 51303940">5130•3940</a></p>
+                                        <p>Interior de la República: <a href="tel: 018003373277">01•800•33•CUACK (73277)</a></p>
+                                        <h3>Atención exclusiva a compras por Internet</h3>
+                                        <p>Brindamos servicio personalizado a nuestros Clientes de Internet para atender temas como:</p>
+                                        <ul>
+                                            <li>Asesoría para navegar en la página y realizar sus compras.</li>
+                                            <li>Dudas, comentarios e información referentes a sus Compras realizadas por Internet.</li>
+                                            <li>Asistencia con contraseñas y activación de cuentas del portal.</li>
+                                            <li>Aclaración de pagos en Línea.</li>
+                                        </ul>
 
-                            <p>Teléfono: D.F. y area Metropolitana <a href="tel: 01 55 53 45 16 06">(01 55) 53 45 16 06</a></p>
+                                        <p>Teléfono: D.F. y area Metropolitana <a href="tel: 01 55 53 45 16 06">(01 55) 53 45 16 06</a></p>
 
-                            <p>Interior de la Republica <a href="tel: 01 800 836 82 46">(01 800) 836 82 46</a></p>
-                            <p>Horario: Lunes a Viernes de 9:00 a 20:00 hrs, Sábado y Domingo de 11:00 a 20:00 hrs</p>
-                            <p>Correo electrónico: <a href="mailto: TiendaE.internet@gmail.com.mx">maafs.internet@gmail.com.mx</a></p>
-                        </div>
+                                        <p>Interior de la Republica <a href="tel: 01 800 836 82 46">(01 800) 836 82 46</a></p>
+                                        <p>Horario: Lunes a Viernes de 9:00 a 20:00 hrs, Sábado y Domingo de 11:00 a 20:00 hrs</p>
+                                        <p>Correo electrónico: <a href="mailto: TiendaE.internet@gmail.com.mx">maafs.internet@gmail.com.mx</a></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     <!-- Accordion end -->
- 
+
                     <div class="box-header with-border">
-                            
-
-<!--------------------------------------------------------------- INFO CONTACTO ------------------------------------------------------------->
 
 
-<!--------------------------------------------------------------- FORM ------------------------------------------------------------->
+                        <!--------------------------------------------------------------- INFO CONTACTO ------------------------------------------------------------->
+
+
+                        <!--------------------------------------------------------------- FORM ------------------------------------------------------------->
 
 
                         <div class="box-footer clearfix formS" style="display:block;">
-                            <form  action="enviarForm.php" method="post" style="text-align:center">
+                            <form action="enviarForm.php" method="post" style="text-align:center">
                                 <h2>Contáctanos</h2><br>
                                 <p>En caso de contar con algún otro comentario, duda o
                                     sugerencia puedes hacerla llegar vía electrónica en el siguiente formulario,
@@ -118,7 +118,7 @@
 
                                 <!-- FORMULARIO -->
                                 <div>
-                                    <fieldset style="width: 100%;" >
+                                    <fieldset style="width: 100%;">
                                         <dl>
                                             <dt><label>Area que desea contactar:</label></dt>
                                             <dd>
@@ -158,7 +158,7 @@
                                         <dl>
                                             <dt>
                                                 <label>Estado:</label></dt>
-                                            <dd><span  class="select">
+                                            <dd><span class="select">
                                                     <select name="estado">
                                                         <option value="">-No Seleccionado-</option>
                                                         <option value="Aguascalientes">Aguascalientes</option>
@@ -251,15 +251,25 @@
 
                         <!-- OPCION DE REGISTRO-->
 
-                        <div class="w3-container w3-hide-small" style="background: #EB0028; color: #fff; padding: 30px 0; text-align: center; height:170px; width:40%;">
+                        <div class="w3-container w3-hide-small" >
                             <div>
                                 <div>
                                     <div>
                                         <h5>¡Regístrate a nuestro Newsletter!</h5>
                                     </div>
                                     <div>
-                                        <input type="text" id="newsletter" name="newsletter" placeholder="Tu correo electrónico" style="color:black; box-sizing: border-box; height:30px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px;">
-                                        <button name="botonsub" href="#" onclick="" style="box-sizing: border-box;height: 40px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px; min-width: 50px;background: #fff!important; color: #000;">Suscribirse</button>
+                                        <form action="envio2.php" method="POST" enctype="multipart/form-data">
+
+                                        <input type="text" id="newsletter" name="correo" placeholder="Tu correo electrónico" style="color:black; box-sizing: border-box; height:30px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px;">
+                                        
+                                        <select name="archivo" >
+                        
+                                            <option value="../dist/img/compu.png">Premio 1</option>
+                                            <option value="../dist/img/icons.png">Premio 2</option>
+                                            <option value="../dist/img/visa.png">Premio 3</option>
+                                        </select>
+                                        <button type="submit" name="botonsub" style="box-sizing: border-box;height: 40px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px; min-width: 50px;background: #fff!important; color: #000;">Suscribirse</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
