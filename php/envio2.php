@@ -2,7 +2,7 @@
 	//variables para los campos de texto
 	$nombre = "isaias emmanuel ";
 	$apellidos = "ramirez gonzalez";
-	$mail = "king.isaias64@gmail.com";
+	$mail = "smshopmx@gmail.com";
 	$mensaje = "gracias por suscribirte , como agradecimiento le enviamos un cupon de regalo";
 
 	//variables para los datos del archivo
