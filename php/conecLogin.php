@@ -39,6 +39,7 @@ if ($nom) {
 
                 session_start();
                 $fila = $resultado->fetch_assoc();
+                $_SESSION["usuario"]=$fila["usuario"];//la necesito para validar en el nav y enseñar a y b de prod
                 $_SESSION["nombre"] = $fila['nombre'];
                 $_SESSION["apellidoPat"] = $fila['apellidoPat'];
                 $_SESSION["apellidoMat"] = $fila['apellidoMat'];
