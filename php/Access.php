@@ -128,7 +128,7 @@
             tamanoLetra: document.getElementById("tam").style.fontSize
         }, function(resp) {
             if (resp != "true") {
-                alertError("Algo salió mal " + resp);
+                alertError("Algo salió mal :" + resp + ".");
                 return false;
             }
         });
