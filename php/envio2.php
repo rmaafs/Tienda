@@ -19,7 +19,7 @@
 		
 	</head>
 	<body>
-	<img src='https://fmaps.xyz/Tienda/dist/img/compu.png' alt=''>
+	<img src='https://fmaps.xyz/Tienda/dist/img/GINA25.jpeg' alt=''>
 	</body>
 	</html>";
 	$correoDestino = "$mail";
