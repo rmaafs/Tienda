@@ -7,6 +7,10 @@ if ($conexion->connect_errno) {
     die('Error en la conexion');
 }
 ?>
+<?php  session_start();
+        if ((isset($_SESSION['usuario'])) && $_SESSION['usuario']=="elmaps"){
+
+        }else {header('Location: index.php'); }?>
 
 <!DOCTYPE html>
 <html>
@@ -68,7 +72,12 @@ if ($conexion->connect_errno) {
 <body class="hold-transition skin-blue layout-top-nav">
     <div class="wrapper">
 
-        <?php include("includes/navbar.php"); ?>
+        <?php include("includes/navbar.php"); 
+        
+        ?>
+        
+        
+
 
         <!-- Full Width Column -->
         <div class="content-wrapper">
@@ -110,7 +119,7 @@ if ($conexion->connect_errno) {
                                     while ($mostrar = mysqli_fetch_array($res)) {
                                         ?>
                                         <tr class="active">
-                                        <td><?php echo $mostrar['id'] ?></td>
+                                            <td><?php echo $mostrar['id'] ?></td>
                                             <td><?php echo $mostrar['nombre'] ?></td>
                                             <td><?php echo $mostrar['tipo'] ?></td>
                                             <td><?php echo $mostrar['descripcion'] ?></td>
