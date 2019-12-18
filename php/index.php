@@ -22,7 +22,7 @@ if ($conexion->connect_errno) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
 
-        <?php include "titlePrefix.php"; ?>Top Navigation</title>
+        <?php include "titlePrefix.php"; ?>SMShop | Inicio</title>
     <?php include "favicon.php" ?>
 
     <!------------------------------------------------------------ LINKS ------------------------------------------------------------>
