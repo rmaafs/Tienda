@@ -21,11 +21,14 @@ session_start();
                 </button>
             </div>
 
+            
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
 
                     <!-- LINK DE INICIO -->
                     <li class="active"><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
+                    <!-- TIENDA -->
+                    <li><a href="Tienda.php">Tienda</a></li>
                     <!-- LINK DE ACERCA DE -->
                     <li><a href="acercaDe.php">Acerca De</a></li>
                     <!-- CONTACTANOS -->
@@ -43,6 +46,17 @@ session_start();
 
                         </ul>
                     </li>
+                    <?php 
+                   
+                    if ((isset($_SESSION['nombre'])&& $_SESSION['nombre'])=="Rodrigo") {
+                        ?>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"></a></li>                           
+                            <li><a href="AyBdeproductos.php">A o B productos</a></li>
+                        </ul>
+                    </li><?php } ?>
                 </ul>
 
             <!-- Navbar Right Menu -->

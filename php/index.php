@@ -219,23 +219,19 @@ if ($conexion->connect_errno) {
                         <div class="box-body">
                             <div class="unified_widget rcmBody" ,="" style="margin:20px">
                                 <h2 style="text-align:left;">Promociones: Nuevas ofertas, todos los días</h2>
-                                <p style="text-align:left;">
-                                    <span>
 
-                                        Si buscas ofertas y promociones especiales de SMShop México, visita nuestra página de Promociones. Nuestras <b>Ofertas del Día</b> son las ofertas más destacadas. Nuestras <b>Ofertas Relámpago</b> son ofertas de tiempo limitado con precios extraordinarios, cómpralas rápidamente ya que estas ofertas se acabarán en poco tiempo. Nuestras <b>Ofertas destacadas</b> incluyen cientos de productos dentro de SMShop.com.mx.
-
-                                    </span>
-                                </p>
                                 <table>
                                     <?php
-                                    require_once "Producto.php";
-                                        $sql = "SELECT * from productos_1 where  Cantidad > 0 ORDER BY RAND() LIMIT 1";
-                                    $result = mysqli_query($conexion, $sql);
-                                    while ($mostrar = mysqli_fetch_array($result)) {
-                                        ?>
+                                                                                                                                                                                                                                                                                                                        require_once "Producto.php";
+                                                                                                                                                                                                                                                                                                                        $sql = "SELECT * from productos_1 where  Cantidad > 0 ORDER BY RAND() LIMIT 1";
+                                                                                                                                                                                                                                                                                                                        $result = mysqli_query($conexion, $sql);
+                                                                                                                                                                                                                                                                                                                        while ($mostrar = mysqli_fetch_array($result)) {
+                                    ?>
 
                                         <tr>
-                                            <td id="td"><h2>OFERTA!</h2></td>
+                                            <td id="td">
+                                                <h2>OFERTA!</h2>
+                                            </td>
                                             <td id="td"><img class="w3-hover-sepia" style="width:70px; height:60px;" src="<?php echo $mostrar['imagen'] ?>"></td>
                                             <td id="td"><?php echo $mostrar['nombre'] ?></td>
                                             <td id="td">$<?php echo $mostrar['precio'] ?></td>
@@ -250,10 +246,19 @@ if ($conexion->connect_errno) {
 
 
                                     <?php
-                                    }
+                                                                                                                                                                                                                                                                                                                        }
 
                                     ?>
                                 </table>
+
+                                <hr>
+                                <p style="text-align:left;">
+                                    <span>
+
+                                        Si buscas ofertas y promociones especiales de SMShop México, visita nuestra página de Promociones. Nuestras <b>Ofertas del Día</b> son las ofertas más destacadas. Nuestras <b>Ofertas Relámpago</b> son ofertas de tiempo limitado con precios extraordinarios, cómpralas rápidamente ya que estas ofertas se acabarán en poco tiempo. Nuestras <b>Ofertas destacadas</b> incluyen cientos de productos dentro de SMShop.com.mx.
+
+                                    </span>
+                                </p>
                                 <p style="text-align:left;">
 
                                     Regresa frecuentemente porque nuestras promociones se actualizan diario.
@@ -267,8 +272,7 @@ if ($conexion->connect_errno) {
                                     Para conocer los Términos y condiciones de las ofertas consulta la <a href="ayuda.php">Sección de ayuda</a>.
 
                                 </p>
-                                <div class="h_rule">
-                                </div>
+                                <hr>
                             </div>
                         </div>
                         <!-- /.box-body -->

@@ -15,7 +15,8 @@ $pre=$_GET['d'];
 $ex=$_GET['e'];
 $img="../img/".$_GET['f'];
 $idhost=$_GET['ag'];
-$query1= "UPDATE producto SET prodID='$id', prodNombre='$nom', prodDescripcion='$des', prodPrecio='$pre', prodExistencias='$ex', prodImagen='$img' WHERE prodID='$idhost'";
+$tipo=$_GET['t'];
+$query1= "UPDATE productos_1 SET id='$id', imagen='$img', nombre='$nom', precio='$pre', tipo='$tipo', descripcion='$des', Cantidad='$ex' WHERE id='$idhost'";
 
 $resultado=$conexion->query($query1);
 
