@@ -14,8 +14,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
     $password = openssl_encrypt($_POST['password'],"AES-128-ECB", "123");
 
-    $sql = "INSERT INTO login (usuario, con, nombre, apellidoPat, apellidoMat, email, estado, intentos, acc, tam, fondo, letra) ";
-    $sql .= "VALUES('$usuario', '$password', '$nombre', '$ape_pat', '$ape_mat', '$email', '1', '0', '1', '0.9', '#FFF', '#000')";
+    $sql = "INSERT INTO login (usuario, con, nombre, apellidoPat, apellidoMat, email, estado, intentos) ";
+    $sql .= "VALUES('$usuario', '$password', '$nombre', '$ape_pat', '$ape_mat', '$email', '1', '0')";
     if (insertDB($sql)) {
       header('Location: login.php?s=1');
     } else {
