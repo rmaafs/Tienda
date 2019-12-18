@@ -77,7 +77,9 @@ if (1) {
         header('Location:login.php');
     }
 } else {
-    echo"alert('Usuario no registrado')";
+    <script>
+        alertError('No existe el usuario');
+    </script>
     //header('Location:FormCorreo2.php');
 }
 
