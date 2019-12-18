@@ -258,10 +258,10 @@
                                         <h5>¡Regístrate a nuestro Newsletter!</h5>
                                     </div>
                                     <div>
-                                        <form action="envior2.php" method="POST" enctype="multipart/form-data"></form>
+                                        <form action="envio2.php" method="POST" enctype="multipart/form-data">
 
                                         <input type="text" id="newsletter" name="correo" placeholder="Tu correo electrónico" style="color:black; box-sizing: border-box; height:30px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px;">
-                                        <button type="submit" name="botonsub" href="#" onclick="" style="box-sizing: border-box;height: 40px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px; min-width: 50px;background: #fff!important; color: #000;">Suscribirse</button>
+                                        <button type="submit" name="botonsub" style="box-sizing: border-box;height: 40px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px; min-width: 50px;background: #fff!important; color: #000;">Suscribirse</button>
                                         <select name="archivo" require>
                         
                                             <option value="../dist/img/compu.png">Premio 1</option>
