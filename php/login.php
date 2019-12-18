@@ -5,6 +5,8 @@ setcookie("pass", '', time() - 1, '/');
 $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
 
 ?>
+<!-- Chat -->
+<?php include "includes/chat.php" ?>
 <html>
 
 <head>
