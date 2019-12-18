@@ -1,1 +1,1 @@
-<?php echo "TiendaGINA | "; ?>
+<?php echo "SMShop | "; ?>
