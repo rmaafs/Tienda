@@ -77,7 +77,7 @@ if ($conexion->connect_errno) {
         <!------------------------------------------------------------ WRAPPER ------------------------------------------------------------>
 
 
-        <div class="content-wrapper">
+        <div class="content-wrapper" id="acc">
             <div>
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
