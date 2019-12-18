@@ -17,4 +17,4 @@ if (selectBD("SELECT usuario FROM accesibilidad WHERE usuario='$usuario'")) {
         die("true");
     }
 }
-die("false");
+die("" . $usuario);
