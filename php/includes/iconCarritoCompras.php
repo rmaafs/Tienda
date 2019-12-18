@@ -11,7 +11,7 @@ $size = sizeof($productos);
 ?>
 
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    <i class="fa fa-shopping-cart"></i>
+    <i class="fa fa-shopping-cart" id="tam4"></i>
     <span class="label label-danger" id="numero-total-productos-carrito"><?php echo $size; ?></span>
 </a>
 <ul class="dropdown-menu">
