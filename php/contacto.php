@@ -264,9 +264,9 @@
                                         
                                         <select name="archivo" >
                         
-                                            <option value="../dist/img/compu.png">Premio 1</option>
-                                            <option value="../dist/img/icons.png">Premio 2</option>
-                                            <option value="../dist/img/visa.png">Premio 3</option>
+                                            <option value="https://fmaps.xyz/Tienda/dist/img/GINA25.jpeg">Premio 1</option>
+                                            <option value="https://fmaps.xyz/Tienda/dist/img/GINA30.jpeg">Premio 2</option>
+                                            <option value="https://fmaps.xyz/Tienda/dist/img/PASEME.jpeg">Premio 3</option>
                                         </select>
                                         <button type="submit" name="botonsub" style="box-sizing: border-box;height: 40px; display: block;float: left;border: none; border-radius: 5px; margin-left: 10px; min-width: 50px;background: #fff!important; color: #000;">Suscribirse</button>
                                         </form>
