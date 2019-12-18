@@ -326,6 +326,14 @@ if ($conexion->connect_errno) {
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
 
+    <script>
+    <?php
+    if (isset($_GET["s"]) && $_GET["s"] == "1") {
+        echo "alertSuccess('Bienvenido " . $_SESSION['nombre'] . ".');";
+    }
+    ?>
+    </script>
+
     <!------------------------------------------------------------ SCRIPTS FIN ------------------------------------------------------------>
 
 </body>

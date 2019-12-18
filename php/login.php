@@ -74,7 +74,7 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
                     <button type="submit" class="btn btn-info btn-block btn-flat" onclick="window.location.href = 'FormCorreo2.php'">Olvide mi olvidarContraseña</button>
                 </div>
             </div>
-            
+
             <div class="col-xs-12 text-center">
                 <!--<a onclick="olvidarContraseña();"><br>Olvidé mi contraseña</a><br>-->
             </div>
@@ -98,6 +98,18 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
                                                                 echo "alertSuccess('Usuario registrado con éxito.');";
                                                             } else if (isset($_GET["s"]) && $_GET["s"] == "2") {
                                                                 echo "alertSuccess('Contraseña cambiada con éxito.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "3") {
+                                                                echo "alertError('No has resuelto el captcha correctamente.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "4") {
+                                                                echo "alertError('El usuario ha sido bloqueado por múltiples intentos fallidos.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "5") {
+                                                                echo "alertError('Contraseña incorrecta.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "6") {
+                                                                echo "alertError('Error al recibir el estado del usuario.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "7") {
+                                                                echo "alertError('Este usuario no está registrado.');";
+                                                            } else if (isset($_GET["s"]) && $_GET["s"] == "8") {
+                                                                echo "alertError('Por favor, resuelve el captcha.');";
                                                             }
         ?>
 
@@ -127,32 +139,6 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
                 increaseArea: '20%' /* optional */
             });
         });
-
-        function olvidarContraseña() {
-            header(location("FormCorreo2.php"));
-            // swal({
-            //     header(location("FormCorreo2.php"));
-            //     title: "Escribe tu nombre de usuario",
-            //     content: "input",
-            //     buttons: {
-            //         cancel: true,
-            //         confirm: "Confirmar"
-            //     }
-            // }).then(val2 => {
-            //     if (val2) {
-            //         $.post('olvidarContrasena.php', {
-            //             user: val2
-            //         }, function(resp) {
-            //             if (resp == "false") {
-            //                 alertError("Este usuario no existe.");
-            //                 return false;
-            //             } else {
-            //                 alertSuccess("Correo enviado a " + resp);
-            //             }
-            //         });
-            //     }
-            // });
-        }
     </script>
 </body>
 
