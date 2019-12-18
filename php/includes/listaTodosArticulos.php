@@ -3,7 +3,7 @@ require_once "mysql.php";
 
 $categoria = $_GET["categoria"];
 
-$resultado = selectBD('SELECT * FROM productos_1 WHERE tipo="' . $categoria . '"');
+$resultado = selectBD('SELECT * FROM productos_1 ');
 if ($resultado) { ?>
 
     <style>
@@ -20,8 +20,10 @@ if ($resultado) { ?>
             color: #f30240;
         }
 
+        .hover-nombre:hover {
+            color:orange;
+        }
     </style>
-
     <div class="box box-default">
         <div class="box-header with-border">
             <i class="fa fa-circle-o"></i>
@@ -40,7 +42,7 @@ if ($resultado) { ?>
                     <div class="col-md-2" style="text-align: center;">
                         <div class="img-producto-categoria">
                             <a href="viewProducto.php?id=<?php echo $producto->id; ?>" title="<?php echo $producto->nombre ?>">
-                                <img class="zoom;" src="<?php echo $producto->imagen ?>" alt="<?php echo $producto->nombre ?>" title="<?php echo $producto->nombre ?>">
+                                <img src="<?php echo $producto->imagen ?>" alt="<?php echo $producto->nombre ?>" title="<?php echo $producto->nombre ?>">
                             </a>
                         </div>
                         <h5 href="viewProducto.php?id=<?php echo $producto->id; ?>" title="<?php echo $producto->nombre ?>">

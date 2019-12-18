@@ -4,89 +4,88 @@ require "mysql.php";
 $user = $_POST['user'];
 $passwd = openssl_encrypt($_POST['passwd'], "AES-128-ECB", "123");
 
-if (!validarCaptcha()) {//Retorna verdadero si el captcha fue resuleto correctamente
-    die("Captcha erroneo");
+if (!validarCaptcha()) { //Retorna verdadero si el captcha fue resuleto correctamente
+    header('Location: login.php?s=3'); //Captcha incorrecto
+    die();
 }
 
-if (1) {
-    $nom = selectBD('select usuario from login where usuario = "' . $user . '"');
-    if ($nom) {
-        $bloqueo = selectBD('select estado from login where usuario = "' . $user . '"');
-        if ($bloqueo) {
-            $b = $bloqueo->fetch_assoc();
-            $b1 = $b['estado'];
-            if ($b1 == 0) {
-                header('Location:FormCorreo2.php');
+$nom = selectBD('select usuario from login where usuario = "' . $user . '"');
+if ($nom) {
+    $bloqueo = selectBD('select estado from login where usuario = "' . $user . '"');
+    if ($bloqueo) {
+        $b = $bloqueo->fetch_assoc();
+        $b1 = $b['estado'];
+        if ($b1 == 0) {
+            header('Location: login.php?s=4'); //Usuario bloqueado
+            //echo "<br>";
+            //echo "Usuario bloqueado";
+        } else {
+            $resultado = selectBD('select usuario, con, nombre, apellidoPat, apellidoMat from login where usuario = "' . $user . '" and con = "' . $passwd . '" ');
+            if ($resultado) {
                 //echo "<br>";
-                //echo "Usuario bloqueado";
-            } else {
-                $resultado = selectBD('select usuario, con, nombre, apellidoPat, apellidoMat from login where usuario = "' . $user . '" and con = "' . $passwd . '" ');
-                if ($resultado) {
-                    //echo "<br>";
-                    echo "Bienvenido";
+                //echo "Bienvenido";
 
-                    if (updateDB('UPDATE login set intentos = 0 where usuario = "' . $user . '"; ')) {
+                if (updateDB('UPDATE login set intentos = 0 where usuario = "' . $user . '"; ')) {
+                    //echo "<br>";
+                    //echo "se actualizo el intento el estado";
+                } else {
+                    //echo "<br>";
+                    //echo "Fallo al actualizar el estado";
+                }
+                //Lo de la sesion
+                setcookie('user', $user, time() + (86400 * 30 * 24), "/");
+                setcookie('con', $_POST['passwd'], time() + (86400 * 30 * 24), "/");
+                //Puse esto, porque $passwd está encriptada
+
+                session_start();
+                $fila = $resultado->fetch_assoc();
+                $_SESSION["nombre"] = $fila['nombre'];
+                $_SESSION["apellidoPat"] = $fila['apellidoPat'];
+                $_SESSION["apellidoMat"] = $fila['apellidoMat'];
+
+                header('Location: index.php?s=1'); //Bienvenido
+            } else {
+                echo "<br>";
+                echo "Error de contraseña";
+                $num = selectBD('select intentos from login where usuario = "' . $user . '"');
+                $i = $num->fetch_assoc();
+                $n = $i['intentos'];
+                $n = $n + 1;
+                if ($n >= 3) {
+                    if (updateDB('UPDATE login set estado = 0 where usuario = "' . $user . '"; ')) {
                         //echo "<br>";
                         //echo "se actualizo el intento el estado";
                     } else {
                         //echo "<br>";
                         //echo "Fallo al actualizar el estado";
                     }
-
-                    session_start();
-                    $fila = $resultado->fetch_assoc();
-                    $_SESSION["usuario"]=$fila["usuario"];
-                    $_SESSION["nombre"] = $fila['nombre'];
-                    $_SESSION["apellidoPat"] = $fila['apellidoPat'];
-                    $_SESSION["apellidoMat"] = $fila['apellidoMat'];
-
-                    header('Location: index.php');
-                } else {
-                    echo "<br>";
-                    echo "Error de contraseña";
-                    $num = selectBD('select intentos from login where usuario = "' . $user . '"');
-                    $i = $num->fetch_assoc();
-                    $n = $i['intentos'];
-                    $n = $n + 1;
-                    if ($n >= 3) {
-                        if (updateDB('UPDATE login set estado = 0 where usuario = "' . $user . '"; ')) {
-                            //echo "<br>";
-                            //echo "se actualizo el intento el estado";
-                        } else {
-                            echo "<br>";
-                            echo "Fallo al actualizar el estado";
-                        }
-                    }
-                    echo "<br>";
-                    echo $n;
-                    
-                    if (updateDB('UPDATE login set intentos = "' . $n . '" WHERE usuario ="' . $user . '";')) {
-                        //echo "<br>";
-                        //echo "se actualizo el intento";
-                    } else {
-                       //echo "<br>";
-                        //echo "Fallo el actualizar el intento";
-                    }
-                    
-                    header('Location:login.php');
                 }
+                echo "<br>";
+                echo $n;
+
+                if (updateDB('UPDATE login set intentos = "' . $n . '" WHERE usuario ="' . $user . '";')) {
+                    //echo "<br>";
+                    //echo "se actualizo el intento";
+                } else {
+                    //echo "<br>";
+                    //echo "Fallo el actualizar el intento";
+                }
+
+                header('Location:login.php?s=5'); //Contraseña incorrecta
             }
-        } else {
-            echo "Error al recibir el estado del usuario";
         }
     } else {
-        header('Location:login.php');
+        header('Location:login.php?s=6'); //Error al recibir el estado del usuario
     }
 } else {
-    echo"alert('Usuario no registrado')";
-    //header('Location:FormCorreo2.php');
+    header('Location:login.php?s=7'); //El usuario no existe
 }
 
 function validarCaptcha()
 {
     if (!isset($_POST["g-recaptcha-response"]) || $_POST["g-recaptcha-response"] == "") {
         //die("No has pasado el captcha correctamente.");
-        header('Location:login.php');
+        return false;
     }
     $clave_secreta = "6Ld_FsgUAAAAAElDXz1-aXExH0myJ-ONn_RngcTA";
     $recaptcha = $_POST["g-recaptcha-response"];
