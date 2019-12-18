@@ -40,4 +40,8 @@
     
  
 	//Enviar el correo
-	header('Location: mensaje-de-envio.php');
+	if(mail($correoDestino, $asunto, $carta, $cabecera)){
+		echo "Correo enviado";
+	}else{
+		echo "Error de envio";
+	}
