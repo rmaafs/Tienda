@@ -71,7 +71,7 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
                     <button type="submit" class="btn btn-info btn-block btn-flat" onclick="window.location.href = 'signup.php'">¡Regístrate!</button>
                 </div>
                 <div class="col-xs-12">
-                    <button type="submit" class="btn btn-info btn-block btn-flat" onclick="window.location.href = 'FormCorreo2.php'">Olvide mi olvidarContraseña</button>
+                    <button type="submit" class="btn btn-info btn-block btn-flat" onclick="window.location.href = 'FormCorreo2.php'">Olvide mi contraseña</button>
                 </div>
             </div>
             
