@@ -63,8 +63,8 @@
 
 <script>
     <?php
-    $tamanoTexto = isset($_SESSION['tamanoLetra']) ? $_SESSION['tamanoLetra'] : "100%";
-    $colorFondo = isset($_SESSION['colorFondo']) ? $_SESSION['colorFondo'] : "#3C8DBC";//
+    $tamanoTexto = isset($_COOKIE['tamanoLetra']) ? $_COOKIE['tamanoLetra'] : "100%";
+    $colorFondo = isset($_COOKIE['colorFondo']) ? $_COOKIE['colorFondo'] : "#3C8DBC";//
     ?>
     document.getElementById("tam").style.fontSize = "<?php echo $tamanoTexto; ?>";
     document.getElementById("tam1").style.fontSize = "<?php echo $tamanoTexto; ?>";

@@ -39,14 +39,15 @@ if ($nom) {
 
                 session_start();
                 $fila = $resultado->fetch_assoc();
-                $_SESSION["usuario"]=$fila['usuario']; //la necesito para validar en el nav y enseñar a y b de prod
+                $_SESSION["usuario"] = $fila['usuario']; //la necesito para validar en el nav y enseñar a y b de prod
                 $_SESSION["nombre"] = $fila['nombre'];
                 $_SESSION["apellidoPat"] = $fila['apellidoPat'];
                 $_SESSION["apellidoMat"] = $fila['apellidoMat'];
 
-                if (isset($fila['color'])) {//
-                    $_SESSION["colorFondo"] = $fila['color'];
-                    $_SESSION["tamanoLetra"] = $fila['letra'];
+                if (isset($fila['color'])) { //
+
+                    setcookie('colorFondo', $fila['color'], time() + (86400 * 30 * 24), "/");
+                    setcookie('tamanoLetra', $fila['letra'], time() + (86400 * 30 * 24), "/");
                 }
 
                 header('Location: index.php?s=1'); //Bienvenido

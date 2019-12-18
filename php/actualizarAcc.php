@@ -3,10 +3,10 @@ require "mysql.php";
 
 $colorFondo = $_POST["colorFondo"];
 $tamanoLetra = $_POST["tamanoLetra"];
-$usuario = $_SESSION['usuario'];
+$usuario = $_COOKIE['user'];
 
-$_SESSION["colorFondo"] = $colorFondo;
-$_SESSION["tamanoLetra"] = $tamanoLetra;//
+setcookie('colorFondo', $colorFondo, time() + (86400 * 30 * 24), "/");
+setcookie('tamanoLetra', $tamanoLetra, time() + (86400 * 30 * 24), "/");
 
 if (selectBD("SELECT usuario FROM accesibilidad WHERE usuario='$usuario'")) {
     if (updateDB("UPDATE accesibilidad SET color='$colorFondo', letra='$tamanoLetra' WHERE usuario='$usuario'")) {
