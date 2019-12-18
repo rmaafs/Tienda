@@ -273,7 +273,7 @@
                                     <div>
                                         <form action="envio2.php" method="POST" enctype="multipart/form-data">
 
-                                            <input type="text" id="newsletter" name="correo" placeholder="Tu correo electrónico">
+                                            <input type="text" id="newsletter" name="correo" placeholder="Tu correo electrónico" style="color:black">
 
                                             <select name="archivo" style="color: black;">
 
