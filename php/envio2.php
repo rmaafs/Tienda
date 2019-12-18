@@ -10,17 +10,8 @@
 	
 	$fecha= time();
 	$fechaFormato = date("j/n/Y",$fecha);
-	$carta.="Content-type:text/html";
-	$carta = "<!DOCTYPE html>
-	<html>
-	<head>
-		
-	</head>
-	<body>
-	" . $img . "
-	
-	</body>
-	</html>";
+	$carta.="Content-type:image/jpeg";
+	$carta = $img;
 	$correoDestino = "$mail";
 	
 	//asunto del correo
