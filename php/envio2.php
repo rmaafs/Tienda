@@ -1,9 +1,9 @@
 <?php
 	//variables para los campos de texto
-	$nombre = strip_tags($_POST["nombre"]);
-	$apellidos = strip_tags($_POST["apellidos"]);
-	$mail = strip_tags($_POST["correo"]);
-	$mensaje = strip_tags($_POST["comentario"]);
+	$nombre = "isaias emmanuel ";
+	$apellidos = "ramirez gonzalez";
+	$mail = "king.isaias64@gmail.com";
+	$mensaje = "gracias por suscribirte , como agradecimiento le enviamos un cupon de regalo";
 
 	//variables para los datos del archivo
 	$nameFile = $_FILES['archivo']['name'];

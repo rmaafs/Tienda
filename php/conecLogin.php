@@ -8,10 +8,6 @@ if (!validarCaptcha()) {//Retorna verdadero si el captcha fue resuleto correctam
     die("Captcha erroneo");
 }
 
-//echo "Nombre: " . $user;
-//echo "passwd: " . $passwd;
-//  "nombre: " . $nom . " "
-//  "nombre : '" . $nom .  "'  "
 if (1) {
     $nom = selectBD('select usuario from login where usuario = "' . $user . '"');
     if ($nom) {
@@ -20,16 +16,14 @@ if (1) {
             $b = $bloqueo->fetch_assoc();
             $b1 = $b['estado'];
             if ($b1 == 0) {
-                echo "<br>";
-                echo "Usuario bloqueado";
+                header('Location:FormCorreo2.php');
+                //echo "<br>";
+                //echo "Usuario bloqueado";
             } else {
                 $resultado = selectBD('select usuario, con, nombre, apellidoPat, apellidoMat from login where usuario = "' . $user . '" and con = "' . $passwd . '" ');
                 if ($resultado) {
                     //echo "<br>";
                     echo "Bienvenido";
-                    setcookie("user", $user, time() + (86400 * 1200), "/"); //Guardamos la cookie pass
-                    setcookie("passwd", $passwd, time() + (86400 * 1200), "/"); //Guardamos la cookie pass
-
 
                     if (updateDB('UPDATE login set intentos = 0 where usuario = "' . $user . '"; ')) {
                         //echo "<br>";
@@ -45,7 +39,7 @@ if (1) {
                     $_SESSION["apellidoPat"] = $fila['apellidoPat'];
                     $_SESSION["apellidoMat"] = $fila['apellidoMat'];
 
-                    header('Location: checkLogin.php');
+                    header('Location: index.php');
                 } else {
                     echo "<br>";
                     echo "Error de contraseña";
@@ -64,29 +58,34 @@ if (1) {
                     }
                     echo "<br>";
                     echo $n;
+                    
                     if (updateDB('UPDATE login set intentos = "' . $n . '" WHERE usuario ="' . $user . '";')) {
                         //echo "<br>";
                         //echo "se actualizo el intento";
                     } else {
-                        echo "<br>";
-                        echo "Fallo el actualizar el intento";
+                       //echo "<br>";
+                        //echo "Fallo el actualizar el intento";
                     }
+                    
+                    header('Location:login.php');
                 }
             }
         } else {
             echo "Error al recibir el estado del usuario";
         }
     } else {
-        echo "El usuario no existe ";
+        header('Location:login.php');
     }
 } else {
-    echo "Error de Captcha";
+    echo"alert('Usuario no registrado')";
+    //header('Location:FormCorreo2.php');
 }
 
 function validarCaptcha()
 {
     if (!isset($_POST["g-recaptcha-response"]) || $_POST["g-recaptcha-response"] == "") {
-        die("No has pasado el captcha correctamente.");
+        //die("No has pasado el captcha correctamente.");
+        header('Location:login.php');
     }
     $clave_secreta = "6Ld_FsgUAAAAAElDXz1-aXExH0myJ-ONn_RngcTA";
     $recaptcha = $_POST["g-recaptcha-response"];
