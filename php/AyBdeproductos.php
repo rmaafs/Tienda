@@ -7,6 +7,7 @@ if ($conexion->connect_errno) {
     die('Error en la conexion');
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -56,8 +57,8 @@ if ($conexion->connect_errno) {
         }
 
         img {
-            width: 35%;
-            height: 35%;
+            width: 15em;
+            height: 15em;
         }
     </style>
 
@@ -97,18 +98,19 @@ if ($conexion->connect_errno) {
                                     <tr class="info">
                                         <th>ID</th>
                                         <th>Nombre</th>
+                                        <th>Tipo</th>
                                         <th>Descripcion</th>
                                         <th>Precio</th>
                                         <th>Existencias</th>
                                         <th>Imagen</th>
                                     </tr>
                                     <?php
-                                    $sql1 = "SELECT * from producto";
+                                    $sql1 = "SELECT * from productos_1";
                                     $res = mysqli_query($conexion, $sql1);
                                     while ($mostrar = mysqli_fetch_array($res)) {
                                         ?>
-
                                         <tr class="active">
+<<<<<<< HEAD
                                             <td><?php echo $mostrar['prodID'] ?></td>
                                             <td><?php echo $mostrar['prodNombre'] ?></td>
                                             <td><?php echo $mostrar['prodDescripcion'] ?></td>
@@ -116,7 +118,16 @@ if ($conexion->connect_errno) {
                                             <td><?php echo $mostrar['prodExistencias'] ?> Unidades</td>
                                             <td><img class="img-rounded" src="<?php echo $mostrar['prodImagen'] ?>" alt="imagen">
                                                 Ruta: <b><?php echo $mostrar['prodImagen'] ?></b></td>
+=======
+                                            <td><?php echo $mostrar['id'] ?></td>
+                                            <td><?php echo $mostrar['nombre'] ?></td>
+                                            <td><?php echo $mostrar['tipo'] ?></td>
+                                            <td><?php echo $mostrar['descripcion'] ?></td>
+                                            <td>$<?php echo $mostrar['precio'] ?></td>
+                                            <td><?php echo $mostrar['Cantidad'] ?> Unidades</td>
+                                            <td><img class="img-rounded" src="<?php echo $mostrar['imagen'] ?>" alt="imagen"></td>
 
+>>>>>>> e07ad5abb69f8b4cc41df79e1959dc725e6c9a48
                                         </tr>
                                     <?php
                                     }
@@ -237,14 +248,15 @@ if ($conexion->connect_errno) {
             idhost = id;
             document.getElementById("res").innerHTML = "<p>Ahora puedes modificar el producto con id: " + id + "</p>";
             ta = document.getElementById("res");
-            ta.innerHTML += "<table id='tabla' class='table'> <tr class='info'> <th>ID</th> <th>Nombre</th> <th>Descripcion</th> <th>Precio</th> <th>Existencias</th> <th>Imagen</th> </tr> </table>";
+            ta.innerHTML += "<table id='tabla' class='table'> <tr class='info'> <th>ID</th> <th>Nombre</th> <th>Tipo</th> <th>Descripcion</th> <th>Precio</th> <th>Existencias</th> <th>Imagen</th> </tr> </table>";
             var elemento = document.createElement('tr');
             elemento.innerHTML += "<td><input type='number' id='idmod' value='id'></td>"
             elemento.innerHTML += "<td><input type='text' id='nommod'></td>"
+            elemento.innerHTML += "<td><input type='text' id='tipomod'></td>"
             elemento.innerHTML += "<td><input type='text' id='desmod'></td>"
             elemento.innerHTML += "<td><input type='number' id='premod'></td>"
             elemento.innerHTML += "<td><input type='number' id='exmod'></td>"
-            elemento.innerHTML += "<td><input type='text' id='imgmod'></td>"
+            elemento.innerHTML += "<td><input type='file' id='imgmod'></td>"
             document.getElementById('tabla').appendChild(elemento);
             ta.innerHTML += "<br> <input class='btn btn-info' type='button' value='Enviar' onclick='mod()'>";
         }
@@ -252,10 +264,11 @@ if ($conexion->connect_errno) {
         function mod() {
             var idmod = document.getElementById("idmod").value;
             var nommod = document.getElementById("nommod").value;
+            var tipomod = document.getElementById("tipomod").value;
             var desmod = document.getElementById("desmod").value;
             var premod = document.getElementById("premod").value;
             var exmod = document.getElementById("exmod").value;
-            var imgmod = document.getElementById("imgmod").value;
+            var imgmod = document.getElementById("imgmod").files[0].name;
             var xhttp1 = new XMLHttpRequest();
             if (idmod == "" || nommod == "" || desmod == "" || premod == "" || exmod == "" || imgmod == "") {
                 document.getElementById("res").innerHTML = "COMPLETA EL FORMULARIO";
@@ -271,32 +284,34 @@ if ($conexion->connect_errno) {
                     }
                 }
             };
-            xhttp1.open("GET", "bdmodifica.php?a=" + idmod + "&b=" + nommod + "&c=" + desmod + "&d=" + premod + "&e=" + exmod + "&f=" + imgmod + "&ag=" + idhost, true);
+            xhttp1.open("GET", "bdmodifica.php?a=" + idmod + "&b=" + nommod + "&t="+tipomod+"&c=" + desmod + "&d=" + premod + "&e=" + exmod + "&f=" + imgmod + "&ag=" + idhost, true);
             xhttp1.send();
         }
 
         function agregar() {
             document.getElementById("res").innerHTML = "<p>Ahora puedes agregar algun producto </p>";
             var ta1 = document.getElementById("res");
-            ta1.innerHTML += "<table id='tabla1' class='table'> <tr class='info'> <th>ID</th> <th>Nombre</th> <th>Descripcion</th> <th>Precio</th> <th>Existencias</th> <th>Imagen</th> </tr> </table>";
+            ta1.innerHTML += "<table id='tabla1' class='table'> <tr class='info'> <th>ID</th> <th>Nombre</th> <th>Tipo</th> <th>Descripcion</th> <th>Precio</th> <th>Existencias</th> <th>Imagen</th> </tr> </table>";
             var elemento = document.createElement('tr');
             elemento.innerHTML += "<td><input type='number' id='idag'></td>"
             elemento.innerHTML += "<td><input type='text' id='nomag'></td>"
+            elemento.innerHTML += "<td><input type='text' id='tipoag'></td>"
             elemento.innerHTML += "<td><input type='text' id='desag'></td>"
             elemento.innerHTML += "<td><input type='number' id='preag'></td>"
             elemento.innerHTML += "<td><input type='number' id='exag'></td>"
-            elemento.innerHTML += "<td><input type='text' id='imgag'></td>"
+            elemento.innerHTML += "<td><input type='file' id='imgag'></td>"
             document.getElementById('tabla1').appendChild(elemento);
             ta1.innerHTML += "<br> <input class='btn btn-info' type='button' value='Enviar' onclick='ag()'>";
         }
 
         function ag() {
             var idag = document.getElementById("idag").value;
+            var tipoag = document.getElementById("tipoag").value;
             var nomag = document.getElementById("nomag").value;
             var desag = document.getElementById("desag").value;
             var preag = document.getElementById("preag").value;
             var exag = document.getElementById("exag").value;
-            var imgag = document.getElementById("imgag").value;
+            var imgag = document.getElementById("imgag").files[0].name;
             var xhttp2 = new XMLHttpRequest();
             if (idag == "" || nomag == "" || desag == "" || preag == "" || exag == "" || imgag == "") {
                 document.getElementById("res").innerHTML = "COMPLETA EL FORMULARIO";
@@ -313,7 +328,7 @@ if ($conexion->connect_errno) {
                     }
                 }
             };
-            xhttp2.open("GET", "bdagrega.php?g=" + idag + "&h=" + nomag + "&i=" + desag + "&j=" + preag + "&k=" + exag + "&l=" + imgag, true);
+            xhttp2.open("GET", "bdagrega.php?g=" + idag + "&h=" + nomag + "&ti="+tipoag+ "&i=" +  desag + "&j=" + preag + "&k=" + exag + "&l=" + imgag, true);
             xhttp2.send();
         }
 

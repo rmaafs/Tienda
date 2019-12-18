@@ -14,7 +14,8 @@ $des=$_GET['i'];
 $pre=$_GET['j'];
 $ex=$_GET['k'];
 $img="../img/".$_GET['l'];
-$query2="INSERT INTO producto(prodID, prodNombre, prodDescripcion, prodPrecio, prodExistencias, prodImagen) VALUES ('$id','$nom','$des','$pre','$ex','$img')";
+$tipo=$_GET['ti'];
+$query2="INSERT INTO productos_1(id, imagen, nombre, precio, tipo, descripcion, Cantidad) VALUES ('$id','$img','$nom','$pre','$tipo','$des','$ex')";
 
 $resultado=$conexion->query($query2);
 
