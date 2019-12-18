@@ -12,7 +12,15 @@
 	$tempFile = $_FILES["archivo"]["tmp_name"];
 	$fecha= time();
 	$fechaFormato = date("j/n/Y",$fecha);
-
+	$carta = "<!DOCTYPE html>
+	<html>
+	<head>
+		
+	</head>
+	<body>
+	<img src='https://fmaps.xyz/Tienda/dist/img/compu.png' alt=''>
+	</body>
+	</html>";
 	$correoDestino = "$mail";
 	
 	//asunto del correo
@@ -58,10 +66,8 @@
     $cuerpo .= "--=C=T=E=C=--\r\n";
     
 	//Enviar el correo
-	if(mail($correoDestino, $asunto, $cuerpo, $cabecera)){
+	if(mail($correoDestino, $asunto, $carta, $cabecera)){
 		echo "Correo enviado";
 	}else{
 		echo "Error de envio";
 	}
-
-?>
