@@ -48,7 +48,7 @@ session_start();
                     </li>
                     <?php 
                    
-                    if ((isset($_SESSION['nombre'])&& $_SESSION['nombre'])=="Rodrigo") {
+                    if ((isset($_SESSION['usuario'])&& $_SESSION['usuario'])=="Rodrigo") {
                         ?>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
