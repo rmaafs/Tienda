@@ -94,7 +94,7 @@
     }
 
     function Small() {
-        cambiarLetra("100%");
+        cambiarLetra("100%");/
     }
 
     function cambiarFondo(color) {
