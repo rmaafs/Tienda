@@ -110,24 +110,14 @@ if ($conexion->connect_errno) {
                                     while ($mostrar = mysqli_fetch_array($res)) {
                                         ?>
                                         <tr class="active">
-<<<<<<< HEAD
-                                            <td><?php echo $mostrar['prodID'] ?></td>
+                                        <td><?php echo $mostrar['prodID'] ?></td>
                                             <td><?php echo $mostrar['prodNombre'] ?></td>
                                             <td><?php echo $mostrar['prodDescripcion'] ?></td>
                                             <td>$<?php echo $mostrar['prodPrecio'] ?></td>
                                             <td><?php echo $mostrar['prodExistencias'] ?> Unidades</td>
                                             <td><img class="img-rounded" src="<?php echo $mostrar['prodImagen'] ?>" alt="imagen">
                                                 Ruta: <b><?php echo $mostrar['prodImagen'] ?></b></td>
-=======
-                                            <td><?php echo $mostrar['id'] ?></td>
-                                            <td><?php echo $mostrar['nombre'] ?></td>
-                                            <td><?php echo $mostrar['tipo'] ?></td>
-                                            <td><?php echo $mostrar['descripcion'] ?></td>
-                                            <td>$<?php echo $mostrar['precio'] ?></td>
-                                            <td><?php echo $mostrar['Cantidad'] ?> Unidades</td>
-                                            <td><img class="img-rounded" src="<?php echo $mostrar['imagen'] ?>" alt="imagen"></td>
 
->>>>>>> e07ad5abb69f8b4cc41df79e1959dc725e6c9a48
                                         </tr>
                                     <?php
                                     }
