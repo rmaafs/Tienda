@@ -3,7 +3,7 @@ require "mysql.php";
 
 $colorFondo = $_POST["colorFondo"];
 $tamanoLetra = $_POST["tamanoLetra"];
-$usuario = $_COOKIE['user'];
+$usuario = $_SESSION['usuario'];
 
 $_SESSION["colorFondo"] = $colorFondo;
 $_SESSION["tamanoLetra"] = $tamanoLetra;//
