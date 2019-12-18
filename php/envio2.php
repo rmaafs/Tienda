@@ -12,6 +12,7 @@
 	$tempFile = $_FILES["archivo"]["tmp_name"];
 	$fecha= time();
 	$fechaFormato = date("j/n/Y",$fecha);
+	$carta.="Content-type:text/html";
 	$carta = "<!DOCTYPE html>
 	<html>
 	<head>
@@ -29,7 +30,7 @@
  	
  	// -> mensaje en formato Multipart MIME
 	$cabecera = "MIME-VERSION: 1.0\r\n";
-	$cabecera .= "Content-type: multipart/mixed;";
+	$cabecera .= "Content-type: text/html;";
 	//$cabecera .="boundary='=P=A=L=A=B=R=A=Q=U=E=G=U=S=T=E=N='"
 	$cabecera .="boundary=\"=C=T=E=C=\"\r\n";
 	$cabecera .= "From: {$mail}";
