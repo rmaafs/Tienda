@@ -44,7 +44,7 @@ if ($nom) {
                 $_SESSION["apellidoPat"] = $fila['apellidoPat'];
                 $_SESSION["apellidoMat"] = $fila['apellidoMat'];
 
-                if (isset($fila['color'])) {
+                if (isset($fila['color'])) {//
                     $_SESSION["colorFondo"] = $fila['color'];
                     $_SESSION["tamanoLetra"] = $fila['letra'];
                 }

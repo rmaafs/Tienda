@@ -6,7 +6,7 @@ $tamanoLetra = $_POST["tamanoLetra"];
 $usuario = $_COOKIE['user'];
 
 $_SESSION["colorFondo"] = $colorFondo;
-$_SESSION["tamanoLetra"] = $tamanoLetra;
+$_SESSION["tamanoLetra"] = $tamanoLetra;//
 
 if (selectBD("SELECT usuario FROM accesibilidad WHERE usuario='$usuario'")) {
     if (updateDB("UPDATE accesibilidad SET color='$colorFondo', letra='$tamanoLetra' WHERE usuario='$usuario'")) {
