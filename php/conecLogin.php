@@ -32,6 +32,7 @@ if ($nom) {
                     //echo "<br>";
                     //echo "Fallo al actualizar el estado";
                 }
+                //Lo de la sesion
                 setcookie('user', $user, time() + (86400 * 30 * 24), "/");
                 setcookie('con', $_POST['passwd'], time() + (86400 * 30 * 24), "/");
                 //Puse esto, porque $passwd está encriptada
