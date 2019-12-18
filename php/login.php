@@ -40,11 +40,11 @@ $clave_sitio = "6Ld_FsgUAAAAADTFqLw1vGWxK5TNWYPh6nFOhnSY";
 
             <form action="conecLogin.php" method="post" id="formLogin" onsubmit="return false;">
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="Usuario" name="user" id="user1">
+                    <input type="text" class="form-control" placeholder="Usuario" name="user" id="user1" value="<?php echo $_COOKIE['user'];?>">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="pass" class="form-control" placeholder="Contraseña" name="passwd" id="passwd1">
+                    <input type="pass" class="form-control" placeholder="Contraseña" name="passwd" id="passwd1" value="<?php echo $_COOKIE['con'];?>">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <center>

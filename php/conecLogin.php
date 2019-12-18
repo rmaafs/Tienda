@@ -32,6 +32,9 @@ if ($nom) {
                     //echo "<br>";
                     //echo "Fallo al actualizar el estado";
                 }
+                setcookie('user', $user, time() + (86400 * 30 * 24), "/");
+                setcookie('con', $_POST['passwd'], time() + (86400 * 30 * 24), "/");
+                //Puse esto, porque $passwd está encriptada
 
                 session_start();
                 $fila = $resultado->fetch_assoc();
