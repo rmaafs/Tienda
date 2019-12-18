@@ -20,7 +20,7 @@ if ($nom) {
             //echo "<br>";
             //echo "Usuario bloqueado";
         } else {
-            $resultado = selectBD('select usuario, con, nombre, apellidoPat, apellidoMat from login where usuario = "' . $user . '" and con = "' . $passwd . '" ');
+            $resultado = selectBD('select b.usuario, b.con, b.nombre, b.apellidoPat, b.apellidoMat, a.color, a.letra from login b LEFT JOIN accesibilidad a ON a.usuario = b.usuario where b.usuario = "' . $user . '" and b.con = "' . $passwd . '" ');
             if ($resultado) {
                 //echo "<br>";
                 //echo "Bienvenido";
@@ -43,6 +43,11 @@ if ($nom) {
                 $_SESSION["nombre"] = $fila['nombre'];
                 $_SESSION["apellidoPat"] = $fila['apellidoPat'];
                 $_SESSION["apellidoMat"] = $fila['apellidoMat'];
+
+                if (isset($fila['color'])) {
+                    $_SESSION["colorFondo"] = $fila['color'];
+                    $_SESSION["tamanoLetra"] = $fila['letra'];
+                }
 
                 header('Location: index.php?s=1'); //Bienvenido
             } else {

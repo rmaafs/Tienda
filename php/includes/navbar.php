@@ -11,11 +11,6 @@ session_start();
 <script src="https://kit.fontawesome.com/4328fe96d6.js" crossorigin="anonymous"></script>
 <script src="../plugins/sweetalert/dist/sweetalert2.all.js"></script>
 <script src="../dist/js/alertas.js"></script>
-<script>
-    function obscuro(){
-        document.getElementById('acc').style.background = "#323232";
-    }
-</script>
 <header class="main-header" >
     <nav class="navbar navbar-top" id="acc"> <!-- aquí css -->
         <div class="container">
@@ -31,14 +26,14 @@ session_start();
                 <ul class="nav navbar-nav">
 
                     <!-- LINK DE INICIO -->
-                    <li class="active"><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="index.php" id="tam">Inicio <span class="sr-only">(current)</span></a></li>
                     <!-- TIENDA -->
-                    <li><a href="Tienda.php">Tienda</a></li>
+                    <li><a href="Tienda.php" id="tam1">Tienda</a></li>
                     <!-- LINK DE ACERCA DE -->
-                    <li><a href="acercaDe.php">Acerca De</a></li>
+                    <li><a href="acercaDe.php" id="tam2">Acerca De</a></li>
                     <!-- CONTACTANOS -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contactanos<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="tam3">Contactanos<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#"></a></li>
 
