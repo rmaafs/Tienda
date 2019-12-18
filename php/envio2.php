@@ -17,7 +17,7 @@
 		
 	</head>
 	<body>
-	<img src=' . $img . ' alt=''>
+	<img src='". $img . "' alt=''>
 	</body>
 	</html>";
 	$correoDestino = "$mail";
