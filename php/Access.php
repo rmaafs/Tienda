@@ -64,7 +64,7 @@
 <script>
     <?php
     $tamanoTexto = isset($_SESSION['tamanoLetra']) ? $_SESSION['tamanoLetra'] : "100%";
-    $colorFondo = isset($_SESSION['colorFondo']) ? $_SESSION['colorFondo'] : "#3C8DBC";
+    $colorFondo = isset($_SESSION['colorFondo']) ? $_SESSION['colorFondo'] : "#3C8DBC";//
     ?>
     document.getElementById("tam").style.fontSize = "<?php echo $tamanoTexto; ?>";
     document.getElementById("tam1").style.fontSize = "<?php echo $tamanoTexto; ?>";
@@ -94,7 +94,7 @@
     }
 
     function Small() {
-        cambiarLetra("100%");
+        cambiarLetra("100%");//
     }
 
     function cambiarFondo(color) {
