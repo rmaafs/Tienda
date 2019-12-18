@@ -1,3 +1,5 @@
+<!-- Chat -->
+<?php include "includes/chat.php" ?>
 <html>
 <head>
 <title>Formulario de contacto</title>

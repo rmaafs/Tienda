@@ -1,3 +1,5 @@
+<!-- Chat -->
+<?php include "includes/chat.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

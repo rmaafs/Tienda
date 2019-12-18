@@ -19,7 +19,8 @@ if ($resultado) {
 }
 
 ?>
-
+<!-- Chat -->
+<?php include "includes/chat.php" ?>
 <!DOCTYPE html>
 <html>
 
