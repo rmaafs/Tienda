@@ -17,7 +17,7 @@
         
         <section class="mensaje-exito">
             <h1>SU MENSAJE SE ENVIÓ EXITOSAMENTE</h1>
-            <a href="index.html">Enviar nuevo mensaje</a>
+            <a href="index.php">Volver a Inicio</a>
         </section>
 
     </section>
