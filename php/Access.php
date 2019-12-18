@@ -127,8 +127,8 @@
             colorFondo: hex,
             tamanoLetra: document.getElementById("tam").style.fontSize
         }, function(resp) {
-            if (resp == "false") {
-                alertError("Algo salió mal");
+            if (resp != "true") {
+                alertError("Algo salió mal :" + resp + ".");
                 return false;
             }
         });

@@ -3,7 +3,7 @@ require "mysql.php";
 
 $colorFondo = $_POST["colorFondo"];
 $tamanoLetra = $_POST["tamanoLetra"];
-$usuario = $_COOKIE['user'];
+$usuario = $_SESSION['usuario'];
 
 $_SESSION["colorFondo"] = $colorFondo;
 $_SESSION["tamanoLetra"] = $tamanoLetra;//
@@ -17,4 +17,4 @@ if (selectBD("SELECT usuario FROM accesibilidad WHERE usuario='$usuario'")) {
         die("true");
     }
 }
-die("false");
+die("" . $usuario);
